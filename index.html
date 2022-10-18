@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link REL="SHORTCUT ICON" HREF="https://francispun.com/favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>francispun</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e476873f04.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="my-designs.json"></script>
+</head>
+
+
+<body>
+  <div class="header-container container-fluid text-center">
+    <div class="container-fluid">
+      <a class="brand responsive-sm" href="index.html"><img src="francispun_logo_dark.svg"></a>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link nav-link-lg responsive-lg"  href="my-designs.html">| MY DESIGNS |</a>
+        </li>
+        <li class="nav-item">
+          <a class="brand responsive-lg" href="index.html"><img src="francispun_logo_dark.svg" width="200px"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-lg responsive-lg" href="about-me.html">| ABOUT ME |</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid responsive-sm">
+      <button type="button" id="menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <div class="mobile-header-container container-fluid text-center" id="menu-content">
+    <li class="nav-item">
+      <a class="nav-link nav-link-sm"  href="my-designs.html">| MY DESIGNS |</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-link-sm" href="about-me.html">| ABOUT ME |</a>
+    </li>
+  </ul>
+</div>
+<div class="profile-container container-fluid text-center">
+  <div class="profile-section container-fluid ">
+    <img id="profile-img" src="francis-profile.png">
+    <h3 id=my-intro-h3>Hello, I'm Francis Pun,</h3>
+    <p id=my-intro-p>a <em>Product Designer</em> and <br> a <em>Multimedia Designer</em>.</p>
+    <button class="button" id="my-intro-btn" onclick="location.href='about-me.html'">more about me</button>
+  </div>
+</div>
+<div class="section-container container-fluid py-3">
+  <div class="section-div container-fluid">
+    <h2 class="section-title">My Projects</h2>
+
+    <script id="featureProjectsTemplate" type="x-template">
+      <a class="{type} feature-projects" href="my-designs.html#{meta}">
+        <img class="feature-img" src="my-designs/{meta}.png">
+        <div class="">
+          <p><strong>{name}</strong><br>{description}</p>
+        </div>
+      </a>
+    </script>
+
+    <div class="row py-3" id="iterMMFeatureProjects">
+      <h4>UI / UX Design Projects</h4>
+    </div>
+    <div class="row py-3" id="iterProductFeatureProjects">
+      <h4>Product Design Projects</h4>
+    </div>
+
+
+    <div class="pb-5">
+      <button class="button secondary-button" onclick="location.href='my-designs.html'">see more works</button>
+    </div>
+  </div>
+  
+</div>
+<div class="footer-container container-fluid text-center py-3">
+  <div class="container-fluid py-3">
+    <a class="footer-icon" href="http://www.linkedin.com/pub/pun-cheuk-wa-francis/90/7b/b2b"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a class="footer-icon" href="http://instagram.com/fotographysek"><i class="fa-brands fa-instagram"></i></a>
+    <a class="footer-icon" href="https://vimeo.com/francispun"><i class="fa-brands fa-vimeo-v"></i></a>
+  </div>
+  <p><strong>FRANCISPUN<span style="vertical-align: super;">©</span></strong> <script>document.write( new Date().getFullYear() );</script> ALL RIGHTS RESERVED.</p>  
+</div>
+
+  <script src="myscript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script type="text/javascript">localStorage.clear()</script>
+</body>
+</html>

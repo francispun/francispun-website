@@ -35,13 +35,12 @@
   	top: 0 !important;
   	right: 0 !important;
   	text-align: center !important;
-    padding: 15px;
 }
 
   #my-intro-btn{
   	top: 0 !important;
   	right: 0 !important;
-    margin-bottom: 30px;
+    margin: 30px 0px;
   }
 
   .responsive-lg {
@@ -91,6 +90,8 @@ h2, h3 {
 
 h4 {
   font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0px;
   letter-spacing: 1px;
 }
 
@@ -163,23 +164,23 @@ a:hover{
 
 
 #profile-img{
-	width: 240px;
+	width: 260px;
     position: relative;
     top: 60px;
-    left: 195px;
+    left: 155px;
 }
 
 #my-intro-h3 {
 	position: relative;
     top: -150px;
-    right: 125px;
+    right: 155px;
   	font-weight: 700;
 }
 
 #my-intro-p {
 	position: relative;
-    top: -145px;
-    right: 145px;
+    top: -150px;
+    right: 225px;
     font-size: 16px;
     font-weight: 500;
     text-align: right;
@@ -188,8 +189,8 @@ a:hover{
 
 #my-intro-btn {
     position: relative;
-    top: -135px;
-    right: 60px;
+    top: -130px;
+    right: 145px;
     background: var(--light-gray) !important;
 }
 
@@ -552,6 +553,10 @@ a:hover{
 
 .cv-content{
   padding: 20px 40px;
+}
+
+.cv-content, h4, span{
+  font-size: 14px;
 }
 
 #iterCvContent .cv-content{

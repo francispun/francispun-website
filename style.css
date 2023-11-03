@@ -36,6 +36,13 @@
   	right: 0 !important;
   	text-align: center !important;
 }
+  #my-intro-p2 {
+
+    top: 0 !important;
+    right: 0 !important;
+    text-align: center !important;
+
+  }
 
   #my-intro-btn{
   	top: 0 !important;
@@ -172,14 +179,14 @@ a:hover{
 
 #my-intro-h3 {
 	position: relative;
-    top: -150px;
+    top: -185px;
     right: 155px;
   	font-weight: 700;
 }
 
 #my-intro-p {
 	position: relative;
-    top: -150px;
+    top: -185px;
     right: 225px;
     font-size: 16px;
     font-weight: 500;
@@ -187,9 +194,21 @@ a:hover{
     letter-spacing: 2px;
 }
 
+#my-intro-p2{
+
+  position: relative;
+    top: -190px;
+    right: 225px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    letter-spacing: 1.5px;
+
+}
+
 #my-intro-btn {
     position: relative;
-    top: -130px;
+    top: -175px;
     right: 145px;
     background: var(--light-gray) !important;
 }

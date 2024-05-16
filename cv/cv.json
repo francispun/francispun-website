@@ -1,90 +1,194 @@
 let myCV = [
 	{
-		"jobTitle" : "Product Designer",
 		"jobCompany" : "Kool Ltd",
+		"companyDesc" : "*Kool Ltd. is a Hong Kong company that designs and manufactures high-quality, innovative kitchen and household products under the renowned Kool brand, as well as for other brands..",
+		"jobTitle" : "Product Designer",
 		"jobDate" : "2021.09 - Present",
-		"jobAchieve" : ["Research", "Product Design", "Marketing"],
-		"jobDesc" : ["- designing Focus Group research // - conducting survey // - conducting usability testing  // - desk research: spot trends & develop insights // - data analysis and insights report" , "- new product ideas generation // - eco-friendly design : design for disassembly for repair and recycle  // - color and material proposal // - prototype making for evaluation // - production ready CAD drawing", "- competitive audit: product features & price benchmarking , SWOT // - NPD costing and SRP calculation // - e-commerce website design"],
-		"companyDesc" : ["*Kool Ltd. is a Hong Kong based company that designs and manufactures kitchen and household products. Its brand Kool is a high-quality and innovative kitchenware brand.."]
+		"jobAchieve" : {
+			"Design" : [
+				"Spearheaded the development of the OBM kool brand and multiple ODM customer projects, delivering designs that meet customer needs and maintain brand alignment.",
+				"Successfully developed a new line of silicone-handled utensils capable of withstanding higher temperatures, based on user feedback, which would significantly enhanced customer satisfaction.",
+				"Orchestrated the design of a brand-consistent e-commerce platform, ensuring a unified brand identity across all digital touchpoints, thereby boosting the company's online visibility and sales channels.",
+				"Played a key role in integrating AI technology to streamline operations and enhance customer communication through advanced text-to-image generation capabilities.",
+				],
+			"Marketing and Operation" : [
+				"Conducted in-depth analysis using tools like Euromonitor and ChinaHow, empowering the organization with data-driven insights and to make competitive decisions.",
+				"Managed the successful implementation and operation of a customized laser engraving service, catering specifically to a niche market segment seeking personalized products.",
+				"Provided insightful contributions and perspectives to inform business strategy as a valuable member of the 'inno-team' a team delegated to embracing design thinking methodology."
+			],
+		}
 	},
 	{
-		"jobTitle" : "Part-time Adobe Trainer",
-		"jobCompany" : "Computer Academy",
-		"jobDate" : "2012.12 - Present",
-		"jobAchieve" : ["Photoshop, Illustrator, Premiere Pro Courses "],
-		"jobDesc" : ["- introducing basic tools // - Ps retouching skills // - Ps advanced non-destructive editing skills // - Ai advanced drawing and coloring skills  // - Pr video and audio editing  // - Pr keyframe animation"],
-		"companyDesc" : ["*Computer Academy is a software training company providing high-quality courses to various organizations and individual students."]
+		"jobCompany": "Computer Academy",
+		"companyDesc": "Computer Academy is a leading software training company in Hong Kong, providing comprehensive courses for organizations and individual learners seeking to enhance their software expertise.",
+		"jobTitle": "Part-time Trainer",
+		"jobDate": "2012.12 - Present",
+		"jobAchieve": {
+		"Experienced Multilevel Trainer": [
+		  "Over 10 years of teaching experience, guiding students of all levels, from secondary school to professionals, for both career advancement and personal fulfillment.",
+		  "Proficient in delivering Photoshop, Illustrator, Indesign, Premiere Pro, and Excel courses in both English and Chinese."
+		],
+		}
 	},
 	{
-		"jobTitle" : "Designer",
-		"jobCompany" : "Homeasy Enterprise Ltd.",
-		"jobDate" : "2020.12 - 2021.09",
-		"jobAchieve" : ["Branding, Marketing and Management","Graphic and Product Design and Management", "Project Management"],
-		"jobDesc" : ["- design team lead of 3 brands: Homeasy, QDO, and Hailo China // - maintaining the visual of the brands // - style guides setup // - costing and SRP calculation // - communicating with outsource digital marketers // - recruiting marketing executives", "- seasonal graphic design for kitchenware // - packaging and CDU design // - web design // - photoshooting // - communicating with outsource designers // - recruiting junior designers", "- creating product assortments // - stock management // - QA guideline setup // - project scheduling // - communicating with factory engineers"],
-		"companyDesc" : ["*Homeasy is a kitchenware and bakeware design and manufacturing company.", "*QDO is a Scandinavian tea and coffee products brand.", "*Hailo China is a China division of a ladder and waste bin leader brand in Germany."]
+		"jobCompany": "Arctomys",
+		"companyDesc": "*Arctomys was a Hong Kong-based fashion and accessories brand, co-founded by two local designers",
+		"jobTitle": "Co-founder",
+		"jobDate": "2018.05 - 2021.09",
+		"jobAchieve": {
+		"Achievement": "Secured 2 years licensing agreement with Miffy from 2019 - 2021.",
+		"Operation" : "Managed sales, marketing, and production activities."
+		  
+		}
 	},
 	{
-	"jobTitle" : "Designer",
-	"jobCompany" : "KAI Cutlery (H.K.) Ltd.",
-	"jobDate" : "2019.07 - 2020.10",
-	"jobAchieve" : ["Patented Designs", "Product Design", "Post-Product Design", "Retail Shop Visual Merchandising", "Digital Marketing"],
-	"jobDesc" : ["- Snap 'n Flag : personalizable knife block system design (JP patent : 特許6704558 刃物収納具) // - My Blockᐩ : attachable sheaths knives set (JP patent : 特許6688948 刃物収納具セット)", "- kitchen gadget and knives design // - idea brainstorming // - in-depth research // - benchmarking // - CAD modelling // - testing model making // - handling 3D printing // - communicating with engineers // - production follow up // - material selection // - costing consideration", "- photoshooting // - story board design // - product demonstraction video shooting // - video editing // - product CG animation // - packaging design", "- Citysuper - gondola design // - AEON - island design, knife cabinet design // - KAI shop - lightbox design, POP design, CDU design // - Wing On - display island design", "- social media feed design // - advertising video shooting and editing"],
-	"companyDesc" : ["*KAI is a Japanese group company founded in 1908. KAI specializes in Japanese cutlery, kitchen utensils, beauty care products, etc."]
-},
-{
-	"jobTitle" : "Part-time Designer",
-	"jobCompany" : "Slick Case",
-	"jobDate" : "2018.09 - 2019.07",
-	"jobAchieve" : ["Graphics and Motion Graphics Design", "Photography and Photo Retouching", "Video Shooting and Edit"],
-	"jobDesc" : ["- design graphics & motion graphics for web banners, social media news feeds, and online advertisements", "- product photography for promoting new cases of iPhone & Macbook on social media", "- video shooting and editing for website product description and promotion use"],
-	"companyDesc" : ["*Slick Case is a Hong Kong company selling accessories for Apple Inc. products, such as iPhone cases, Macbook cases, Apple Watch interchangeable bands, etc."]
-},
-{
-	"jobTitle" : "Co-founder",
-	"jobCompany" : "Arctomys",
-	"jobDate" : "2018.05 - Present (switch to a hobby business)",
-	"jobAchieve" : ["Start-Up"],
-	"jobDesc" : ["- licensed by Miffy for 2 years // - design bags and accessories // - handling sales and marketing // - handling production"],
-	"companyDesc" : ["*Arctomys is a Hong Kong based fashion and accessories brand founded by 2 local designers."]
-},
-{
-	"jobTitle" : "Product Designer",
-	"jobCompany" : "Kool Ltd.",
-	"jobDate" : "2016.02 - 2018.06",
-	"jobAchieve" : ["Design Awards", "Product Design", "Web Design and Launching", "Graphic, Multi-Media, and Other Designs"],
-	"jobDesc" : ["- 2017 Golden Pin Design Award - dual citrus reamer tongs // - IDA design awards 17 Third Prize prize in Home Interior Products competition - dual citrus reamer tongs", "- kitchen utensils and gadget designs // - idea brainstorming // - in-depth researching // - marketing benchmarking // - CAD modelling // - prototype making // - handling 3D printing machine // - communicating with engineers // - manufacturing follow up // - material selection // - costing consideration", " - web graphic design // - user interface design // - web prototyping // - communicating with web developer // - web content management","- photo shooting (lighting, props, composition, retouching) // - packaging and CDU design // - logo and name card design for startup company // - storyboard for promotional video // - product CG animation // - booth & interior design"],
-	"companyDesc" : ["*Kool Ltd. is a Hong Kong based company that designs and manufactures kitchen and household products and is expanding its business towards the design-oriented market."]
-},
-{
-	"jobTitle" : "Designer",
-	"jobCompany" : "Fang Studio Ltd.",
-	"jobDate" : "2015.08 - 2016.02",
-	"jobAchieve" : ["Kickstarter Crowdfunding Campaign" , "Product Design"],
-	"jobDesc" : [ "- participated in 2 successfully  funded Kickstarter campaign : High5Dogs - CLIC, the Ultimate leash for Dogs in the City and VICIOUSVENOM - Sleek Unisex Waterproof Bags // - product shooting and retouching // - poster, menu, flyer design // - landing page design // - preparing materials for social media and press marketing", "- pet product design // - furniture design // - CAD modelling // - supplier contacting"],
-	"companyDesc" : ["*Fang Studio Ltd. is a Hong Kong based design consultancy founded by Dutch designer Danny Fang."]
-},
-{
-	"jobTitle" : "Part-time Web Designer",
-	"jobCompany" : "BIC Ltd.",
-	"jobDate" : "2013.10 - 2014.09",
-	"jobAchieve" : ["Web Design" , "Branding Design"],
-	"jobDesc" : [ "- web inner page design // - EDM design // - web prototyping", "- logo design // - letterhead design // - web banner design // - leaflet design"],
-	"companyDesc" : ["*BIC Ltd. is an online consultancy providing professional and affordable solutions to a wide variety of businesses by creating efficient and effective IT solutions."]
-},
-{
-	"jobTitle" : "Internship",
-	"jobCompany" : "Fang Studio Ltd.",
-	"jobDate" : "2014.06 - 2014.08",
-	"jobAchieve" : ["Elephant Parade Hong Kong 2014" , "Product Design"],
-	"jobDesc" : [ "- idea brainstorming // - art production (wood works, paper-pattern making, patchwork stitching, stuffing)", "- dog leash design // - supplier contacting // - furniture design"],
-	"companyDesc" : ["*Fang Studio Ltd. is a Hong Kong based design consultancy founded by Dutch designer Danny Fang.","*Elephant Parade is a social enterprise with a unique combination of art, business & conservation."]
-},
-{
-	"jobTitle" : "Product Designer",
-	"jobCompany" : "Plastoform Industries Ltd.",
-	"jobDate" : "2011.08 - 2012.08",
-	"jobAchieve" : ["Audio Product Design"],
-	"jobDesc" : [ "- designed MINI licensed Bluetooth speaker launched at CEF // - portable speaker, headphone, electronic gadget design"],
-	"companyDesc" : ["*Plastoform Industries Ltd. is providing high-quality wireless audio speakers with custom-made solutions. Plastoform does both OEM and ODM."]
-},
+		"jobCompany": "Homeasy Enterprise Ltd.",
+		"companyDesc": ["*Homeasy was a kitchenware and bakeware design and manufacturing company. // *QDO was a distinguished Scandinavian brand, known for its exceptional tea and coffee products. // *Hailo China was the Chinese division of a leading German brand, renowned for its ladders and waste bins."],
+		"jobTitle": "Designer",
+		"jobDate": "2020.12 - 2021.09",
+		"jobAchieve": {
+		"Branding, Marketing, and Management": [
+			"Design lead for three brands: Homeasy, QDO, and Hailo China.",
+			"Maintained the visual identity of the brands and established style guides.",
+			"Coordinated with outsourced digital marketers to implement marketing strategies.",
+			"Conducted engaging e-commerce photoshoots to enhance customer interest and drive conversions.",
+		],
+		"Graphic and Product Design and Management": [
+			"Developed web design concepts for online platforms.",
+			"Collaborated with outsourced designers on various product design projects.",
+			"Oversaw the recruitment and mentoring of junior designers.",
+		],
+		"Project Management" :[
+			"Established quality assurance (QA) guidelines with engineers.",
+			"Created project schedules and ensured timely execution.",
+			"Communicated with factory engineers to coordinate production processes."
+		],
+		}
+	},
+	{
+		"jobCompany": "KAI Cutlery (H.K.) Ltd.",
+		"companyDesc": "*KAI is a Japanese group company founded in 1908, specializes in Japanese cutlery, kitchen utensils, beauty care products, etc.",
+		"jobTitle": "Designer",
+		"jobDate": "2019.07 - 2020.10",
+		"jobAchieve": {
+			"Achievement": [
+			  "Successfully brainstormed and generated innovative ideas for kitchen gadgets and knives and developed with engineers, resulting in a patent-worthy solution approved by the company's headquarters as exclusive intellectual property:",
+			  {
+			  	"text": "Snap 'n Flag: Customizable knife storage system (JP patent: 特許6704558 刃物収納具)",
+			  	"link": "https://ipforce.jp/patent-jp-B9-6704558"
+			  },
+			  {
+			  	"text": "My Blockᐩ: Attachable sheaths knives set (JP patent: 特許6688948 刃物収納具セット)",
+			  	"link": "https://ipforce.jp/patent-jp-B9-6688948"
+			  },
+			],
+			"Marketing Material Design":[
+				"Conducted professional photoshoots to capture high-quality images of the products.",
+				"Designed storyboards, shot and edited product demonstration videos or computer-generated animations for marketing materials to effectively showcase the products.",
+				"Designed attractive and functional packaging for the products.",
+			],
+			"Elevated retail shop visual merchandising":[
+				"Redesigned eye-catching gondolas for Citysuper",
+				"Redesigned captivating islands and knife cabinets for AEON",
+				"Designed impressive lightboxes and redesigned store displays for KAI shops",
+			]
+		},
+	},
+	{
+		"jobCompany": "Slick Case",
+		"companyDesc": "*Slick Case was a Hong Kong company that sold accessories for Apple Inc. products, such as iPhone cases, MacBook cases, Apple Watch interchangeable bands, etc.",
+		"jobTitle": "Part-time Designer",
+		"jobDate": "2019.07 - 2020.10",
+		"jobAchieve": {
+			"Increased Social Media Engagement": "Collaborated with the marketing team to create visuals for social media campaigns, resulting in a significant increase in engagement.",
+			"Enhanced Online Advertising":"Designed graphics and motion graphics for web banners, social media news feeds, and online advertisements, contributing to a more visually appealing and effective advertising strategy.",
+			"Brand Identity Integration":"Worked collaboratively with the marketing team to ensure visual designs were in line with marketing goals and objectives."
+		},
+	},
+	{
+		"jobCompany": "Kool Ltd.",
+		"companyDesc": "Kool Ltd., based in Hong Kong, served as an OEM and ODM company, specializing in the design and manufacturing of kitchen and household products.",
+		"jobTitle": "Product Designer",
+		"jobDate": "2016.02 - 2018.06",
+		"jobAchieve": {
+			"Achievement": [
+			  {
+			  	"text": "2017 Golden Pin Design Award - Dual Cirtus Reamer Tongs",
+			  	"link": "Dual citrus reamer tongs - cerf.pdf"
+			  },
+			  {
+			  	"text": "IDA Design Awards 17 Third Prize - Dual Cirtus Reamer Tongs",
+			  	"link": "IDA2016_mpdf.pdf"
+			  },
+			],
+			"Product design and development" : "Led the end-to-end product design process, from conducting research and ideation to CAD modeling and prototype development, managing 3D printing and collaborating with engineers, and overseeing manufacturing, ensuring innovative and competitive product designs.",
+			"Web Design and Launch" : [
+				"Created visually appealing web graphics and user interfaces",
+				"Developed web prototypes and effectively communicated the design to web developer.",
+				"Managed web content and ensured a seamless user experience"
+			],
+			"Graphic, Multimedia, and Other Designs" : [
+				"Conducted professional photo shoots, including lighting, prop selection, composition, and retouching, developed storyboards and promotional videos",
+				"Designed packaging and point-of-sale displays / CDUs for products",
+				"Designed booths and interiors for trade shows and events."
+			]
+		},
+	},
+	{
+		"jobCompany": "Fang Studio Ltd.",
+		"companyDesc": "*Fang Studio Ltd. was a Hong Kong based design consultancy founded by Dutch designer Danny Fang.",
+		"jobTitle": "Designer",
+		"jobDate": "2015.08 - 2016.02",
+		"jobAchieve": {
+			"Kickstarters": [
+				"Contributed to two successful Kickstarter campaigns through product shooting, design of promotional materials, creation of engaging landing pages, and preparation of social media and press marketing content:",
+				{
+					"text": "High5Dogs - CLIC, the Ultimate Leash for Dogs in the City",
+				  	"link": "https://www.kickstarter.com/projects/clic/clic-the-multi-functional-leash-bring-your-dog-eve"
+				},
+				{
+				  	"text": "IDA Design Awards 17 Third Prize - Dual Cirtus Reamer Tongs",
+				  	"link": "https://www.kickstarter.com/projects/304020492/the-elements-collection-sleek-unisex-dry-bags"
+				},
+			],
+			"Product design" : "Specialized in pet product and furniture design"
+		},
+	},
+	{
+		"jobCompany": "BIC Ltd.",
+		"companyDesc": "*BIC Ltd. was an online consultancy providing professional and affordable solutions to a wide variety of businesses by creating efficient and effective digital solutions.",
+		"jobTitle": "Part-time Web Designer",
+		"jobDate": "2013.10 - 2014.09",
+		"jobAchieve": {
+			"": [
+				"Created visually appealing web inner pages and EDM designs and developed prototypes to showcase design concepts.",
+				"Designed brand logos, letterheads, web banners, and leaflets."
+			]
+
+		},
+	},
+	{
+		"jobCompany": "Fang Studio Ltd.",
+		"companyDesc": "*Fang Studio Ltd. was a Hong Kong based design consultancy founded by Dutch designer Danny Fang. // *Elephant Parade is a social enterprise with a unique combination of art, business & conservation.",
+		"jobTitle": "Internship",
+		"jobDate": "2014.06 - 2014.08",
+		"jobAchieve": {
+			"Elephant Parade Hong Kong 2014": "Participated in art production, including idea brainstorming, woodwork, paper-pattern making, patchwork stitching, and stuffing.",
+			"Product Design" : "Assisted in the development of product designs and production for the High5Dogs brand."
+			
+
+		},
+	},
+	{
+		"jobCompany": "Plastoform Industries Ltd.",
+		"companyDesc": "*Plastoform Industries Ltd. was providing high-quality wireless audio speakers with custom-made solutions. ",
+		"jobTitle": "Product Designer",
+		"jobDate": "2011.08 - 2012.08",
+		"jobAchieve": {
+			"Audio Product Design": [
+				"Designed MINI licensed Bluetooth speaker launched at CEF",
+				"Developed designs for portable speakers, headphones, and electronic gadgets.",
+			]
+		},
+	},
 ]

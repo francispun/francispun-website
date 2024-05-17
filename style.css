@@ -659,11 +659,11 @@ a:hover{
   margin-bottom: 0px;
 }
 
-li {
+.cv-content li {
   list-style-type: circle;
   padding-bottom: 5px;
 }
 
-ol {
+.cv-content ol {
   padding-left: 18px;
 }

@@ -81,10 +81,10 @@ function templateBefore(types){
       $iterContent.classList.add("my-designs-inner")
 
       // filter types
-      let uiuxFilterText = 'UI/UX DESIGNS ▼'
-      let productDesignFilterText = 'PRODUCT DESIGNS ▼'
-      let mulitmediaDesignFilterText = 'MULTIMEDIA DESIGNS ▼'
-      let allDesignFilterText = 'MY DESIGNS ▼'
+      let uiuxFilterText = 'UI/UX DESIGNS <i class="fa-solid fa-chevron-down"></i>';
+      let productDesignFilterText = 'PRODUCT DESIGNS <i class="fa-solid fa-chevron-down"></i>';
+      let mulitmediaDesignFilterText = 'MULTIMEDIA DESIGNS <i class="fa-solid fa-chevron-down"></i>';
+      let allDesignFilterText = 'MY DESIGNS <i class="fa-solid fa-chevron-down"></i>';
 
       // loop through the project array and append each list item
       // check the "types" from storage or button action
@@ -132,51 +132,67 @@ function templateBefore(types){
 };
 
 
-function templateAfter(){
+function templateAfter() {
   let newDiv = "";
-  projects.forEach(function(project){
-    if (document.location.hash === `#${project.meta}`){
+  projects.forEach(function (project) {
+    if (document.location.hash === `#${project.meta}`) {
       newDiv = `
       <div class="project-inner ${project.meta}">
       <img class="project-hero-img" src="my-designs/${project.meta}.jpg">
       <h1>${project.name}</h1>
-      <p class="info">description : ${project.description} <br> for : ${project.for}</p>
-      <p> ${project.innerDescription}</p>`;
+      <p class="info"><em>The ${project.description} project of ${project.for}</em></p>`;
 
-      if (typeof project.gif !== "undefined"){
-        for ( var i=0; i<project.gif; i++){
-        newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i+1}.gif">`;
-        };
-      };
+      project.innerDescription.forEach(function (description) {
+        if (typeof description === "object") {
+          newDiv += `
+          <h3>${description.title}</h3>`;
+          if (Array.isArray(description.description)) {
+            description.description.forEach(function (desc) {
+              newDiv += `<p>${desc}</p>`;
+            });
+          } else {
+            newDiv += `<p>${description.description}</p>`;
+          }
+        } else {
+          newDiv += `<p>${description}</p>`;
+        }
+      });
 
-      if (typeof project.download !== "undefined"){
-        newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`
-      };
-    
+      if (typeof project.gif !== "undefined") {
+        for (let i = 0; i < project.gif; i++) {
+          newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i + 1}.gif">`;
+        }
+      }
 
-      if (typeof project.video !== "undefined"){
-        project.video.forEach(function(eachVideo){
-          newDiv += `<div class="iframe-container"> <iframe class="responsive-iframe" ${eachVideo}></iframe></div>`
+      if (typeof project.download !== "undefined") {
+        newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`;
+      }
+
+      if (typeof project.video !== "undefined") {
+        project.video.forEach(function (eachVideo) {
+          newDiv += `<div class="iframe-container"> <iframe class="responsive-iframe" ${eachVideo}></iframe></div>`;
         });
-      };
+      }
 
-      for ( var i=0; i<project.img; i++){
-        newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i+1}.jpg">`;
-      };
+      for (let i = 0; i < project.img; i++) {
+        newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i + 1}.jpg">`;
+      }
 
-    newDiv += `
+      newDiv += `
       <p class="text-center published">@ ${project.published}</p>
       <button class="project-inner-close project-close-top" onclick="closeProject()"><i class="fa-solid fa-xmark"></i></button> 
-            </div>
-            `;
-
-
-    };
+      </div>`;
+    }
   });
+
+  if (newDiv === "") {
+    newDiv = "<p>No project found.</p>";
+  }
+
   document.getElementsByClassName("inner-header-container")[0].classList.add("hide");
   document.getElementsByClassName("design-filter")[0].classList.add("hide");
   return newDiv;
-};
+}
 
 
 function toggleDropdown(){
@@ -209,7 +225,8 @@ function closeProject(){
   };
   
   function closeProjectDiv() {
-    if (history.length == 1){
+    let previousPage = document.referrer
+    if (previousPage.includes(!"francispun.com") || previousPage == ""){
       location.href="https://www.francispun.com"
     }else{
       history.back();
@@ -221,14 +238,16 @@ function closeProject(){
 };
 
 
-window.addEventListener('scroll', (e) => {
-  let toTopButton = document.getElementsByClassName("to-top")[0]
-  if (window.scrollY > 110) {
-    toTopButton.style.display = "block";
-  } else if (window.scrollY < 110) {
-    toTopButton.style.display = "none";
-  }
-});
+if(document.location.href.includes("my-designs")){
+  window.addEventListener('scroll', (e) => {
+    let toTopButton = document.getElementsByClassName("to-top")[0]
+    if (window.scrollY > 110) {
+      toTopButton.style.display = "block";
+    } else if (window.scrollY < 110) {
+      toTopButton.style.display = "none";
+    }
+  });
+};
 
 window.addEventListener('popstate', backToDesigns);
 
@@ -243,6 +262,6 @@ window.addEventListener('click', function(e) {
 });
 
 
-featureProjects()
+featureProjects();
 templateBefore();
 popUpDetails();

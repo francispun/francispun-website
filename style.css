@@ -423,6 +423,23 @@ a:hover{
   text-decoration: underline !important;
 }
 
+.project-inner h1{
+  font-weight:  600;
+}
+
+.project-inner h3{
+  padding-top: 20px;
+}
+
+.project-inner .info{
+  font-size: 16px !important;
+  padding-bottom: 0px;
+}
+
+.project-inner img{
+  width: -webkit-fill-available;
+}
+
 .my-designs a {
   color: var(--black);
   text-decoration: none;
@@ -448,19 +465,6 @@ a:hover{
 .project-inner-close:hover {
   border: solid 1px var(--dark-gray);
   opacity: 1;
-}
-
-.project-inner h1{
-  font-weight:  600;
-}
-
-.project-inner .info{
-  font-size: 16px !important;
-  padding-bottom: 0px;
-}
-
-.project-inner img{
-  width: -webkit-fill-available;
 }
 
 .project-hero-img{
@@ -518,7 +522,7 @@ a:hover{
   width: 41px;
   height: 41px;
   position: fixed;
-  bottom: 25px;
+  bottom: 90px;
   right: 25px;
   border-radius: 50px;
   border: none;

@@ -671,3 +671,20 @@ a:hover{
 .cv-content ol {
   padding-left: 18px;
 }
+
+.cv-skills .row {
+  display: flex; 
+}
+
+.cv-skills .col-sm-4 {
+  display: flex;
+  flex-direction: column; 
+}
+
+.cv-skills .align-top {
+  justify-content: flex-start; 
+}
+
+.offDiv {
+  height: 45px; 
+}

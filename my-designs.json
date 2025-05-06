@@ -1,5 +1,44 @@
 // Simple array of projects
 var projects = [
+     {
+      "meta":"product-viewer",
+      "name":"3D Model Viewer",
+      "description":"AR/VR app development",
+      "type":"uiux",
+      "for":"Kool",
+      "published":"Apr 2025",
+      "feature":"",
+     "innerDescription": [
+       {
+         "title": "Project Overview",
+         "description": "I collaborated on a design thinking initiative that brought together cross-functional teams from sales, merchandising, engineering, accounting, and shipping. This diverse collaboration was essential as we generated innovative ideas aimed at enhancing business processes. I led the design project to develop a virtual prototyping web app, working closely with design team members and leveraging the power of AI to streamline our efforts."
+       },
+       {
+         "title": "Collaborative Design Thinking",
+         "description": "The first phase of the project focused on design thinking, where we brainstormed several business innovation ideas. By integrating insights from various departments, we identified key areas for improvement and developed solutions that could transform our approach to product development. The integration of AI played a significant role in this phase, helping us analyze data and generate creative concepts more efficiently. This technological aid allowed us to explore possibilities that might have otherwise been overlooked, enriching our design process."
+         
+       },
+       {
+         "title": "Development for Enhanced Prototyping",
+         "description": "In the second phase, I directed the development of the app, ensuring it effectively reflected the insights gained during our initial discussions. The virtual prototyping web app minimizes the initial prototyping efforts, allowing clients to explore and interact with 3D models before creating physical prototypes. While clients will ultimately want a tangible object to examine, this app significantly reduces the time and resources spent on preliminary designs. By enabling virtual exploration, clients can make informed decisions and adjustments early in the design process, ultimately leading to more successful final products."
+         
+       },
+       {
+         "title": "Intuitive User Experience",
+         "description": [
+           "The app is designed with user-friendliness in mind, allowing clients to easily navigate and interact with their 3D models. Users can seamlessly browse preload models or open their own files with just a few clicks. The interface is intuitive, enabling users to drag and reposition components effortlessly, and rotate the models simply by swiping on the screen.",
+           "A standout feature of the app is its augmented reality (AR) capability, which bridges the virtual and physical worlds. This powerful functionality allows clients to visualize new product designs in real-time, placing virtual prototypes alongside existing products or within actual environments. By seeing how a new design fits within the context of previous versions or the product family, clients gain a deeper understanding of its impact and can make more informed decisions."
+         ]
+       },
+       {
+         "title": "Conclusion",
+         "description": "Overall, this project not only showcases my technical skills but also emphasizes the importance of collaboration and innovation in product development. By merging design thinking with advanced technology, we created a solution that significantly enhances the way clients visualize and interact with their designs, ultimately driving business success.",
+       },       
+     ],
+      "img":6,
+      "download":"https://francispun.github.io/product-viewer/",
+      "downloadText":"view demo"
+   },
    {
       "meta":"financeschool",
       "name":"Finance School",
@@ -70,6 +109,35 @@ var projects = [
          "The Kool e-commerce website project involved the design and development of an online store using the Shopline e-commerce platform, which shares similarities with popular platforms like Shopify. As the designer, my primary responsibility was to create an appealing layout and visually captivating style for the website.",
          "Working with the provided content, I carefully crafted the design elements to ensure a seamless and engaging user experience. This included designing the overall layout of the website, organizing product categories, and creating visually appealing product pages. The goal was to create an intuitive and visually engaging interface that would attract potential customers. I customized the website's appearance to align with the unique branding and identity of Kool. Attention was given to ensuring that the design elements and visual style reflected the essence of the brand, creating a cohesive and memorable online shopping experience."],
       "img":4
+   },
+   {
+      "meta":"arctomys",
+      "name":"Arctomys",
+      "description":"bag design and visual branding",
+      "type":"product-design",
+      "for":"Arctomys",
+      "published":"2018 - 2021",
+      "feature":"",
+      "innerDescription":[{
+          "title": "Building a Distinctive Accessories Brand",
+          "description": "I partnered with another designer to launch a fashion accessories brand, creating a collection of bags that balanced bold style with everyday function. We designed the EABA bucket bag, TOFLIP tote bag, and Demas sacoche bag. They were crafted to elevate diverse lifestyles."
+        },
+        {
+          "title": "Creating Versatile Designs",
+          "description": "The EABA bucket bag, made from 16oz waxed cotton canvas with a water-resistant lining, blends a sleek profile with space for essentials like a water bottle, wallet, and umbrella, plus three side pockets for smaller items. The TOFLIP tote bag, double-sided with earthy cotton canvas on one side and glossy polyester on the other, shifts effortlessly from laid-back to polished looks. The Demas sacoche bag, built from waxed canvas with three compartments, delivers minimalist utility for daily needs."
+        },
+        {
+          "title": "Showcasing Through Visuals",
+          "description": "Beyond designing the bags, I crafted a compelling lookbook for the EABA, TOFLIP, and Demas, handling most of the photography and retouching myself. This visual storytelling secured our first consignment deals, highlighting my ability to translate design into persuasive marketing."
+        },
+        {
+          "title": "Expanding with Miffy Designs",
+          "description": "By securing a Miffy license, I reimagined the Eaba bucket bag as a Miffy edition, which gained strong traction. This led to two more designs: a Demas Sacoche featuring Miffy’s face and a lunchbox bag with a detachable strap and side storage. These playful yet practical pieces underscored my knack for market-driven creativity."
+        },
+      ],
+      "img":11,
+      "download":"./downloads/arctomy lookbook - print.pdf",
+      "downloadText":"download lookbook"
    },
    {
       "meta":"sachellecollective",

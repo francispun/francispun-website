@@ -6,14 +6,19 @@ let myCV = [
 		"jobDate" : "2021.09 - Present",
 		"jobAchieve" : {
 			"Design" : [
-				"Spearheaded the development of the OBM kool brand and multiple ODM customer projects, delivering designs that meet customer needs and maintain brand alignment.",
-				"Orchestrated the design of a brand-consistent e-commerce platform, ensuring a unified brand identity across all digital touchpoints, thereby boosting the company's online visibility and sales channels.",
-				"Played a key role in integrating AI technology to streamline operations and enhance customer communication through advanced text-to-image generation capabilities.",
-				],
+				"Initiated the development of the OBM Kool brand and multiple ODM customer projects, delivering customer-centric designs aligned with brand identity.",
+				"Orchestrated the design of a cohesive e-commerce platform, ensuring brand consistency across digital touchpoints, driving increased online visibility and sales.",
+				"Collaborated on the 'Inno-Team' in a design thinking initiative led by a certified design thinking facilitator, working with cross-functional teams to ideate improvements, contributing design ideas that drove business innovation.",
+				"Developed a virtual prototyping web app built on the 'Inno-Team's insights, enabling clients to interact with 3D models, modify colors, and visualize designs in mixed reality, reducing physical prototyping costs and time.",
+			],
+			"AI Integration" : [
+				"Leveraged AI-driven graphic design tools to enhance creative workflows, producing high-quality visuals for branding and customer projects with improved speed and precision.",
+				"Utilized AI-powered research tools (e.g., Perplexity) to conduct rapid, in-depth market analysis, delivering actionable insights to support strategic decision-making.",
+				"Coded the virtual prototyping web app using AI-assisted programming tools, enabling efficient development without requiring deep mastery of complex libraries."
+			],
 			"Marketing and Operation" : [
-				"Conducted in-depth analysis using tools like Euromonitor and ChinaHow, empowering the organization with data-driven insights and to make competitive decisions.",
-				"Managed the successful implementation and operation of a customized laser engraving service, catering specifically to a niche market segment seeking personalized products.",
-				"Provided insightful contributions and perspectives to inform business strategy as a valuable member of the 'inno-team' a team delegated to embracing design thinking methodology."
+				"Conducted market analysis using platforms like Euromonitor and ChinaHow, providing data-driven insights to inform competitive business strategies.",
+				"Managed the implementation of a customized laser engraving service, successfully targeting a niche market for personalized products.",
 			],
 		}
 	},
@@ -35,9 +40,13 @@ let myCV = [
 		"jobTitle": "Co-founder",
 		"jobDate": "2018.05 - 2021.09",
 		"jobAchieve": {
-		"Achievement": "Secured 2 years licensing agreement with Miffy from 2019 - 2021.",
-		"Operation" : "Managed sales, marketing, and production activities."
-		  
+		"Achievement" : "Secured a Miffy license from 2019 - 2021 and developed three character-inspired bags, including a top-selling bucket bag, driving strong market demand and expanding the brand’s reach.",
+		"Design & Opetation": [
+			"Co-designed a collection of versatile bags, including the EABA bucket bag, TOFLIP tote bag, and Demas sacoche bag, blending functionality with style to cater to diverse lifestyles.",
+			"Created and photographed a compelling lookbook for three flagship products, which secured initial consignment deals with retailers.",
+			"Oversaw production to ensure quality, enhancing user experience and market appeal.",
+			"Led social media strategy, creating engaging posts to promote the bags and grow the brand's audience."
+		],
 		}
 	},
 	{

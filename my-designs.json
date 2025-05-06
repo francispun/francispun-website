@@ -7,7 +7,7 @@ var projects = [
       "type":"uiux",
       "for":"Kool",
       "published":"Apr 2025",
-      "feature":"",
+      "feature":"yes",
      "innerDescription": [
        {
          "title": "Project Overview",

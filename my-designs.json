@@ -181,7 +181,7 @@ var projects = [
       "type":"uiux",
       "for":"QDO",
       "published":"Jul 2021",
-      "feature":"yes",
+      "feature":"",
       "innerDescription":[
          "The QDO Website project was created with the primary goal of engaging both B2B clients and B2C customers. The website design caters to the specific needs of these two target audiences, offering distinct features to enhance their experience with the brand.",
          "For B2B clients, the website incorporates mood boards and detailed product information to provide a comprehensive understanding of QDO's brand image and the potential business opportunities that exist. The mood boards visually communicate the brand's identity and aesthetic, while the product details offer insights into the range of products available and their unique features. This information helps B2B clients make informed decisions and explore potential collaborations with QDO.",

@@ -142,6 +142,10 @@ function templateAfter() {
       <h1>${project.name}</h1>
       <p class="info"><em>The ${project.description} project of ${project.for}</em></p>`;
 
+      if (typeof project.download !== "undefined") {
+        newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`;
+      }
+
       project.innerDescription.forEach(function (description) {
         if (typeof description === "object") {
           newDiv += `
@@ -162,10 +166,6 @@ function templateAfter() {
         for (let i = 0; i < project.gif; i++) {
           newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i + 1}.gif">`;
         }
-      }
-
-      if (typeof project.download !== "undefined") {
-        newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`;
       }
 
       if (typeof project.video !== "undefined") {

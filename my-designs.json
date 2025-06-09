@@ -36,7 +36,7 @@ var projects = [
        },       
      ],
       "img":6,
-      "download":"https://francispun.github.io/product-viewer/",
+      "download":"https://product-viewer.francispun.com/",
       "downloadText":"view demo"
    },
    {

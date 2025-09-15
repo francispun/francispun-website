@@ -159,23 +159,36 @@
         // ===================================================================================
         const username = 'francispun'; // <--- CHANGE THIS
         const repoName = 'francispun-website'; // <--- CHANGE THIS
-        const initialPath = 'share'; // <--- NEW: Set the subfolder you want to browse as the root
+        const initialPath = 'share'; // <--- Set the subfolder you want to browse as the root
         // ===================================================================================
 
         const fileBrowser = document.getElementById('file-browser');
         const loadingIndicator = document.getElementById('loading');
         const breadcrumbNav = document.getElementById('breadcrumb');
 
+        // Variable to keep track of the current full path within the GitHub repository
+        let currentRepoPath = initialPath;
+
         /**
          * Fetches and displays the content of a directory from the GitHub repository.
-         * @param {string} path - The full path to the directory (e.g., 'share', 'share/documents').
+         * This function now also updates the browser's URL hash.
+         * @param {string} repoPath - The full path to the directory within the GitHub repository (e.g., 'share', 'share/documents').
          */
-        async function loadDirectory(path) { // 'path' now always includes the initialPath prefix
+        async function loadDirectory(repoPath) {
             showLoading(true);
             fileBrowser.innerHTML = '';
-            updateBreadcrumb(path); // Pass the full path to updateBreadcrumb
+            currentRepoPath = repoPath; // Update the global currentRepoPath
+            updateBreadcrumb(currentRepoPath);
 
-            const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${path}`;
+            // Update URL hash to reflect the current display path
+            // The hash should be relative to the initialPath
+            let hashPath = '';
+            if (repoPath.startsWith(initialPath) && repoPath.length > initialPath.length) {
+                hashPath = repoPath.substring(initialPath.length + 1); // +1 to remove the leading '/'
+            }
+            window.location.hash = hashPath ? `/${hashPath}` : ''; // Ensure leading slash for consistency, or empty for root
+
+            const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${repoPath}`;
 
             try {
                 const response = await fetch(apiUrl);
@@ -217,7 +230,7 @@
             // Determine the icon or thumbnail
             if (item.type === 'dir') {
                 iconDiv.innerHTML = '<i class="fas fa-folder" style="color: #5894df;"></i>';
-                // For directories, item.path is already the full path, so no change needed here
+                // When a folder is clicked, call loadDirectory with its full path
                 fileItem.onclick = () => loadDirectory(item.path); 
             } else {
                 const extension = item.name.split('.').pop().toLowerCase();
@@ -229,7 +242,7 @@
                     iconDiv.innerHTML = getFileIcon(extension);
                 }
                 // Open the raw file in a new tab when clicked
-                fileItem.onclick = () => window.open(item.download_url, '_blank');
+                fileItem.onclick = () => window.open(item.download_url, '_blank'); 
             }
 
             const fileName = document.createElement('div');
@@ -276,33 +289,33 @@
         
         /**
          * Updates the breadcrumb navigation.
-         * @param {string} currentRepoPath - The current full path within the repository.
+         * @param {string} repoPath - The current full path within the repository.
          */
-        function updateBreadcrumb(currentRepoPath) {
+        function updateBreadcrumb(repoPath) {
             breadcrumbNav.innerHTML = '';
             
             const rootLink = document.createElement('a');
-            rootLink.href = '#';
-            rootLink.textContent = 'Root'; // This "Root" now represents the 'share' folder
+            rootLink.href = '#'; // Link to the root of the file browser (which is initialPath)
+            rootLink.textContent = 'Root'; 
             rootLink.onclick = (e) => {
                 e.preventDefault();
-                loadDirectory(initialPath); // Link to the defined initialPath
+                loadDirectory(initialPath); 
             };
             breadcrumbNav.appendChild(rootLink);
 
             // Only add subsequent breadcrumbs if we are deeper than the initialPath
-            if (currentRepoPath.startsWith(initialPath) && currentRepoPath.length > initialPath.length) {
-                let relativePath = currentRepoPath.substring(initialPath.length);
+            if (repoPath.startsWith(initialPath) && repoPath.length > initialPath.length) {
+                let relativePath = repoPath.substring(initialPath.length);
                 // Remove leading slash if present (e.g., from "/subfolder")
                 if (relativePath.startsWith('/')) {
                     relativePath = relativePath.substring(1);
                 }
                 
                 const parts = relativePath.split('/').filter(p => p !== '');
-                let currentAccumulatedPath = initialPath; // Path to pass to loadDirectory
+                let currentAccumulatedRepoPath = initialPath; // Full path for loadDirectory calls
 
                 parts.forEach((part, index) => {
-                    currentAccumulatedPath += '/' + part;
+                    currentAccumulatedRepoPath += '/' + part;
 
                     const separator = document.createElement('span');
                     separator.textContent = ' / ';
@@ -312,7 +325,7 @@
                         const partLink = document.createElement('a');
                         partLink.href = '#';
                         partLink.textContent = part;
-                        const pathToLoad = currentAccumulatedPath; // This is the full path for the API call
+                        const pathToLoad = currentAccumulatedRepoPath; 
                         partLink.onclick = (e) => {
                             e.preventDefault();
                             loadDirectory(pathToLoad);
@@ -335,10 +348,38 @@
             loadingIndicator.style.display = isLoading ? 'block' : 'none';
         }
 
-        // Initial load of the root directory (which is now the 'share' subfolder)
+        /**
+         * Handles changes to the URL hash, loading the corresponding directory.
+         */
+        function handleHashChange() {
+            let hashPath = window.location.hash.substring(1); // Remove the '#'
+            if (hashPath.startsWith('/')) {
+                hashPath = hashPath.substring(1); // Remove leading '/' if present
+            }
+
+            let pathFromHash = initialPath;
+            if (hashPath) {
+                pathFromHash += '/' + hashPath;
+            }
+            
+            // Only load if the path derived from hash is different from currentRepoPath
+            // This prevents unnecessary reloads when loadDirectory itself changes the hash
+            if (pathFromHash !== currentRepoPath) {
+                loadDirectory(pathFromHash);
+            }
+        }
+
+        // Initial load: Check hash or load initialPath
         document.addEventListener('DOMContentLoaded', () => {
-            loadDirectory(initialPath); // <--- MODIFIED: Start at the 'share' subfolder
+            if (window.location.hash) {
+                handleHashChange(); // Load content based on existing hash
+            } else {
+                loadDirectory(initialPath); // Load the default initial path
+            }
         });
+
+        // Listen for hash changes (e.g., browser back/forward buttons)
+        window.addEventListener('hashchange', handleHashChange);
     </script>
 
 </body>

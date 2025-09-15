@@ -157,8 +157,9 @@
         // ===================================================================================
         // CONFIGURATION: Update these variables with your GitHub username and repository name
         // ===================================================================================
-        const username = 'YOUR_GITHUB_USERNAME'; // <--- CHANGE THIS
-        const repoName = 'YOUR_REPOSITORY_NAME'; // <--- CHANGE THIS
+        const username = 'francispun'; // <--- CHANGE THIS
+        const repoName = 'francispun-website'; // <--- CHANGE THIS
+        const initialPath = 'share'; // <--- NEW: Set the subfolder you want to browse as the root
         // ===================================================================================
 
         const fileBrowser = document.getElementById('file-browser');
@@ -167,12 +168,12 @@
 
         /**
          * Fetches and displays the content of a directory from the GitHub repository.
-         * @param {string} path - The path to the directory to display.
+         * @param {string} path - The full path to the directory (e.g., 'share', 'share/documents').
          */
-        async function loadDirectory(path = '') {
+        async function loadDirectory(path) { // 'path' now always includes the initialPath prefix
             showLoading(true);
             fileBrowser.innerHTML = '';
-            updateBreadcrumb(path);
+            updateBreadcrumb(path); // Pass the full path to updateBreadcrumb
 
             const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${path}`;
 
@@ -216,7 +217,8 @@
             // Determine the icon or thumbnail
             if (item.type === 'dir') {
                 iconDiv.innerHTML = '<i class="fas fa-folder" style="color: #5894df;"></i>';
-                fileItem.onclick = () => loadDirectory(item.path);
+                // For directories, item.path is already the full path, so no change needed here
+                fileItem.onclick = () => loadDirectory(item.path); 
             } else {
                 const extension = item.name.split('.').pop().toLowerCase();
                 if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension)) {
@@ -274,40 +276,49 @@
         
         /**
          * Updates the breadcrumb navigation.
-         * @param {string} path - The current path.
+         * @param {string} currentRepoPath - The current full path within the repository.
          */
-        function updateBreadcrumb(path) {
+        function updateBreadcrumb(currentRepoPath) {
             breadcrumbNav.innerHTML = '';
+            
             const rootLink = document.createElement('a');
             rootLink.href = '#';
-            rootLink.textContent = 'Root';
+            rootLink.textContent = 'Root'; // This "Root" now represents the 'share' folder
             rootLink.onclick = (e) => {
                 e.preventDefault();
-                loadDirectory('');
+                loadDirectory(initialPath); // Link to the defined initialPath
             };
             breadcrumbNav.appendChild(rootLink);
 
-            if (path) {
-                const parts = path.split('/');
-                let currentPath = '';
+            // Only add subsequent breadcrumbs if we are deeper than the initialPath
+            if (currentRepoPath.startsWith(initialPath) && currentRepoPath.length > initialPath.length) {
+                let relativePath = currentRepoPath.substring(initialPath.length);
+                // Remove leading slash if present (e.g., from "/subfolder")
+                if (relativePath.startsWith('/')) {
+                    relativePath = relativePath.substring(1);
+                }
+                
+                const parts = relativePath.split('/').filter(p => p !== '');
+                let currentAccumulatedPath = initialPath; // Path to pass to loadDirectory
+
                 parts.forEach((part, index) => {
-                    currentPath += (index > 0 ? '/' : '') + part;
+                    currentAccumulatedPath += '/' + part;
+
                     const separator = document.createElement('span');
                     separator.textContent = ' / ';
                     breadcrumbNav.appendChild(separator);
 
-                    if (index < parts.length - 1) {
+                    if (index < parts.length - 1) { // Not the last part
                         const partLink = document.createElement('a');
                         partLink.href = '#';
                         partLink.textContent = part;
-                        // Use a closure to capture the correct path for the onclick handler
-                        const pathToLoad = currentPath;
+                        const pathToLoad = currentAccumulatedPath; // This is the full path for the API call
                         partLink.onclick = (e) => {
                             e.preventDefault();
                             loadDirectory(pathToLoad);
                         };
                         breadcrumbNav.appendChild(partLink);
-                    } else {
+                    } else { // The current folder
                         const currentFolder = document.createElement('span');
                         currentFolder.textContent = part;
                         breadcrumbNav.appendChild(currentFolder);
@@ -324,9 +335,9 @@
             loadingIndicator.style.display = isLoading ? 'block' : 'none';
         }
 
-        // Initial load of the root directory
+        // Initial load of the root directory (which is now the 'share' subfolder)
         document.addEventListener('DOMContentLoaded', () => {
-            loadDirectory('');
+            loadDirectory(initialPath); // <--- MODIFIED: Start at the 'share' subfolder
         });
     </script>
 

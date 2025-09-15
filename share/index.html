@@ -206,6 +206,10 @@
                 });
 
                 data.forEach(item => {
+                    // Exclude specific files from being displayed
+                    if (item.name === 'index.html') {
+                        return; // Skip this item
+                    }
                     createFileItem(item);
                 });
 

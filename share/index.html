@@ -229,7 +229,7 @@
                     iconDiv.innerHTML = getFileIcon(extension);
                 }
                 // Open the raw file in a new tab when clicked
-                fileItem.onclick = () => window.open(item.html_url, '_blank');
+                fileItem.onclick = () => window.open(item.download_url, '_blank');
             }
 
             const fileName = document.createElement('div');

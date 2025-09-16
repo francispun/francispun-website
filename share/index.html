@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Browser</title>
+    <title>Francis' Shared Files</title> <!-- Updated title for the browser tab -->
     <!-- Font Awesome for file icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -31,19 +31,7 @@
             color: #444;
         }
         
-        #breadcrumb {
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        #breadcrumb a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-
-        #breadcrumb a:hover {
-            text-decoration: underline;
-        }
+        /* Removed #breadcrumb styles as the element is removed */
 
         /* Main container for the file browser */
         .container {
@@ -141,8 +129,8 @@
 <body>
 
     <header>
-        <h1>File Browser</h1>
-        <div id="breadcrumb"></div>
+        <h1>Francis' Shared Files</h1> <!-- Updated heading -->
+        <!-- Removed <div id="breadcrumb"></div> -->
     </header>
 
     <div class="container">
@@ -164,7 +152,7 @@
 
         const fileBrowser = document.getElementById('file-browser');
         const loadingIndicator = document.getElementById('loading');
-        const breadcrumbNav = document.getElementById('breadcrumb');
+        // Removed: const breadcrumbNav = document.getElementById('breadcrumb');
 
         // Variable to keep track of the current full path within the GitHub repository
         let currentRepoPath = initialPath;
@@ -178,7 +166,7 @@
             showLoading(true);
             fileBrowser.innerHTML = '';
             currentRepoPath = repoPath; // Update the global currentRepoPath
-            updateBreadcrumb(currentRepoPath);
+            // Removed: updateBreadcrumb(currentRepoPath); // No longer needed without breadcrumbs
 
             // Update URL hash to reflect the current display path
             // The hash should be relative to the initialPath
@@ -291,58 +279,7 @@
             }
         }
         
-        /**
-         * Updates the breadcrumb navigation.
-         * @param {string} repoPath - The current full path within the repository.
-         */
-        function updateBreadcrumb(repoPath) {
-            breadcrumbNav.innerHTML = '';
-            
-            const rootLink = document.createElement('a');
-            rootLink.href = '#'; // Link to the root of the file browser (which is initialPath)
-            rootLink.textContent = 'Root'; 
-            rootLink.onclick = (e) => {
-                e.preventDefault();
-                loadDirectory(initialPath); 
-            };
-            breadcrumbNav.appendChild(rootLink);
-
-            // Only add subsequent breadcrumbs if we are deeper than the initialPath
-            if (repoPath.startsWith(initialPath) && repoPath.length > initialPath.length) {
-                let relativePath = repoPath.substring(initialPath.length);
-                // Remove leading slash if present (e.g., from "/subfolder")
-                if (relativePath.startsWith('/')) {
-                    relativePath = relativePath.substring(1);
-                }
-                
-                const parts = relativePath.split('/').filter(p => p !== '');
-                let currentAccumulatedRepoPath = initialPath; // Full path for loadDirectory calls
-
-                parts.forEach((part, index) => {
-                    currentAccumulatedRepoPath += '/' + part;
-
-                    const separator = document.createElement('span');
-                    separator.textContent = ' / ';
-                    breadcrumbNav.appendChild(separator);
-
-                    if (index < parts.length - 1) { // Not the last part
-                        const partLink = document.createElement('a');
-                        partLink.href = '#';
-                        partLink.textContent = part;
-                        const pathToLoad = currentAccumulatedRepoPath; 
-                        partLink.onclick = (e) => {
-                            e.preventDefault();
-                            loadDirectory(pathToLoad);
-                        };
-                        breadcrumbNav.appendChild(partLink);
-                    } else { // The current folder
-                        const currentFolder = document.createElement('span');
-                        currentFolder.textContent = part;
-                        breadcrumbNav.appendChild(currentFolder);
-                    }
-                });
-            }
-        }
+        // Removed the entire updateBreadcrumb function as it's no longer needed.
 
         /**
          * Toggles the visibility of the loading indicator.

@@ -97,7 +97,7 @@
             cursor: pointer;
             transition: box-shadow 0.2s, transform 0.2s;
             word-wrap: break-word;
-            position: relative; /* For positioning checkboxes */
+            position: relative;
         }
 
         .file-item:hover {
@@ -174,15 +174,33 @@
         const loadingIndicator = document.getElementById('loading');
         let selectedFiles = [];
         let currentRepoPath = initialPath;
+        let isLoading = false; // Flag to prevent concurrent loads
+
+        /**
+         * Debounces a function to prevent it from being called too frequently.
+         * @param {Function} func - The function to debounce.
+         * @param {number} wait - The debounce delay in milliseconds.
+         * @returns {Function} The debounced function.
+         */
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
 
         /**
          * Fetches and displays the content of a directory from the GitHub repository.
          * @param {string} repoPath - The full path to the directory within the GitHub repository.
          */
         async function loadDirectory(repoPath) {
+            if (isLoading) return; // Prevent concurrent loads
+            isLoading = true;
+
             showLoading(true);
             fileBrowser.innerHTML = '';
-            selectedFiles = []; // Clear selected files
+            selectedFiles = [];
             updateDownloadButton();
             currentRepoPath = repoPath;
 
@@ -201,24 +219,47 @@
                 }
                 const data = await response.json();
 
-                data.sort((a, b) => {
+                // Log API response for debugging
+                console.log('API Response:', data);
+
+                // Filter out duplicates based on item.path
+                const seenPaths = new Set();
+                const uniqueData = data.filter(item => {
+                    if (seenPaths.has(item.path)) {
+                        console.warn(`Duplicate item detected: ${item.path}`);
+                        return false;
+                    }
+                    seenPaths.add(item.path);
+                    return true;
+                });
+
+                // Sort items: folders first, then files, alphabetically
+                uniqueData.sort((a, b) => {
                     if (a.type === b.type) {
                         return a.name.localeCompare(b.name);
                     }
                     return a.type === 'dir' ? -1 : 1;
                 });
 
-                data.forEach(item => {
+                // Log rendered items for debugging
+                console.log('Rendering items:', uniqueData.map(item => item.path));
+
+                uniqueData.forEach(item => {
                     if (item.name === 'index.html') {
                         return;
                     }
                     createFileItem(item);
                 });
 
+                if (uniqueData.length === 0) {
+                    fileBrowser.innerHTML = '<p>No files or folders found in this directory.</p>';
+                }
+
             } catch (error) {
                 fileBrowser.innerHTML = `<p>Error loading files: ${error.message}. Make sure the repository is public and the details are correct.</p>`;
             } finally {
                 showLoading(false);
+                isLoading = false;
             }
         }
 
@@ -375,12 +416,15 @@
             }
         }
 
+        // Debounced loadDirectory to prevent rapid calls
+        const debouncedLoadDirectory = debounce(loadDirectory, 300);
+
         // Initial load
         document.addEventListener('DOMContentLoaded', () => {
             if (window.location.hash) {
                 handleHashChange();
             } else {
-                loadDirectory(initialPath);
+                debouncedLoadDirectory(initialPath);
             }
             document.getElementById('download-zip').addEventListener('click', downloadSelectedAsZip);
         });

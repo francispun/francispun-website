@@ -11,6 +11,11 @@
     <!-- FileSaver.js for triggering downloads -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <style>
+        /* Define main color variable */
+        :root {
+            --main-yellow: #ffcf22;
+        }
+
         /* Basic styles for the body and fonts */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -40,21 +45,33 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            padding-bottom: 80px; /* Ensure space for fixed button */
         }
 
-        /* Download button styles */
-        #download-zip {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
+        /* Download All button styles */
+        #download-all-zip {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            background-color: var(--main-yellow);
+            color: #333;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s;
         }
 
-        #download-zip:disabled {
-            background-color: #6c757d;
+        #download-all-zip:hover {
+            background-color: #e6b800; /* Slightly darker yellow on hover */
+        }
+
+        #download-all-zip:disabled {
+            background-color: #ccc;
             cursor: not-allowed;
         }
 
@@ -142,6 +159,10 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            #download-all-zip {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -151,14 +172,12 @@
     </header>
 
     <div class="container">
-        <div style="margin-bottom: 20px;">
-            <button id="download-zip" disabled>Download Selected as ZIP</button>
-        </div>
         <div id="loading">
             <div class="spinner"></div>
             <p>Fetching files...</p>
         </div>
         <div id="file-browser"></div>
+        <button id="download-all-zip">Download All as ZIP</button>
     </div>
 
     <script>
@@ -172,9 +191,9 @@
 
         const fileBrowser = document.getElementById('file-browser');
         const loadingIndicator = document.getElementById('loading');
-        let selectedFiles = [];
+        const downloadAllButton = document.getElementById('download-all-zip');
         let currentRepoPath = initialPath;
-        let isLoading = false; // Flag to prevent concurrent loads
+        let isLoading = false;
 
         /**
          * Debounces a function to prevent it from being called too frequently.
@@ -195,13 +214,12 @@
          * @param {string} repoPath - The full path to the directory within the GitHub repository.
          */
         async function loadDirectory(repoPath) {
-            if (isLoading) return; // Prevent concurrent loads
+            if (isLoading) return;
             isLoading = true;
 
             showLoading(true);
             fileBrowser.innerHTML = '';
-            selectedFiles = [];
-            updateDownloadButton();
+            downloadAllButton.disabled = true; // Disable until files are loaded
             currentRepoPath = repoPath;
 
             let hashPath = '';
@@ -219,7 +237,6 @@
                 }
                 const data = await response.json();
 
-                // Log API response for debugging
                 console.log('API Response:', data);
 
                 // Filter out duplicates based on item.path
@@ -241,15 +258,21 @@
                     return a.type === 'dir' ? -1 : 1;
                 });
 
-                // Log rendered items for debugging
                 console.log('Rendering items:', uniqueData.map(item => item.path));
 
+                let hasFiles = false;
                 uniqueData.forEach(item => {
                     if (item.name === 'index.html') {
                         return;
                     }
+                    if (item.type === 'file') {
+                        hasFiles = true;
+                    }
                     createFileItem(item);
                 });
+
+                // Enable Download All button only if there are files
+                downloadAllButton.disabled = !hasFiles;
 
                 if (uniqueData.length === 0) {
                     fileBrowser.innerHTML = '<p>No files or folders found in this directory.</p>';
@@ -257,6 +280,7 @@
 
             } catch (error) {
                 fileBrowser.innerHTML = `<p>Error loading files: ${error.message}. Make sure the repository is public and the details are correct.</p>`;
+                downloadAllButton.disabled = true;
             } finally {
                 showLoading(false);
                 isLoading = false;
@@ -274,23 +298,6 @@
             const iconDiv = document.createElement('div');
             iconDiv.className = 'icon';
             
-            let checkbox = null;
-            if (item.type === 'file') {
-                checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.style.position = 'absolute';
-                checkbox.style.top = '10px';
-                checkbox.style.right = '10px';
-                checkbox.addEventListener('change', () => {
-                    if (checkbox.checked) {
-                        selectedFiles.push(item);
-                    } else {
-                        selectedFiles = selectedFiles.filter(file => file.download_url !== item.download_url);
-                    }
-                    updateDownloadButton();
-                });
-            }
-
             if (item.type === 'dir') {
                 iconDiv.innerHTML = '<i class="fas fa-folder" style="color: #5894df;"></i>';
                 fileItem.onclick = () => loadDirectory(item.path); 
@@ -301,11 +308,7 @@
                 } else {
                     iconDiv.innerHTML = getFileIcon(extension);
                 }
-                fileItem.onclick = (e) => {
-                    if (e.target !== checkbox) {
-                        window.open(item.download_url, '_blank');
-                    }
-                };
+                fileItem.onclick = () => window.open(item.download_url, '_blank');
             }
 
             const fileName = document.createElement('div');
@@ -314,9 +317,6 @@
 
             fileItem.appendChild(iconDiv);
             fileItem.appendChild(fileName);
-            if (checkbox) {
-                fileItem.appendChild(checkbox);
-            }
             fileBrowser.appendChild(fileItem);
         }
 
@@ -359,37 +359,50 @@
          */
         function showLoading(isLoading) {
             loadingIndicator.style.display = isLoading ? 'block' : 'none';
+            downloadAllButton.disabled = isLoading || downloadAllButton.disabled;
         }
 
         /**
-         * Updates the state of the Download ZIP button based on selected files.
+         * Downloads all files in the current directory as a ZIP archive.
          */
-        function updateDownloadButton() {
-            const downloadButton = document.getElementById('download-zip');
-            downloadButton.disabled = selectedFiles.length === 0;
-        }
-
-        /**
-         * Downloads selected files as a ZIP archive.
-         */
-        async function downloadSelectedAsZip() {
-            if (selectedFiles.length === 0) return;
-
+        async function downloadAllAsZip() {
             showLoading(true);
             const zip = new JSZip();
+            const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${currentRepoPath}`;
 
             try {
-                for (const file of selectedFiles) {
-                    const response = await fetch(file.download_url);
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch ${file.name}: ${response.statusText}`);
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                // Filter out duplicates and non-files
+                const seenPaths = new Set();
+                const files = data.filter(item => {
+                    if (item.name === 'index.html' || item.type !== 'file' || seenPaths.has(item.path)) {
+                        return false;
                     }
-                    const blob = await response.blob();
+                    seenPaths.add(item.path);
+                    return true;
+                });
+
+                if (files.length === 0) {
+                    alert('No files available to download in this directory.');
+                    return;
+                }
+
+                for (const file of files) {
+                    const fileResponse = await fetch(file.download_url);
+                    if (!fileResponse.ok) {
+                        throw new Error(`Failed to fetch ${file.name}: ${fileResponse.statusText}`);
+                    }
+                    const blob = await fileResponse.blob();
                     zip.file(file.name, blob);
                 }
 
                 const zipBlob = await zip.generateAsync({ type: 'blob' });
-                saveAs(zipBlob, 'selected_files.zip');
+                saveAs(zipBlob, `${currentRepoPath.split('/').pop() || 'files'}.zip`);
             } catch (error) {
                 alert(`Error creating ZIP file: ${error.message}`);
             } finally {
@@ -412,7 +425,7 @@
             }
             
             if (pathFromHash !== currentRepoPath) {
-                loadDirectory(pathFromHash);
+                debouncedLoadDirectory(pathFromHash);
             }
         }
 
@@ -426,7 +439,7 @@
             } else {
                 debouncedLoadDirectory(initialPath);
             }
-            document.getElementById('download-zip').addEventListener('click', downloadSelectedAsZip);
+            document.getElementById('download-all-zip').addEventListener('click', downloadAllAsZip);
         });
 
         window.addEventListener('hashchange', handleHashChange);

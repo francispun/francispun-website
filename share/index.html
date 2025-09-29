@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francis' Shared Files</title>
-    <!-- Font Awesome for file and navigation icons -->
+    <!-- Font Awesome for file icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- JSZip for creating ZIP files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -31,7 +31,7 @@
             border-bottom: 1px solid #ddd;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         header h1 {
@@ -45,54 +45,15 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding-bottom: 100px;
-        }
-
-        /* Button row for navigation and download */
-        .button-row {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Navigation button styles */
-        .nav-button {
-            background-color: #ccc;
-            color: #333;
-            border: none;
-            border-radius: 5px;
-            padding: 12px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1em;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.2s, transform 0.2s;
-        }
-
-        .nav-button.enabled {
-            background-color: var(--main-yellow);
-            cursor: pointer;
-        }
-
-        .nav-button.enabled:hover {
-            background-color: #e6b800;
-            transform: scale(1.05);
-        }
-
-        .nav-button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-            transform: none;
+            padding-bottom: 80px; /* Ensure space for fixed button */
         }
 
         /* Download All button styles */
         #download-all-zip {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             padding: 12px 24px;
             background-color: var(--main-yellow);
             color: #333;
@@ -102,18 +63,16 @@
             font-size: 1em;
             font-weight: 500;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.2s, transform 0.2s;
+            transition: background-color 0.2s;
         }
 
         #download-all-zip:hover {
-            background-color: #e6b800;
-            transform: scale(1.05);
+            background-color: #e6b800; /* Slightly darker yellow on hover */
         }
 
         #download-all-zip:disabled {
             background-color: #ccc;
             cursor: not-allowed;
-            transform: none;
         }
 
         /* Loading spinner styles */
@@ -200,13 +159,6 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            .button-row {
-                gap: 8px;
-            }
-            .nav-button {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
             #download-all-zip {
                 padding: 10px 20px;
                 font-size: 0.9em;
@@ -225,11 +177,7 @@
             <p>Fetching files...</p>
         </div>
         <div id="file-browser"></div>
-        <div class="button-row">
-            <button class="nav-button" id="prev-page" disabled><i class="fas fa-chevron-left"></i></button>
-            <button id="download-all-zip">Download All as ZIP</button>
-            <button class="nav-button" id="next-page" disabled><i class="fas fa-chevron-right"></i></button>
-        </div>
+        <button id="download-all-zip">Download All as ZIP</button>
     </div>
 
     <script>
@@ -244,12 +192,8 @@
         const fileBrowser = document.getElementById('file-browser');
         const loadingIndicator = document.getElementById('loading');
         const downloadAllButton = document.getElementById('download-all-zip');
-        const prevButton = document.getElementById('prev-page');
-        const nextButton = document.getElementById('next-page');
         let currentRepoPath = initialPath;
         let isLoading = false;
-        let historyPaths = [initialPath]; // Store navigation history
-        let historyIndex = 0; // Current position in history
 
         /**
          * Debounces a function to prevent it from being called too frequently.
@@ -266,27 +210,16 @@
         }
 
         /**
-         * Updates the state of navigation buttons based on history.
-         */
-        function updateNavButtons() {
-            prevButton.disabled = historyIndex <= 0;
-            nextButton.disabled = historyIndex >= historyPaths.length - 1;
-            prevButton.classList.toggle('enabled', !prevButton.disabled);
-            nextButton.classList.toggle('enabled', !nextButton.disabled);
-        }
-
-        /**
          * Fetches and displays the content of a directory from the GitHub repository.
          * @param {string} repoPath - The full path to the directory within the GitHub repository.
-         * @param {boolean} addToHistory - Whether to add the path to history.
          */
-        async function loadDirectory(repoPath, addToHistory = true) {
-            if (isLoading || repoPath === currentRepoPath) return;
+        async function loadDirectory(repoPath) {
+            if (isLoading) return;
             isLoading = true;
 
             showLoading(true);
             fileBrowser.innerHTML = '';
-            downloadAllButton.disabled = true;
+            downloadAllButton.disabled = true; // Disable until files are loaded
             currentRepoPath = repoPath;
 
             let hashPath = '';
@@ -294,16 +227,6 @@
                 hashPath = repoPath.substring(initialPath.length + 1);
             }
             window.location.hash = hashPath ? `/${hashPath}` : '';
-
-            if (addToHistory) {
-                // Truncate history after current index and add new path
-                historyPaths = historyPaths.slice(0, historyIndex + 1);
-                if (historyPaths[historyPaths.length - 1] !== repoPath) {
-                    historyPaths.push(repoPath);
-                    historyIndex++;
-                }
-                window.history.pushState({ path: repoPath }, '', window.location.href);
-            }
 
             const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${repoPath}`;
 
@@ -327,6 +250,7 @@
                     return true;
                 });
 
+                // Sort items: folders first, then files, alphabetically
                 uniqueData.sort((a, b) => {
                     if (a.type === b.type) {
                         return a.name.localeCompare(b.name);
@@ -347,6 +271,7 @@
                     createFileItem(item);
                 });
 
+                // Enable Download All button only if there are files
                 downloadAllButton.disabled = !hasFiles;
 
                 if (uniqueData.length === 0) {
@@ -359,7 +284,6 @@
             } finally {
                 showLoading(false);
                 isLoading = false;
-                updateNavButtons();
             }
         }
 
@@ -453,6 +377,7 @@
                 }
                 const data = await response.json();
 
+                // Filter out duplicates and non-files
                 const seenPaths = new Set();
                 const files = data.filter(item => {
                     if (item.name === 'index.html' || item.type !== 'file' || seenPaths.has(item.path)) {
@@ -486,32 +411,6 @@
         }
 
         /**
-         * Navigate to the previous page in history.
-         */
-        function goBack(event) {
-            event.preventDefault();
-            if (historyIndex > 0) {
-                historyIndex--;
-                const path = historyPaths[historyIndex];
-                window.history.pushState({ path }, '', `#${path.substring(initialPath.length) || ''}`);
-                loadDirectory(path, false);
-            }
-        }
-
-        /**
-         * Navigate to the next page in history.
-         */
-        function goForward(event) {
-            event.preventDefault();
-            if (historyIndex < historyPaths.length - 1) {
-                historyIndex++;
-                const path = historyPaths[historyIndex];
-                window.history.pushState({ path }, '', `#${path.substring(initialPath.length) || ''}`);
-                loadDirectory(path, false);
-            }
-        }
-
-        /**
          * Handles changes to the URL hash, loading the corresponding directory.
          */
         function handleHashChange() {
@@ -526,7 +425,7 @@
             }
             
             if (pathFromHash !== currentRepoPath) {
-                loadDirectory(pathFromHash);
+                debouncedLoadDirectory(pathFromHash);
             }
         }
 
@@ -538,25 +437,12 @@
             if (window.location.hash) {
                 handleHashChange();
             } else {
-                debouncedLoadDirectory(initialPath, false);
-                window.history.replaceState({ path: initialPath }, '', window.location.href);
+                debouncedLoadDirectory(initialPath);
             }
             document.getElementById('download-all-zip').addEventListener('click', downloadAllAsZip);
-            prevButton.addEventListener('click', goBack);
-            nextButton.addEventListener('click', goForward);
         });
 
         window.addEventListener('hashchange', handleHashChange);
-        window.addEventListener('popstate', (event) => {
-            if (event.state && event.state.path) {
-                const path = event.state.path;
-                const index = historyPaths.indexOf(path);
-                if (index !== -1) {
-                    historyIndex = index;
-                    debouncedLoadDirectory(path, false);
-                }
-            }
-        });
     </script>
 </body>
 </html>

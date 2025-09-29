@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francis' Shared Files</title> <!-- Updated title for the browser tab -->
+    <title>Francis' Shared Files</title>
     <!-- Font Awesome for file icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- JSZip for creating ZIP files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- FileSaver.js for triggering downloads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <style>
         /* Basic styles for the body and fonts */
         body {
@@ -30,14 +34,28 @@
             font-size: 1.5em;
             color: #444;
         }
-        
-        /* Removed #breadcrumb styles as the element is removed */
 
         /* Main container for the file browser */
         .container {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Download button styles */
+        #download-zip {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #download-zip:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
         }
 
         /* Loading spinner styles */
@@ -79,6 +97,7 @@
             cursor: pointer;
             transition: box-shadow 0.2s, transform 0.2s;
             word-wrap: break-word;
+            position: relative; /* For positioning checkboxes */
         }
 
         .file-item:hover {
@@ -88,7 +107,7 @@
 
         /* Icon and thumbnail container */
         .file-item .icon {
-            font-size: 4em; /* Default icon size */
+            font-size: 4em;
             margin-bottom: 15px;
             height: 80px;
             display: flex;
@@ -127,13 +146,14 @@
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Francis' Shared Files</h1> <!-- Updated heading -->
-        <!-- Removed <div id="breadcrumb"></div> -->
+        <h1>Francis' Shared Files</h1>
     </header>
 
     <div class="container">
+        <div style="margin-bottom: 20px;">
+            <button id="download-zip" disabled>Download Selected as ZIP</button>
+        </div>
         <div id="loading">
             <div class="spinner"></div>
             <p>Fetching files...</p>
@@ -145,36 +165,32 @@
         // ===================================================================================
         // CONFIGURATION: Update these variables with your GitHub username and repository name
         // ===================================================================================
-        const username = 'francispun'; // <--- CHANGE THIS
-        const repoName = 'francispun-website'; // <--- CHANGE THIS
-        const initialPath = 'share'; // <--- Set the subfolder you want to browse as the root
+        const username = 'francispun';
+        const repoName = 'francispun-website';
+        const initialPath = 'share';
         // ===================================================================================
 
         const fileBrowser = document.getElementById('file-browser');
         const loadingIndicator = document.getElementById('loading');
-        // Removed: const breadcrumbNav = document.getElementById('breadcrumb');
-
-        // Variable to keep track of the current full path within the GitHub repository
+        let selectedFiles = [];
         let currentRepoPath = initialPath;
 
         /**
          * Fetches and displays the content of a directory from the GitHub repository.
-         * This function now also updates the browser's URL hash.
-         * @param {string} repoPath - The full path to the directory within the GitHub repository (e.g., 'share', 'share/documents').
+         * @param {string} repoPath - The full path to the directory within the GitHub repository.
          */
         async function loadDirectory(repoPath) {
             showLoading(true);
             fileBrowser.innerHTML = '';
-            currentRepoPath = repoPath; // Update the global currentRepoPath
-            // Removed: updateBreadcrumb(currentRepoPath); // No longer needed without breadcrumbs
+            selectedFiles = []; // Clear selected files
+            updateDownloadButton();
+            currentRepoPath = repoPath;
 
-            // Update URL hash to reflect the current display path
-            // The hash should be relative to the initialPath
             let hashPath = '';
             if (repoPath.startsWith(initialPath) && repoPath.length > initialPath.length) {
-                hashPath = repoPath.substring(initialPath.length + 1); // +1 to remove the leading '/'
+                hashPath = repoPath.substring(initialPath.length + 1);
             }
-            window.location.hash = hashPath ? `/${hashPath}` : ''; // Ensure leading slash for consistency, or empty for root
+            window.location.hash = hashPath ? `/${hashPath}` : '';
 
             const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${repoPath}`;
 
@@ -185,7 +201,6 @@
                 }
                 const data = await response.json();
 
-                // Sort items to show folders first, then files alphabetically
                 data.sort((a, b) => {
                     if (a.type === b.type) {
                         return a.name.localeCompare(b.name);
@@ -194,9 +209,8 @@
                 });
 
                 data.forEach(item => {
-                    // Exclude specific files from being displayed
                     if (item.name === 'index.html') {
-                        return; // Skip this item
+                        return;
                     }
                     createFileItem(item);
                 });
@@ -219,22 +233,38 @@
             const iconDiv = document.createElement('div');
             iconDiv.className = 'icon';
             
-            // Determine the icon or thumbnail
+            let checkbox = null;
+            if (item.type === 'file') {
+                checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.style.position = 'absolute';
+                checkbox.style.top = '10px';
+                checkbox.style.right = '10px';
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        selectedFiles.push(item);
+                    } else {
+                        selectedFiles = selectedFiles.filter(file => file.download_url !== item.download_url);
+                    }
+                    updateDownloadButton();
+                });
+            }
+
             if (item.type === 'dir') {
                 iconDiv.innerHTML = '<i class="fas fa-folder" style="color: #5894df;"></i>';
-                // When a folder is clicked, call loadDirectory with its full path
                 fileItem.onclick = () => loadDirectory(item.path); 
             } else {
                 const extension = item.name.split('.').pop().toLowerCase();
                 if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension)) {
-                    // Display a thumbnail for images
                     iconDiv.innerHTML = `<img src="${item.download_url}" alt="${item.name}">`;
                 } else {
-                    // Display an icon for other file types
                     iconDiv.innerHTML = getFileIcon(extension);
                 }
-                // Open the raw file in a new tab when clicked
-                fileItem.onclick = () => window.open(item.download_url, '_blank'); 
+                fileItem.onclick = (e) => {
+                    if (e.target !== checkbox) {
+                        window.open(item.download_url, '_blank');
+                    }
+                };
             }
 
             const fileName = document.createElement('div');
@@ -243,6 +273,9 @@
 
             fileItem.appendChild(iconDiv);
             fileItem.appendChild(fileName);
+            if (checkbox) {
+                fileItem.appendChild(checkbox);
+            }
             fileBrowser.appendChild(fileItem);
         }
 
@@ -278,8 +311,6 @@
                     return '<i class="fas fa-file" style="color: #666;"></i>';
             }
         }
-        
-        // Removed the entire updateBreadcrumb function as it's no longer needed.
 
         /**
          * Toggles the visibility of the loading indicator.
@@ -290,12 +321,48 @@
         }
 
         /**
+         * Updates the state of the Download ZIP button based on selected files.
+         */
+        function updateDownloadButton() {
+            const downloadButton = document.getElementById('download-zip');
+            downloadButton.disabled = selectedFiles.length === 0;
+        }
+
+        /**
+         * Downloads selected files as a ZIP archive.
+         */
+        async function downloadSelectedAsZip() {
+            if (selectedFiles.length === 0) return;
+
+            showLoading(true);
+            const zip = new JSZip();
+
+            try {
+                for (const file of selectedFiles) {
+                    const response = await fetch(file.download_url);
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch ${file.name}: ${response.statusText}`);
+                    }
+                    const blob = await response.blob();
+                    zip.file(file.name, blob);
+                }
+
+                const zipBlob = await zip.generateAsync({ type: 'blob' });
+                saveAs(zipBlob, 'selected_files.zip');
+            } catch (error) {
+                alert(`Error creating ZIP file: ${error.message}`);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        /**
          * Handles changes to the URL hash, loading the corresponding directory.
          */
         function handleHashChange() {
-            let hashPath = window.location.hash.substring(1); // Remove the '#'
+            let hashPath = window.location.hash.substring(1);
             if (hashPath.startsWith('/')) {
-                hashPath = hashPath.substring(1); // Remove leading '/' if present
+                hashPath = hashPath.substring(1);
             }
 
             let pathFromHash = initialPath;
@@ -303,25 +370,22 @@
                 pathFromHash += '/' + hashPath;
             }
             
-            // Only load if the path derived from hash is different from currentRepoPath
-            // This prevents unnecessary reloads when loadDirectory itself changes the hash
             if (pathFromHash !== currentRepoPath) {
                 loadDirectory(pathFromHash);
             }
         }
 
-        // Initial load: Check hash or load initialPath
+        // Initial load
         document.addEventListener('DOMContentLoaded', () => {
             if (window.location.hash) {
-                handleHashChange(); // Load content based on existing hash
+                handleHashChange();
             } else {
-                loadDirectory(initialPath); // Load the default initial path
+                loadDirectory(initialPath);
             }
+            document.getElementById('download-zip').addEventListener('click', downloadSelectedAsZip);
         });
 
-        // Listen for hash changes (e.g., browser back/forward buttons)
         window.addEventListener('hashchange', handleHashChange);
     </script>
-
 </body>
 </html>

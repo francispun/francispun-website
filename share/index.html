@@ -56,27 +56,28 @@
             transform: translateX(-50%);
             display: flex;
             align-items: center;
-            gap: 15px; /* Increased spacing */
+            gap: 15px;
         }
 
         /* Navigation button styles */
         .nav-button {
-            background-color: #ccc; /* Grey by default */
+            background-color: #ccc;
             color: #333;
             border: none;
             border-radius: 5px;
-            padding: 12px 24px; /* Same as ZIP button */
+            padding: 12px 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 1em; /* Same as ZIP button */
+            font-size: 1em;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: background-color 0.2s, transform 0.2s;
         }
 
         .nav-button.enabled {
-            background-color: var(--main-yellow); /* Yellow when enabled */
+            background-color: var(--main-yellow);
+            cursor: pointer;
         }
 
         .nav-button.enabled:hover {
@@ -200,7 +201,7 @@
                 gap: 10px;
             }
             .button-row {
-                gap: 8px; /* Slightly reduced for smaller screens */
+                gap: 8px;
             }
             .nav-button {
                 padding: 10px 20px;
@@ -247,7 +248,8 @@
         const nextButton = document.getElementById('next-page');
         let currentRepoPath = initialPath;
         let isLoading = false;
-        let historyIndex = 0;
+        let historyPaths = [initialPath]; // Store navigation history
+        let historyIndex = 0; // Current position in history
 
         /**
          * Debounces a function to prevent it from being called too frequently.
@@ -268,8 +270,7 @@
          */
         function updateNavButtons() {
             prevButton.disabled = historyIndex <= 0;
-            nextButton.disabled = !window.history.state || historyIndex >= window.history.length - 1;
-            // Toggle .enabled class based on disabled state
+            nextButton.disabled = historyIndex >= historyPaths.length - 1;
             prevButton.classList.toggle('enabled', !prevButton.disabled);
             nextButton.classList.toggle('enabled', !nextButton.disabled);
         }
@@ -277,9 +278,10 @@
         /**
          * Fetches and displays the content of a directory from the GitHub repository.
          * @param {string} repoPath - The full path to the directory within the GitHub repository.
+         * @param {boolean} addToHistory - Whether to add the path to history.
          */
-        async function loadDirectory(repoPath) {
-            if (isLoading) return;
+        async function loadDirectory(repoPath, addToHistory = true) {
+            if (isLoading || repoPath === currentRepoPath) return;
             isLoading = true;
 
             showLoading(true);
@@ -292,7 +294,16 @@
                 hashPath = repoPath.substring(initialPath.length + 1);
             }
             window.location.hash = hashPath ? `/${hashPath}` : '';
-            window.history.pushState({ path: repoPath, index: historyIndex++ }, '', window.location.href);
+
+            if (addToHistory) {
+                // Truncate history after current index and add new path
+                historyPaths = historyPaths.slice(0, historyIndex + 1);
+                if (historyPaths[historyPaths.length - 1] !== repoPath) {
+                    historyPaths.push(repoPath);
+                    historyIndex++;
+                }
+                window.history.pushState({ path: repoPath }, '', window.location.href);
+            }
 
             const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${repoPath}`;
 
@@ -475,6 +486,32 @@
         }
 
         /**
+         * Navigate to the previous page in history.
+         */
+        function goBack(event) {
+            event.preventDefault();
+            if (historyIndex > 0) {
+                historyIndex--;
+                const path = historyPaths[historyIndex];
+                window.history.pushState({ path }, '', `#${path.substring(initialPath.length) || ''}`);
+                loadDirectory(path, false);
+            }
+        }
+
+        /**
+         * Navigate to the next page in history.
+         */
+        function goForward(event) {
+            event.preventDefault();
+            if (historyIndex < historyPaths.length - 1) {
+                historyIndex++;
+                const path = historyPaths[historyIndex];
+                window.history.pushState({ path }, '', `#${path.substring(initialPath.length) || ''}`);
+                loadDirectory(path, false);
+            }
+        }
+
+        /**
          * Handles changes to the URL hash, loading the corresponding directory.
          */
         function handleHashChange() {
@@ -489,28 +526,7 @@
             }
             
             if (pathFromHash !== currentRepoPath) {
-                debouncedLoadDirectory(pathFromHash);
-            }
-            updateNavButtons();
-        }
-
-        /**
-         * Navigate to the previous page in history.
-         */
-        function goBack() {
-            if (historyIndex > 0) {
-                historyIndex--;
-                window.history.back();
-            }
-        }
-
-        /**
-         * Navigate to the next page in history.
-         */
-        function goForward() {
-            if (historyIndex < window.history.length - 1) {
-                historyIndex++;
-                window.history.forward();
+                loadDirectory(pathFromHash);
             }
         }
 
@@ -522,7 +538,8 @@
             if (window.location.hash) {
                 handleHashChange();
             } else {
-                debouncedLoadDirectory(initialPath);
+                debouncedLoadDirectory(initialPath, false);
+                window.history.replaceState({ path: initialPath }, '', window.location.href);
             }
             document.getElementById('download-all-zip').addEventListener('click', downloadAllAsZip);
             prevButton.addEventListener('click', goBack);
@@ -532,8 +549,12 @@
         window.addEventListener('hashchange', handleHashChange);
         window.addEventListener('popstate', (event) => {
             if (event.state && event.state.path) {
-                historyIndex = event.state.index;
-                debouncedLoadDirectory(event.state.path);
+                const path = event.state.path;
+                const index = historyPaths.indexOf(path);
+                if (index !== -1) {
+                    historyIndex = index;
+                    debouncedLoadDirectory(path, false);
+                }
             }
         });
     </script>

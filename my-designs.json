@@ -236,7 +236,7 @@ var projects = [
     "type": "uiux",
     "for": "Homeasy",
     "published": "May 2021",
-    "feature": "yes",
+    "feature": "",
     "innerDescription": [
       "The Homeasy Website Project focuses on engaging and converting B2B clients through a strategically designed website. The primary objective is to showcase Homeasy's products and their backgrounds, establishing credibility and trust with potential clients.",
       "Through compelling product presentations and informative content, the website effectively communicates the value and benefits of Homeasy's offerings. The design and layout of the website are carefully crafted to capture the attention of B2B clients and provide a seamless user experience.",

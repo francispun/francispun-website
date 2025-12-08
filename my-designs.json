@@ -1,44 +1,6 @@
 // Simple array of projects
 var projects = [
      {
-      "meta":"kool-econtact",
-      "name":"Dynamic e-Namecard",
-      "description":"UX UI Design",
-      "type":"uiux",
-      "for":"Kool",
-      "published":"Dec 2025",
-      "feature":"yes",
-     "innerDescription": [
-       {
-         "title": "Digital Networking Reimagined",
-         "description": "In the digital era, traditional business cards are fading. This project introduces a modern E-Namecard solution designed for instant sharing and seamless integration. By replacing paper with pixels, we offer a sustainable, always-accessible professional identity that eliminates manual data entry and adapts to the modern professional's needs."
-       },
-       {
-         "title": "AI-Assisted Design & Bilingual Support",
-         "description": "Leveraging AI tools during the development phase, we have crafted dynamic, high-quality templates that cater specifically to a dual-language audience. The system fully supports both English and Hong Kong Traditional Chinese. The design ensures that whether a client views the card in English or Chinese, the layout remains polished, professional, and culturally attuned."
-         
-       },
-       {
-         "title": "User Interface Design and Visual Hierarchy",
-         "description": "The front-end user interface is designed with a 'mobile-first' philosophy, prioritizing visual impact and ease of navigation. Key design elements include a prominent, eye-catching profile picture and a clean presentation of the user's name and professional details. To ensure accessibility, a language toggle switch is strategically placed in the top-right corner, allowing viewers to instantly swap between English and Chinese versions of the profile without reloading the page or losing context."
-         
-       },
-       {
-         "title": "Frictionless Connectivity via Floating Action Button",
-         "description": [
-           "To maximize conversion—defined here as successfully saving a contact—we have engineered a persistent User Experience (UX) feature. A floating 'Add Contact' button remains sticky at the bottom of the screen, hovering above the content regardless of how far the user scrolls. This eliminates the need to scroll to the footer to find action buttons. Upon clicking, this button triggers the device’s native contact application, prompting the user to save the new contact immediately."
-         ]
-       },
-       {
-         "title": "Internal Generator & VCF Export Workflow",
-         "description": "For internal efficiency, we utilized AI to help code a custom E-Namecard generator interface. This tool allows administrators to input personal data once and automatically export two distinct vCard (.vcf) files—one in English and one in Chinese. This ensures that the downloadable contact file always matches the language currently displayed on the screen.",
-       },       
-     ],
-      "img":4,
-      "download":"https://contacts.koolfoundation.org/#sampleau",
-      "downloadText":"view demo"
-   },
-     {
       "meta":"product-viewer",
       "name":"3D Model Viewer",
       "description":"AR/VR app development",

@@ -46,27 +46,28 @@ var projects = [
     "feature": "yes",
     "innerDescription": [
       {
-        "title": "Project Overview",
-        "description": "I collaborated on a design thinking initiative that brought together cross-functional teams from sales, merchandising, engineering, accounting, and shipping. This diverse collaboration was essential as we generated innovative ideas aimed at enhancing business processes. I led the design project to develop a virtual prototyping web app, working closely with design team members and leveraging the power of AI to streamline our efforts."
+        "title": "Addressing the Development Bottleneck",
+        "description": "In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market."
       },
       {
-        "title": "Collaborative Design Thinking",
-        "description": "The first phase of the project focused on design thinking, where we brainstormed several business innovation ideas. By integrating insights from various departments, we identified key areas for improvement and developed solutions that could transform our approach to product development. The integration of AI played a significant role in this phase, helping us analyze data and generate creative concepts more efficiently. This technological aid allowed us to explore possibilities that might have otherwise been overlooked, enriching our design process."
+        "title": "Leading Innovation with AI",
+        "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilized AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool."
       },
       {
-        "title": "Development for Enhanced Prototyping",
-        "description": "In the second phase, I directed the development of the app, ensuring it effectively reflected the insights gained during our initial discussions. The virtual prototyping web app minimizes the initial prototyping efforts, allowing clients to explore and interact with 3D models before creating physical prototypes. While clients will ultimately want a tangible object to examine, this app significantly reduces the time and resources spent on preliminary designs. By enabling virtual exploration, clients can make informed decisions and adjustments early in the design process, ultimately leading to more successful final products."
+        "title": "Intuitive Virtual Review (VR Mode)",
+        "description": "To facilitate deep inspection, I developed a web-based VR mode prioritizing complete manipulation. In this environment, users can drag the screen to rotate the view, change camera angles, and move individual parts to understand the assembly. It serves as a seamless digital workspace where validation happens without specialized software."
       },
       {
-        "title": "Intuitive User Experience",
-        "description": [
-          "The app is designed with user-friendliness in mind, allowing clients to easily navigate and interact with their 3D models. Users can seamlessly browse preload models or open their own files with just a few clicks. The interface is intuitive, enabling users to drag and reposition components effortlessly, and rotate the models simply by swiping on the screen.",
-          "A standout feature of the app is its augmented reality (AR) capability, which bridges the virtual and physical worlds. This powerful functionality allows clients to visualize new product designs in real-time, placing virtual prototypes alongside existing products or within actual environments. By seeing how a new design fits within the context of previous versions or the product family, clients gain a deeper understanding of its impact and can make more informed decisions."
-        ]
+        "title": "Real-Scale AR & Production Confidence",
+        "description": "The standout feature for decision-making is the Augmented Reality (AR) mode, which anchors the 3D model into the physical world at a strict 1:1 scale. While users typically walk around the anchored object to view different angles, I implemented a specific rotation control to spin the object on its vertical (Y) axis. This ensures clients can inspect every side—even in tight spaces—giving them the confidence to approve designs for physical prototyping."
       },
       {
-        "title": "Conclusion",
-        "description": "Overall, this project not only showcases my technical skills but also emphasizes the importance of collaboration and innovation in product development. By merging design thinking with advanced technology, we created a solution that significantly enhances the way clients visualize and interact with their designs, ultimately driving business success."
+        "title": "Empowering Sales & Internal Communication",
+        "description": "Beyond engineering, the app serves as a vital tool for sales and marketing. I implemented a dynamic color-changing feature available in both modes. While material finishes are pre-set to ensure production feasibility, stakeholders can instantly visualize different colorways. This feature was particularly well-received by clients, who adopted the app for internal team discussions to align on aesthetics before production began."
+      },
+      {
+        "title": "Conclusion & Impact",
+        "description": "By stepping outside the traditional boundaries of industrial design and leveraging AI to build a custom software solution, I delivered a tool that cut development lead times. The application impressed our clients, who welcomed the innovation and immediately integrated it into their internal review processes, proving that the tool successfully bridged the gap between concept and manufacturing."
       }
     ],
     "img": 6,

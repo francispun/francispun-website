@@ -47,23 +47,23 @@ var projects = [
     "innerDescription": [
       {
         "title": "Addressing the Development Bottleneck",
-        "description": "In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market."
+        "description": " In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market."
       },
       {
         "title": "Leading Innovation with AI",
-        "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilized AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool."
+        "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilised AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool."
       },
       {
         "title": "Intuitive Virtual Review (VR Mode)",
-        "description": "To facilitate deep inspection, I developed a web-based VR mode prioritizing complete manipulation. In this environment, users can drag the screen to rotate the view, change camera angles, and move individual parts to understand the assembly. It serves as a seamless digital workspace where validation happens without specialized software."
+        "description": "To facilitate deep inspection, I developed a web-based VR mode prioritising complete manipulation. In this environment, users can drag the screen to rotate the view, change camera angles, and move individual parts to understand the assembly. It serves as a seamless digital workspace where validation happens without specialised software."
       },
       {
         "title": "Real-Scale AR & Production Confidence",
-        "description": "The standout feature for decision-making is the Augmented Reality (AR) mode, which anchors the 3D model into the physical world at a strict 1:1 scale. While users typically walk around the anchored object to view different angles, I implemented a specific rotation control to spin the object on its vertical (Y) axis. This ensures clients can inspect every side—even in tight spaces—giving them the confidence to approve designs for physical prototyping."
+        "description": "The standout feature for decision-making is the Augmented Reality (AR) mode, which anchors the 3D model into the physical world at a strict 1:1 scale. While users typically walk around the anchored object to view different angles, I implemented a specific rotation control to spin the object on its vertical axis. This ensures clients can inspect every side, even in tight spaces, giving them the confidence to approve designs for physical prototyping."
       },
       {
         "title": "Empowering Sales & Internal Communication",
-        "description": "Beyond engineering, the app serves as a vital tool for sales and marketing. I implemented a dynamic color-changing feature available in both modes. While material finishes are pre-set to ensure production feasibility, stakeholders can instantly visualize different colorways. This feature was particularly well-received by clients, who adopted the app for internal team discussions to align on aesthetics before production began."
+        "description": "Beyond engineering, the app serves as a vital tool for sales and marketing. I implemented a dynamic colour-changing feature available in both modes. While material finishes are pre-set to ensure production feasibility, stakeholders can instantly visualise different colourways. This feature was particularly well-received by clients, who adopted the app for internal team discussions to align on aesthetics before production began."
       },
       {
         "title": "Conclusion & Impact",

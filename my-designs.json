@@ -1,5 +1,57 @@
 // Simple array of projects
 var projects = [
+    {
+    "meta": "izakaya-ai",
+    "name": "Izakaya AI",
+    "description": "AI exploration",
+    "type": "uiux",
+    "for": "myself",
+    "published": "Jan 2026",
+    "feature": "yes",
+    "innerDescription": [
+      {
+        "title": "Project Overview",
+        "description": "Izakaya AI is a single-page web application that transforms the traditional tablet-based self-ordering experience in casual dining into an intelligent, conversational, and highly personalized workflow. Inspired by a real-world conversation with a friend who owns a Japanese izakaya restaurant in Hong Kong, this project explores how modern AI can meaningfully enhance the guest experience while streamlining operations."
+      },
+      {
+        "title": "From a Real Question to a Prototype",
+        "description": "The idea began when my friend asked a simple but practical question: “How can I actually use AI in my restaurant?” As a designer, I started thinking about the limitations of typical self-ordering systems. While they are efficient, guests cannot describe what they feel like eating, ask detailed questions when staff are busy, or easily discover pairings and alternatives. This prototype addresses those gaps by adding a smart AI assistant that complements the standard menu interface."
+      },
+      {
+        "title": "The Key Innovation: An Intelligent AI Assistant",
+        "description": [
+          "The standout feature is an embedded AI assistant that goes far beyond static menu display. Unlike conventional systems that simply list items, the AI serves as a helpful, informative companion — a knowledgeable virtual waiter always available at the table.",
+          "It has full contextual awareness: it knows the entire menu (names, prices, descriptions in English, Traditional Chinese, and Japanese), current cart contents, past confirmed orders, selected language, and conversation history.",
+          "It offers personalized recommendations, suggesting pairings, alternatives, or additional items based on what the guest has already ordered — for example, recommending yakitori after sake, or lighter appetizers if the order is already substantial.",
+          "Recommended dishes appear directly in the chat with “+Add” buttons, allowing seamless one-tap addition to the cart — identical to adding from the menu grid.",
+          "The conversation is iterative: guests can ask follow-up questions (“Something spicy?”, “Any vegan options?”, “What pairs well with the chicken skewers?”) and the AI continues the dialogue intelligently, building on preferences revealed throughout the session.",
+          "It supports multilingual responses naturally in English, Hong Kong-style Traditional Chinese, or Japanese, matching the user’s selected language."
+        ]
+        
+      },
+      {
+        "title": "Building the System",
+        "description": [
+          "While not a full retrieval-augmented generation (RAG) implementation, the system applies similar principles. The menu and item metadata are loaded from a structured JSON file and injected into each prompt. Conversation history is maintained and sent with every request, giving the AI stateful, agent-like behavior. Google Gemini powers the responses, guided by a carefully crafted prompt that ensures consistent tone and useful output.",
+          "The frontend is built with vanilla HTML, Tailwind CSS, and modular JavaScript — with most of the coding assisted by AI tools to bring the design vision to life quickly and accurately. It features multi-language menu rendering, multi-round ordering with localStorage persistence, real-time cart updates, and a responsive design suitable for tablets and mobile devices."
+        ]
+      },
+      {
+        "title": "Inspiration and Learning Path",
+        "description": "This project was a practical way to explore AI possibilities while deepening my understanding of related concepts. In January 2026, I completed IBM’s online Professional Certificate in RAG and Agentic AI, which provided valuable insights into designing context-aware systems, managing conversation memory, and orchestrating intelligent workflows."
+      },
+      {
+        "title": "Reflections and Potential",
+        "description": [
+          "Izakaya AI is a lightweight yet compelling prototype that shows how a well-integrated AI assistant can make restaurant ordering more flexible and discovery-friendly. It demonstrates that thoughtful context management and natural conversation can turn a standard digital tool into something genuinely useful — enhancing the dining experience without overshadowing the human connections that make izakayas special.",
+          "This hands-on experiment blended design thinking with emerging AI capabilities, resulting in a focused concept that feels ready for real-world testing."
+        ]
+      }
+    ],
+    "img": 4,
+    "download": "https://izakaya-ai.francispun.com/",
+    "downloadText": "view prototype"
+  },
   {
     "meta": "kool-econtact",
     "name": "Dynamic e-Namecard",
@@ -7,7 +59,7 @@ var projects = [
     "type": "uiux",
     "for": "Kool",
     "published": "Dec 2025",
-    "feature": "yes",
+    "feature": "",
     "innerDescription": [
       {
         "title": "Digital Networking Reimagined",

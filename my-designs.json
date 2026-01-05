@@ -3,7 +3,7 @@ var projects = [
     {
     "meta": "izakaya-ai",
     "name": "Izakaya AI",
-    "description": "AI exploration",
+    "description": "AI chatbot",
     "type": "uiux",
     "for": "myself",
     "published": "Jan 2026",

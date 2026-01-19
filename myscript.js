@@ -140,7 +140,7 @@ function templateAfter() {
       <div class="project-inner ${project.meta}">
       <img class="project-hero-img" src="my-designs/${project.meta}.jpg">
       <h1>${project.name}</h1>
-      <p class="info"><em>The ${project.description} project of ${project.for}</em></p>`;
+      <p class="info"><em>The ${project.description} project for ${project.for}</em></p>`;
 
       if (typeof project.download !== "undefined") {
         newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`;

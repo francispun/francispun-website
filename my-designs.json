@@ -27,7 +27,7 @@ var projects = [
         "title": "Technical Strategy & Design Thinking",
         "description": [
           "The system is powered by Google Gemini, but the effectiveness comes from the architectural logic: Simulated RAG via Prompt Injection.",
-          "Instead of a complex vector database, the application injects the structured menu JSON and the conversation history into every prompt. This lightweight approach gives the AI "perfect memory" of the session without backend latency. The objective was to demonstrate that by strictly managing context and state, we can transform a generic LLM into a domain-specific tool that feels distinctively helpful, personal, and smart."
+          "Instead of a complex vector database, the application injects the structured menu JSON and the conversation history into every prompt. This lightweight approach gives the AI 'perfect memory' of the session without backend latency. The objective was to demonstrate that by strictly managing context and state, we can transform a generic LLM into a domain-specific tool that feels distinctively helpful, personal, and smart."
         ]
       },
     ],

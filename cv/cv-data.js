@@ -69,7 +69,7 @@ const myCV = [
     "jobDate": "2011 – 2018",
     "jobAchieve": {
       "Key Achievements": [
-        "Kool Ltd, (2016–2018): [International Awards] Led end-to-end design of Dual Citrus Reamer Tongs, winning Golden Pin Design Award and IDA Prize Third Place.",
+        "<strong>International Awards (Kool Ltd, 2016–2018)</strong>: Led end-to-end design of Dual Citrus Reamer Tongs, winning Golden Pin Design Award and IDA Prize Third Place.",
         "Homeasy Enterprise Ltd. (2020.12–2021.09): Design lead for three brands; created style guides, mentored juniors, managed QA/projects.",
         "Fang Studio Ltd. (2015–2016 & Internship): Contributed to two successful Kickstarters (High5Dogs, VICIOUSVENOM); specialized in pet and furniture design.",
         "Plastoform & BIC (2011–2014): Designed MINI-licensed Bluetooth speakers; created web/EDM designs, logos, prototypes."

@@ -73,8 +73,8 @@ var projects = [
   },
   {
     "meta": "product-viewer",
-    "name": "Sync Vision",
-    "description": "real-scale VR/AR prototype viewer",
+    "name": "3D Model Viewer",
+    "description": "VR/AR visualisation tool",
     "type": "uiux",
     "for": "Kool",
     "published": "Apr 2025",
@@ -112,7 +112,7 @@ var projects = [
   {
     "meta": "financeschool",
     "name": "Finance School",
-    "description": "End-to-end UX Research",
+    "description": "UX UI Design",
     "type": "uiux",
     "for": "Google UX Design Course",
     "published": "Aug 2022",
@@ -128,7 +128,7 @@ var projects = [
   {
     "meta": "catdogplanet",
     "name": "Cat Dog Planet",
-    "description": "User-centered Interface Design",
+    "description": "UX UI Design",
     "type": "uiux",
     "for": "Google UX Design Course",
     "published": "Aug 2022",
@@ -146,7 +146,7 @@ var projects = [
   {
     "meta": "francispun.com",
     "name": "francispun.com",
-    "description": "Web Development & Portfolio Design",
+    "description": "web development & portfolio design",
     "type": "uiux",
     "for": "Personal Branding",
     "published": "Jul 2022",
@@ -286,7 +286,7 @@ var projects = [
   {
     "meta": "kai-shop",
     "name": "Kai Shop",
-    "description": "retail visual merchandising design",
+    "description": "visual merchandising design",
     "type": "multimedia-design",
     "for": "Kai",
     "published": "Jul 2020",

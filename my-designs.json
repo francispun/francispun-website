@@ -3,9 +3,9 @@ var projects = [
     {
     "meta": "izakaya-ai",
     "name": "Izakaya AI",
-    "description": "AI chatbot",
+    "description": "intelligent menu design",
     "type": "uiux",
-    "for": "myself",
+    "for": "Izakaya Sakura",
     "published": "Jan 2026",
     "feature": "yes",
     "innerDescription": [
@@ -38,7 +38,7 @@ var projects = [
   {
     "meta": "kool-econtact",
     "name": "Dynamic e-Namecard",
-    "description": "UX UI Design",
+    "description": "digital contact management design",
     "type": "uiux",
     "for": "Kool",
     "published": "Dec 2025",
@@ -73,8 +73,8 @@ var projects = [
   },
   {
     "meta": "product-viewer",
-    "name": "3D Model Viewer",
-    "description": "AR/VR app development",
+    "name": "Sync Vision",
+    "description": "real-scale VR/AR prototype viewer",
     "type": "uiux",
     "for": "Kool",
     "published": "Apr 2025",
@@ -112,7 +112,7 @@ var projects = [
   {
     "meta": "financeschool",
     "name": "Finance School",
-    "description": "UX Design",
+    "description": "End-to-end UX Research",
     "type": "uiux",
     "for": "Google UX Design Course",
     "published": "Aug 2022",
@@ -128,7 +128,7 @@ var projects = [
   {
     "meta": "catdogplanet",
     "name": "Cat Dog Planet",
-    "description": "UX design",
+    "description": "User-centered Interface Design",
     "type": "uiux",
     "for": "Google UX Design Course",
     "published": "Aug 2022",
@@ -146,9 +146,9 @@ var projects = [
   {
     "meta": "francispun.com",
     "name": "francispun.com",
-    "description": "web portfolio",
+    "description": "Web Development & Portfolio Design",
     "type": "uiux",
-    "for": "myself",
+    "for": "Personal Branding",
     "published": "Jul 2022",
     "feature": "yes",
     "innerDescription": [
@@ -170,7 +170,7 @@ var projects = [
   {
     "meta": "kool-shopline",
     "name": "Kool E-Commerce",
-    "description": "web layout and style design",
+    "description": "e-commerce interface design",
     "type": "uiux",
     "for": "Kool",
     "published": "Jan 2022",
@@ -184,7 +184,7 @@ var projects = [
   {
     "meta": "arctomys",
     "name": "Arctomys",
-    "description": "bag design and visual branding",
+    "description": "lifestyle accessory design & brand identity",
     "type": "product-design",
     "for": "Arctomys",
     "published": "2018 - 2021",
@@ -214,7 +214,7 @@ var projects = [
   {
     "meta": "sachellecollective",
     "name": "Sachelle Collective",
-    "description": "product photography",
+    "description": "commercial product photography",
     "type": "multimedia-design",
     "for": "Sachelle Collective",
     "published": "Aug 2021",
@@ -286,7 +286,7 @@ var projects = [
   {
     "meta": "kai-shop",
     "name": "Kai Shop",
-    "description": "visual merchandising design",
+    "description": "retail visual merchandising design",
     "type": "multimedia-design",
     "for": "Kai",
     "published": "Jul 2020",
@@ -348,7 +348,7 @@ var projects = [
   {
     "meta": "kai-shun",
     "name": "Kai Shun",
-    "description": "product photography",
+    "description": "high-end cutlery photography",
     "type": "multimedia-design",
     "for": "Kai",
     "published": "Jun 2020",
@@ -373,7 +373,7 @@ var projects = [
   {
     "meta": "snap-n-flag",
     "name": "Snap 'n Flag",
-    "description": "knife system design",
+    "description": "modular knife system design",
     "type": "product-design",
     "for": "Kai",
     "published": "Dec 2019",

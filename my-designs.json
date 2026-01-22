@@ -168,20 +168,6 @@ var projects = [
     "img": 0
   },
   {
-    "meta": "kool-shopline",
-    "name": "Kool E-Commerce",
-    "description": "e-commerce interface design",
-    "type": "uiux",
-    "for": "Kool",
-    "published": "Jan 2022",
-    "feature": "",
-    "innerDescription": [
-      "The Kool e-commerce website project involved the design and development of an online store using the Shopline e-commerce platform, which shares similarities with popular platforms like Shopify. As the designer, my primary responsibility was to create an appealing layout and visually captivating style for the website.",
-      "Working with the provided content, I carefully crafted the design elements to ensure a seamless and engaging user experience. This included designing the overall layout of the website, organizing product categories, and creating visually appealing product pages. The goal was to create an intuitive and visually engaging interface that would attract potential customers. I customized the website's appearance to align with the unique branding and identity of Kool. Attention was given to ensuring that the design elements and visual style reflected the essence of the brand, creating a cohesive and memorable online shopping experience."
-    ],
-    "img": 4
-  },
-  {
     "meta": "arctomys",
     "name": "Arctomys",
     "description": "lifestyle accessory design & brand identity",
@@ -403,7 +389,7 @@ var projects = [
   {
     "meta": "sportsoho",
     "name": "Sportsoho",
-    "description": "3D renderings",
+    "description": "sport events 3D visualization",
     "type": "multimedia-design",
     "for": "Multi-clients: Pocari, FWD",
     "published": "2018 - 2019",
@@ -416,7 +402,7 @@ var projects = [
   {
     "meta": "hkpa",
     "name": "HKPA",
-    "description": "graphic designs",
+    "description": "backdrop and booklet designs",
     "type": "multimedia-design",
     "for": "HKPA",
     "published": "2018 - 2019",
@@ -559,19 +545,6 @@ var projects = [
       "Pay.ImHome.Queue is a Japanese cultural souvenir collection. Mantha and I wanted to highlight and remind the tourists of the interesting cultural behaviors of the Japanese. We have this idea after we traveled to Japan together. We both very much appreciate the culture and aesthetic of the olden days of Japan. We therefore designed them like a folk toy."
     ],
     "img": 0
-  },
-  {
-    "meta": "fang-studio",
-    "name": "Fang Studio Ltd.",
-    "description": "product photography",
-    "type": "multimedia-design",
-    "for": "Fang Studio Ltd.",
-    "published": "Aug 2014",
-    "feature": "",
-    "innerDescription": [
-      "Photography projects done during internship"
-    ],
-    "img": 7
   },
   {
     "meta": "stackply",

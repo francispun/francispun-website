@@ -74,7 +74,7 @@ var projects = [
   {
     "meta": "product-viewer",
     "name": "3D Model Viewer",
-    "description": "VR/AR visualisation tool",
+    "description": "VR/AR virtual prototyping",
     "type": "uiux",
     "for": "Kool",
     "published": "Apr 2025",

@@ -210,6 +210,38 @@ function templateAfter() {
         newDiv += `</div>`;
       }
 
+      const usedVideos = new Set();
+      if (project.innerDescription) {
+        project.innerDescription.forEach(sec => {
+          if (sec.videos) sec.videos.forEach(i => usedVideos.add(i));
+        });
+      }
+
+      if (project.video && project.video.length > 0) {
+        let hasUnassigned = false;
+        for (let i = 0; i < project.video.length; i++) {
+          if (!usedVideos.has(i)) {
+            hasUnassigned = true;
+            break;
+          }
+        }
+
+        if (hasUnassigned) {
+          newDiv += `<div class="project-video-gallery mt-5">`;
+          newDiv += `<h3 class="text-center mb-4">Project Videos</h3>`;
+          
+          project.video.forEach(function (videoAttr, idx) {
+            if (!usedVideos.has(idx)) {
+              newDiv += `<div class="iframe-container mb-4">
+                <iframe class="responsive-iframe" ${videoAttr}></iframe>
+              </div>`;
+            }
+          });
+
+          newDiv += `</div>`;
+        }
+      }
+
       // Published & close
       newDiv += `
         <p class="text-center published">@ ${project.published}</p>

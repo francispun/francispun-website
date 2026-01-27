@@ -151,7 +151,7 @@ var projects = [
     "name": "francispun.com",
     "description": "web development & portfolio design",
     "type": "uiux",
-    "for": "Personal Branding",
+    "for": "personal branding",
     "published": "Jul 2022",
     "feature": "yes",
     "innerDescription": [

@@ -91,7 +91,7 @@ var projects = [
         {
           "title": "The Solution: A Self-Service Design Tool",
           "description": "I developed a responsive 'What You See Is What You Get' (WYSIWYG) application. This tool empowers customers to act as the final signatory on their designs, ensuring the output matches their vision perfectly.",
-          "images": [2]
+          "images": [2, 4]
         },
         {
           "title": "Key Functionalities",
@@ -101,17 +101,16 @@ var projects = [
             "Production-Ready Exports: The tool generates dual outputs: a visual preview for the customer and a high-resolution, text-only file for engraving software, supporting both English and Chinese characters.",
             "Zero-Conversion Workflow: By outputting ready-to-engrave files, the system bypasses manual design software entirely, allowing for immediate production."
           ],
-          "images": [3]
+          "gifs": [1, 2]
         },
         {
           "title": "Technical Implementation",
           "description": "Built using HTML5, CSS3, and JavaScript (Canvas API), the project leveraged AI-assisted coding to rapidly transition from concept to a functional tool. This architecture allows the customiser to integrate directly into our workshop’s existing digital workflow.",
-          "images": [4, 5]
         },
         {
           "title": "Impact & Results",
           "description": "The customiser has successfully bridged the gap between customer intent and operational output. By removing the friction of manual artwork preparation, the system transforms bespoke engraving into a scalable, error-free process. The result is a significant increase in production throughput and heightened consumer confidence, as the real-time preview serves as a definitive blueprint for the final product.",
-          "gifs": [1, 2]
+          "images": [5]
         }
       ],
       "img": 5,

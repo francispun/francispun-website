@@ -138,49 +138,82 @@ function templateAfter() {
     if (document.location.hash === `#${project.meta}`) {
       newDiv = `
       <div class="project-inner ${project.meta}">
-      <img class="project-hero-img" src="my-designs/${project.meta}.jpg">
-      <h1>${project.name}</h1>
-      <p class="info"><em>The ${project.description} project for ${project.for}</em></p>`;
+        <img class="project-hero-img" src="my-designs/${project.meta}.jpg" alt="${project.name} hero">
+        <h1>${project.name}</h1>
+        <p class="info"><em>${project.description} project for ${project.for}</em></p>`;
 
+      // Download button
       if (typeof project.download !== "undefined") {
         newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`;
       }
 
-      project.innerDescription.forEach(function (description) {
-        if (typeof description === "object") {
-          newDiv += `
-          <h3>${description.title}</h3>`;
-          if (Array.isArray(description.description)) {
-            description.description.forEach(function (desc) {
-              newDiv += `<p>${desc}</p>`;
-            });
-          } else {
-            newDiv += `<p>${description.description}</p>`;
+      // Render each section (including the first "intro" one)
+      if (project.innerDescription) {
+        project.innerDescription.forEach(function (section) {
+          newDiv += `<section class="project-section">`;
+
+          // Only render title if it exists and is non-empty
+          if (section.title && section.title.trim() !== "") {
+            newDiv += `<h3>${section.title}</h3>`;
           }
-        } else {
-          newDiv += `<p>${description}</p>`;
-        }
-      });
 
-      if (typeof project.gif !== "undefined") {
-        for (let i = 0; i < project.gif; i++) {
-          newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i + 1}.gif">`;
-        }
-      }
+          // Description (string or array)
+          if (typeof section.description === "string") {
+            newDiv += `<p>${section.description}</p>`;
+          } else if (Array.isArray(section.description)) {
+            section.description.forEach(function (para) {
+              newDiv += `<p>${para}</p>`;
+            });
+          }
 
-      if (typeof project.video !== "undefined") {
-        project.video.forEach(function (eachVideo) {
-          newDiv += `<div class="iframe-container"> <iframe class="responsive-iframe" ${eachVideo}></iframe></div>`;
+          // Inline images
+          if (Array.isArray(section.images) && section.images.length > 0) {
+            section.images.forEach(function (idx) {
+              newDiv += `<img class="project-img" src="my-designs/${project.meta}-${idx}.jpg" alt="${project.name} image ${idx}" loading="lazy">`;
+            });
+          }
+
+          // Inline GIFs (optional)
+          if (Array.isArray(section.gifs) && section.gifs.length > 0) {
+            section.gifs.forEach(function (idx) {
+              newDiv += `<img class="project-img" src="my-designs/${project.meta}-${idx}.gif" alt="${project.name} gif ${idx}" loading="lazy">`;
+            });
+          }
+
+          // Inline videos (optional)
+          if (Array.isArray(section.videos) && section.videos.length > 0) {
+            section.videos.forEach(function (videoIdx) {
+              if (project.video && project.video[videoIdx]) {
+                newDiv += `<div class="iframe-container"><iframe class="responsive-iframe" ${project.video[videoIdx]}></iframe></div>`;
+              }
+            });
+          }
+
+          newDiv += `</section>`;
         });
       }
 
-      for (let i = 0; i < project.img; i++) {
-        newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i + 1}.jpg">`;
+      // Optional: leftover images at bottom (for unassigned ones)
+      const usedImages = new Set();
+      if (project.innerDescription) {
+        project.innerDescription.forEach(sec => {
+          if (sec.images) sec.images.forEach(i => usedImages.add(i));
+        });
+      }
+      if (project.img && usedImages.size < project.img) {
+        newDiv += `<div class="project-gallery">`;
+        for (let i = 1; i <= project.img; i++) {
+          if (!usedImages.has(i)) {
+            newDiv += `<img class="project-img" src="my-designs/${project.meta}-${i}.jpg" alt="${project.name} additional image ${i}" loading="lazy">`;
+          }
+        }
+        newDiv += `</div>`;
       }
 
+      // Published & close
       newDiv += `
-      <p class="text-center published">@ ${project.published}</p>
-      <button class="project-inner-close project-close-top" onclick="closeProject()"><i class="fa-solid fa-xmark"></i></button> 
+        <p class="text-center published">@ ${project.published}</p>
+        <button class="project-inner-close project-close-top" onclick="closeProject()"><i class="fa-solid fa-xmark"></i></button> 
       </div>`;
     }
   });

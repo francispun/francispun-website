@@ -70,6 +70,58 @@ var projects = [
     "download": "https://contacts.koolfoundation.org/#francispun",
     "downloadText": "view my card"
   },
+    {
+      "meta": "product-engraving-customiser",
+      "name": "Product Engraving Customiser",
+      "description": "user-led bespoke production interface",
+      "type": "uiux",
+      "for": "Kool",
+      "published": "Jun 2025",
+      "feature": "yes",
+      "innerDescription": [
+        {
+          "title": "Case Study: Knife Engraving Customiser",
+          "description": "Optimising Bespoke Production through User-Led Design. The Knife Engraving Customiser is an interactive web tool designed to streamline the personalisation of premium kitchenware. By shifting design control to the customer, the platform eliminates creative guesswork and automates the transition from digital preview to physical engraving.",
+          "images": [1]
+        },
+        {
+          "title": "The Challenge: Manual Bottlenecks",
+          "description": "Our engraving service originally relied on vague customer notes. This created two primary issues: Design Uncertainty, where we lacked visual confirmation of customer intent, and Operational Inefficiency, as every order required a designer to manually recreate artwork in Adobe Illustrator, slowing production lead times."
+        },
+        {
+          "title": "The Solution: A Self-Service Design Tool",
+          "description": "I developed a responsive 'What You See Is What You Get' (WYSIWYG) application. This tool empowers customers to act as the final signatory on their designs, ensuring the output matches their vision perfectly.",
+          "images": [2]
+        },
+        {
+          "title": "Key Functionalities",
+          "description": [
+            "Precision Guardrails: The 'Show Edit Area' overlay defines safe engraving zones, while 'Resize Handles' allow for intuitive, tactile scaling and positioning directly on the product canvas.",
+            "Batch Efficiency: For multi-item orders, 'Sync Text Style' and 'Auto Align' automate uniformity. These features ensure consistent fonts, sizes, and mathematical centering across all items, maintaining professional symmetry.",
+            "Production-Ready Exports: The tool generates dual outputs: a visual preview for the customer and a high-resolution, text-only file for engraving software, supporting both English and Chinese characters.",
+            "Zero-Conversion Workflow: By outputting ready-to-engrave files, the system bypasses manual design software entirely, allowing for immediate production."
+          ],
+          "images": [3]
+        },
+        {
+          "title": "Technical Implementation",
+          "description": "Built using HTML5, CSS3, and JavaScript (Canvas API), the project leveraged AI-assisted coding to rapidly transition from concept to a functional tool. This architecture allows the customiser to integrate directly into our workshop’s existing digital workflow.",
+          "images": [4, 5]
+        },
+        {
+          "title": "Impact & Results",
+          "description": "The customiser has successfully bridged the gap between customer intent and operational output. By removing the friction of manual artwork preparation, the system transforms bespoke engraving into a scalable, error-free process. The result is a significant increase in production throughput and heightened consumer confidence, as the real-time preview serves as a definitive blueprint for the final product.",
+          "gifs": [1, 2]
+        }
+      ],
+      "img": 5,
+      "gif": 2,
+      "video": [
+        "src=\"https://player.vimeo.com/video/1157525352?byline=0&amp;portrait=0&amp;color=FCD110\" width=\"672\" height=\"378\" frameborder=\"0\" webkitallowfullscreen=\"\" mozallowfullscreen=\"\" allowfullscreen=\"\""
+      ],
+      "download": "https://www.kool.com.hk/zh-hant/pages/free-engraving",
+      "downloadText": "view live customiser"
+    },
   {
       "meta": "product-viewer",
       "name": "3D Model Viewer",

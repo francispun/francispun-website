@@ -1,40 +1,39 @@
 // Simple array of projects
 var projects = [
     {
-    "meta": "izakaya-ai",
-    "name": "Izakaya AI",
-    "description": "intelligent menu design",
-    "type": "uiux",
-    "for": "Izakaya Sakura",
-    "published": "Jan 2026",
-    "feature": "yes",
-    "innerDescription": [
-      {
-        "title": "Project Overview",
-        "description": "Izakaya AI is a single-page web application that transforms the casual dining experience. Born from a discussion with a restaurant owner, it addresses the primary limitation of self-ordering kiosks: they are static tools that demand the user do all the work. While digital menus are efficient, they lack the intelligence to guide a customer. This project solves that by embedding a smart, context-aware agent directly into the ordering workflow."
-      },
-      {
-        "title": "The Solution: An Intelligent Menu Interface",
-        "description": [
-          "The core of the application is an AI that moves beyond simple Q&A to act as a personalized dining concierge.",
-          "Contextual Intelligence: The AI monitors the user’s active cart in real-time. If a guest orders sake, the AI recognizes the flavor profile and immediately suggests compatible yakitori skewers, rather than random items.",
-          "Frictionless Utility: The goal is to reduce the distance between decision and action. Recommendations are not just text; they are rendered with interactive '+Add' buttons, allowing users to act on the AI's advice instantly.",
-          "Adaptive Communication: It supports English, Traditional Chinese, and Japanese, adapting not just the language, but the depth of explanation required for ingredients and culinary terms."
-        ]
-        
-      },
-      {
-        "title": "Technical Strategy & Design Thinking",
-        "description": [
-          "The system is powered by Google Gemini, but the effectiveness comes from the architectural logic: Simulated RAG via Prompt Injection.",
-          "Instead of a complex vector database, the application injects the structured menu JSON and the conversation history into every prompt. This lightweight approach gives the AI 'perfect memory' of the session without backend latency. The objective was to demonstrate that by strictly managing context and state, we can transform a generic LLM into a domain-specific tool that feels distinctively helpful, personal, and smart."
-        ]
-      },
-    ],
-    "img": 4,
-    "download": "https://izakaya-ai.francispun.com/",
-    "downloadText": "view prototype"
-  },
+      "meta": "izakaya-ai",
+      "name": "Izakaya AI",
+      "description": "intelligent menu design",
+      "type": "uiux",
+      "for": "Izakaya Sakura",
+      "published": "Jan 2026",
+      "feature": "yes",
+      "innerDescription": [
+        {
+          "title": "",  // empty title = no <h3> rendered
+          "description": "Izakaya AI is a single-page web application that transforms the casual dining experience. Born from a discussion with a restaurant owner, it addresses the primary limitation of self-ordering kiosks: they are static tools that demand the user do all the work. While digital menus are efficient, they lack the intelligence to guide a customer. This project solves that by embedding a smart, context-aware agent directly into the ordering workflow.",
+          "images": [1]
+        },
+        {
+          "title": "The Solution: An Intelligent Menu Interface",
+          "description": [
+            "The core of the application is an AI that moves beyond simple Q&A to act as a personalized dining concierge.",
+            "Contextual Intelligence: The AI monitors the user’s active cart in real-time. If a guest orders sake, the AI recognizes the flavor profile and immediately suggests compatible yakitori skewers, rather than random items.",
+            "Frictionless Utility: The goal is to reduce the distance between decision and action. Recommendations are not just text; they are rendered with interactive '+Add' buttons, allowing users to act on the AI's advice instantly.",
+            "Adaptive Communication: It supports English, Traditional Chinese, and Japanese, adapting not just the language, but the depth of explanation required for ingredients and culinary terms."
+          ],
+          "images": [2, 3]
+        },
+        {
+          "title": "Technical Strategy & Design Thinking",
+          "description": "The system is powered by Google Gemini, but the effectiveness comes from the architectural logic: Simulated RAG via Prompt Injection. Instead of a complex vector database, the application injects the structured menu JSON and the conversation history into every prompt. This lightweight approach gives the AI 'perfect memory' of the session without backend latency. The objective was to demonstrate that by strictly managing context and state, we can transform a generic LLM into a domain-specific tool that feels distinctively helpful, personal, and smart.",
+          "images": [4]
+        }
+      ],
+      "img": 4,
+      "download": "https://izakaya-ai.francispun.com/",
+      "downloadText": "view prototype"
+    },
   {
     "meta": "kool-econtact",
     "name": "Dynamic e-Namecard",

@@ -71,43 +71,47 @@ var projects = [
     "downloadText": "view my card"
   },
   {
-    "meta": "product-viewer",
-    "name": "3D Model Viewer",
-    "description": "VR/AR virtual prototyping",
-    "type": "uiux",
-    "for": "Kool",
-    "published": "Apr 2025",
-    "feature": "yes",
-    "innerDescription": [
-      {
-        "title": "Addressing the Development Bottleneck",
-        "description": " In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market."
-      },
-      {
-        "title": "Leading Innovation with AI",
-        "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilised AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool."
-      },
-      {
-        "title": "Intuitive Virtual Review (VR Mode)",
-        "description": "To facilitate deep inspection, I developed a web-based VR mode prioritising complete manipulation. In this environment, users can drag the screen to rotate the view, change camera angles, and move individual parts to understand the assembly. It serves as a seamless digital workspace where validation happens without specialised software."
-      },
-      {
-        "title": "Real-Scale AR & Production Confidence",
-        "description": "The standout feature for decision-making is the Augmented Reality (AR) mode, which anchors the 3D model into the physical world at a strict 1:1 scale. While users typically walk around the anchored object to view different angles, I implemented a specific rotation control to spin the object on its vertical axis. This ensures clients can inspect every side, even in tight spaces, giving them the confidence to approve designs for physical prototyping."
-      },
-      {
-        "title": "Empowering Sales & Internal Communication",
-        "description": "Beyond engineering, the app serves as a vital tool for sales and marketing. I implemented a dynamic colour-changing feature available in both modes. While material finishes are pre-set to ensure production feasibility, stakeholders can instantly visualise different colourways. This feature was particularly well-received by clients, who adopted the app for internal team discussions to align on aesthetics before production began."
-      },
-      {
-        "title": "Conclusion & Impact",
-        "description": "By stepping outside the traditional boundaries of industrial design and leveraging AI to build a custom software solution, I delivered a tool that cut development lead times. The application impressed our clients, who welcomed the innovation and immediately integrated it into their internal review processes, proving that the tool successfully bridged the gap between concept and manufacturing."
-      }
-    ],
-    "img": 6,
-    "download": "https://product-viewer.francispun.com/",
-    "downloadText": "view demo"
-  },
+      "meta": "product-viewer",
+      "name": "3D Model Viewer",
+      "description": "VR/AR virtual prototyping",
+      "type": "uiux",
+      "for": "Kool",
+      "published": "Apr 2025",
+      "feature": "yes",
+      "innerDescription": [
+        {
+          "title": "Addressing the Development Bottleneck",
+          "description": "In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market."
+        },
+        {
+          "title": "Leading Innovation with AI",
+          "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilised AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool.",
+          "images": [1]
+        },
+        {
+          "title": "Intuitive Virtual Review (VR Mode)",
+          "description": "To facilitate deep inspection, I developed a web-based VR mode prioritising complete manipulation. In this environment, users can drag the screen to rotate the view, change camera angles, and move individual parts to understand the assembly. It serves as a seamless digital workspace where validation happens without specialised software.",
+          "images": [2, 3]
+        },
+        {
+          "title": "Empowering Sales & Internal Communication",
+          "description": "Beyond engineering, the app serves as a vital tool for sales and marketing. I implemented a dynamic colour-changing feature available in both modes. While material finishes are pre-set to ensure production feasibility, stakeholders can instantly visualise different colourways. This feature was particularly well-received by clients, who adopted the app for internal team discussions to align on aesthetics before production began.",
+          "images": [4]
+        },
+        {
+          "title": "Real-Scale AR & Production Confidence",
+          "description": "The standout feature for decision-making is the Augmented Reality (AR) mode, which anchors the 3D model into the physical world at a strict 1:1 scale. While users typically walk around the anchored object to view different angles, I implemented a specific rotation control to spin the object on its vertical axis. This ensures clients can inspect every side, even in tight spaces, giving them the confidence to approve designs for physical prototyping.",
+          "images": [5, 6]
+        },
+        {
+          "title": "Conclusion & Impact",
+          "description": "By stepping outside the traditional boundaries of industrial design and leveraging AI to build a custom software solution, I delivered a tool that cut development lead times. The application impressed our clients, who welcomed the innovation and immediately integrated it into their internal review processes, proving that the tool successfully bridged the gap between concept and manufacturing."
+        }
+      ],
+      "img": 6,
+      "download": "https://product-viewer.francispun.com/",
+      "downloadText": "view demo"
+    },
   {
     "meta": "financeschool",
     "name": "Finance School",
@@ -207,16 +211,12 @@ var projects = [
     "innerDescription": [
       "The Sachelle Collective New Collection Launch is an exciting freelance photography project focused on capturing stunning visuals for the brand's latest line of jewelry. The collection comprises a range of exquisite necklaces, earrings, and rings, showcasing the brand's commitment to style.",
       {
-        "title": "Pure Product Shooting",
-        "description": "Capturing high-quality images of the jewelry pieces individually, highlighting their intricate details, unique designs, and fine materials. This ensures that potential customers can appreciate the beauty of each item."
-      },
-      {
         "title": "Model Shooting",
         "description": "Showcasing the jewelry collection in a real-life context by capturing images of models wearing the jewelry. The photographs provide a sense of how the pieces look when worn, allowing potential customers to visualize themselves wearing the collection and inspiring them to make a purchase."
       },
       "Throughout the project, utmost attention is given to lighting, composition, and styling to ensure that the photographs effectively convey the elegance and allure of the Sachelle Collective's new collection."
     ],
-    "img": 11
+    "img": 5
   },
   {
     "meta": "qdo-photography",

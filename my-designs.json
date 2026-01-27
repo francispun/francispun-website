@@ -81,12 +81,12 @@ var projects = [
       "innerDescription": [
         {
           "title": "Addressing the Development Bottleneck",
-          "description": "In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market."
+          "description": "In the manufacturing world, the gap between a digital concept and a physical sample is often where projects stall. Our clients faced long development cycles, needing weeks to validate designs before moving to tooling. The objective was to create a rapid solution to confirm design direction immediately, reducing the risk of costly revisions and shortening time-to-market.",
+          "images": [1]
         },
         {
           "title": "Leading Innovation with AI",
-          "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilised AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool.",
-          "images": [1]
+          "description": "Although my background is in Industrial Product Design, I initiated and directed the development of this web application to solve our workflow challenges. Facing the technical hurdle of coding the app from scratch, I utilised AI as a collaborative coding partner. I engineered the prompts and directed the AI to generate the necessary code structure, successfully building a functional AR/VR platform despite not being a software engineer. This approach allowed me to translate the design team's vision directly into a working digital tool."
         },
         {
           "title": "Intuitive Virtual Review (VR Mode)",

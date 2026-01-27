@@ -356,21 +356,46 @@ var projects = [
     "img": 4
   },
   {
-    "meta": "snap-n-flag",
-    "name": "Snap 'n Flag",
-    "description": "modular knife system design",
-    "type": "product-design",
-    "for": "Kai",
-    "published": "Dec 2019",
-    "feature": "yes",
-    "innerDescription": [
-      "Snap 'n flag is a personalized knife storing system. With the shaft stand, users can snap the knife sheaths to the shaft as a knife holder. Users can personalize the combination of knives to fit their daily practice. On the sheath, there is a feature called \"finger rest\". It is designed for users to hold the sheath and pull the knife out."
-    ],
-    "img": 0,
-    "video": [
-      "src=\"https://player.vimeo.com/video/440905990?byline=0&amp;portrait=0&amp;color=FCD110\" width=\"672\" height=\"378\" frameborder=\"0\" webkitallowfullscreen=\"\" mozallowfullscreen=\"\" allowfullscreen=\"\""
-    ]
-  },
+      "meta": "snap-n-flag",
+      "name": "Snap 'n Flag",
+      "description": "modular knife system design",
+      "type": "product-design",
+      "for": "Kai",
+      "published": "Dec 2019",
+      "feature": "yes",
+      "innerDescription": [
+        {
+          "title": "",
+          "description": "This modular knife storage system offers a fresh approach to organising and displaying kitchen cutlery. Rather than relying on the usual big wooden knife block, the design centres on a single cylindrical pillar rising from a sturdy, weighted circular base. Individual blade covers clip securely onto the pillar using elastic snap-fit mechanisms, each one fully encasing the blade for safety.",
+          "images": [1]
+        },
+        {
+          "title": "Core Mechanism and Everyday Use",
+          "description": "The covers attach at subtly different heights along the pillar, ensuring they never interfere with one another regardless of how many are fitted. As the pillar is perfectly round, each cover can be positioned at any point around the full 360 degrees and rotated smoothly by hand. This produces a neat radial arrangement that generally occupies around 40% less worktop space than a conventional slotted knife block. While keeping every handle clearly visible and within easy reach, much like the familiar arrangement of condiments or utensils on a classic revolving lazy Susan or carousel stand.",
+          "images": [2]
+        },
+        {
+          "title": "Practical and Ergonomic Features",
+          "description": "Each cover is shaped to closely follow the blade profile and features ventilation holes to allow knives to dry properly after washing. A small protruding press-tab on the reverse side enables one smooth, controlled motion to withdraw the knife. The clip itself incorporates flat contact areas, so that when a cover is removed it can stand stably on the worktop during food preparation or cleaning. The side-mounted and staggered clips position the handles at a natural outward angle, making them comfortable and intuitive to grasp.",
+          "images": [3, 4]
+        },
+        {
+          "title": "Modularity and Future-Proof Value",
+          "description": "The system is deliberately designed to grow with the user. One can begin with just a handful of covers for everyday knives, then gradually add others for more specialised blades such as a santoku, bread knife, utility knife, or kitchen scissors. This incremental approach allows investment over time rather than requiring the purchase of a full set from the outset.",
+          "images": [5]
+        },
+        {
+          "title": "Aesthetic and Emotional Appeal",
+          "description": "Beyond its practical merits, the rotating radial layout and crisp, sculptural form elevate simple storage into something almost kinetic, a small, lively piece of kitchen design that sits cheerfully on the counter. The design thoughtfully balances genuine kitchen requirements (space efficiency, safety, rapid drying, straightforward access) with a touch of playful interaction and inherent expandability, resulting in a solution that feels both thoroughly useful and quietly satisfying to use day after day."
+        }
+      ],
+      "img": 5,
+      "video": [
+        "src=\"https://player.vimeo.com/video/440905990?byline=0&amp;portrait=0&amp;color=FCD110\" width=\"672\" height=\"378\" frameborder=\"0\" webkitallowfullscreen=\"\" mozallowfullscreen=\"\" allowfullscreen=\"\""
+      ],
+      "download": "https://ipforce.jp/patent-jp-B9-6704558",
+      "downloadText": "view patent"
+    },
   {
     "meta": "slickcase",
     "name": "Slick Case",

@@ -80,8 +80,8 @@ var projects = [
       "feature": "yes",
       "innerDescription": [
         {
-          "title": "Case Study: Knife Engraving Customiser",
-          "description": "Optimising Bespoke Production through User-Led Design. The Knife Engraving Customiser is an interactive web tool designed to streamline the personalisation of premium kitchenware. By shifting design control to the customer, the platform eliminates creative guesswork and automates the transition from digital preview to physical engraving.",
+          "title": "",
+          "description": "The Knife Engraving Customiser is an interactive web tool designed to streamline the personalisation of premium kitchenware. By shifting design control to the customer, the platform eliminates creative guesswork and automates the transition from digital preview to physical engraving.",
           "images": [1]
         },
         {
@@ -91,7 +91,7 @@ var projects = [
         {
           "title": "The Solution: A Self-Service Design Tool",
           "description": "I developed a responsive 'What You See Is What You Get' (WYSIWYG) application. This tool empowers customers to act as the final signatory on their designs, ensuring the output matches their vision perfectly.",
-          "images": [2, 4]
+          "images": [2, 3]
         },
         {
           "title": "Key Functionalities",
@@ -110,7 +110,7 @@ var projects = [
         {
           "title": "Impact & Results",
           "description": "The customiser has successfully bridged the gap between customer intent and operational output. By removing the friction of manual artwork preparation, the system transforms bespoke engraving into a scalable, error-free process. The result is a significant increase in production throughput and heightened consumer confidence, as the real-time preview serves as a definitive blueprint for the final product.",
-          "images": [5]
+          "images": [4, 5]
         }
       ],
       "img": 5,

@@ -205,7 +205,7 @@ var projects = [
     "type": "uiux",
     "for": "personal branding",
     "published": "Jul 2022",
-    "feature": "yes",
+    "feature": "",
     "innerDescription": [
       {
         "title": "Embracing Challenges",

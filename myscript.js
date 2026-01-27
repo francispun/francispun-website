@@ -210,6 +210,38 @@ function templateAfter() {
         newDiv += `</div>`;
       }
 
+      const usedGifs = new Set();
+      if (project.innerDescription) {
+        project.innerDescription.forEach(sec => {
+          if (sec.gifs) sec.gifs.forEach(i => usedGifs.add(i));
+        });
+      }
+
+      if (project.gif && project.gif > 0) {
+        let hasUnassignedGifs = false;
+        for (let i = 1; i <= project.gif; i++) {
+          if (!usedGifs.has(i)) {
+            hasUnassignedGifs = true;
+            break;
+          }
+        }
+
+        if (hasUnassignedGifs) {
+          newDiv += `<div class="project-gif-gallery mt-5">`;
+
+          for (let i = 1; i <= project.gif; i++) {
+            if (!usedGifs.has(i)) {
+              newDiv += `<img class="project-img project-gif" 
+                             src="my-designs/${project.meta}-${i}.gif" 
+                             alt="${project.name} animation ${i}" 
+                             loading="lazy">`;
+            }
+          }
+
+          newDiv += `</div>`;
+        }
+      }
+
       const usedVideos = new Set();
       if (project.innerDescription) {
         project.innerDescription.forEach(sec => {

@@ -81,7 +81,7 @@ var projects = [
       "innerDescription": [
         {
           "title": "",
-          "description": "The Knife Engraving Customiser is an interactive web tool designed to streamline the personalisation of premium kitchenware. By shifting design control to the customer, the platform eliminates creative guesswork and automates the transition from digital preview to physical engraving.",
+          "description": "The Product Engraving Customiser is an interactive web tool designed to streamline the personalisation of premium kitchenware. By shifting design control to the customer, the platform eliminates creative guesswork and automates the transition from digital preview to physical engraving.",
           "images": [1]
         },
         {

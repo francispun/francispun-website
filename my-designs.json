@@ -163,6 +163,38 @@ var projects = [
       "download": "https://product-viewer.francispun.com/",
       "downloadText": "view demo"
     },
+    {
+      "meta": "dripez-secondz",
+      "name": "SecondZ",
+      "description": "collapsible food storage",
+      "type": "product-design",
+      "for": "DripEZ",
+      "published": "Feb 2025",
+      "feature": "yes",
+      "innerDescription": [
+        {
+          "title": "",
+          "description": "The brief was to expand the Drip EZ product family into everyday kitchen storage, building directly on the success of the Prep Tub. Recognising that the Prep Tub's collapsible silicone sides, robust proportions, and distinctive lid features, such as the integrated lifting handle, resonated strongly with users. The goal was to adapt these iconic elements into a more compact, versatile food storage system. The result is Secondz® becomes a high-growth, best-selling series that addresses common pain points like overflowing cabinets and bulky containers, while maintaining the brand's signature practical and durable aesthetic.",
+          "images": [1]
+        },
+        {
+          "title": "Design Concept and Evolution",
+          "description": "The core idea drew inspiration from the Prep Tub's visual language to ensure brand cohesion. We retained the characteristic lid profile with its easy-grip handle for intuitive lifting, along with the familiar broad, stable proportions that give the products a premium, trustworthy feel. To differentiate and enhance functionality for storage, we refined key details: the Prep Tub's grooves were evolved into subtle stacking dents on the base of each Secondz container, improving secure alignment when stacked in the fridge or cupboard. The collapsible silicone walls were optimised for repeated expansion and compression, paired with airtight, leakproof locking lids that prevent spills and preserve freshness. This approach allowed the line to feel like a natural extension of the Prep Tub family — familiar yet distinctly tailored for daily meal prep, leftovers, and portion control.",
+          "images": [2, 3, 4, 5]
+        },
+        {
+          "title": "Key Features and Sizes",
+          "description": "Secondz is available in practical sizes, including Single Serve (16oz) for individual portions and Multi-Serve (32oz) for family meals or batch cooking. The containers collapse flat when empty, saving up to 70% of cabinet space, which is a game-changer for busy kitchens with limited storage. Made from BPA-free silicone and plastic, they are microwave-safe, freezer-safe, and dishwasher-safe (top rack recommended).",
+          "images": [6, 7]
+        },
+        {
+          "title": "Impact and Outcome",
+          "description": "Since launch, Secondz has quickly become one of Drip EZ's highest-growth and best-selling items, appealing to home cooks who value space efficiency without compromising on quality or performance. The series has expanded in response to strong demand, with additional sizes and colours added following the initial success. This project highlights my approach to iterative design: leveraging established brand strengths to create complementary products that solve real user problems in fresh and intuitive ways.",
+          "images": [8]
+        }
+      ],
+      "img": 8,
+    },
   {
     "meta": "financeschool",
     "name": "Finance School",
@@ -551,7 +583,7 @@ var projects = [
     "type": "product-design",
     "for": "Kool",
     "published": "Mar 2017",
-    "feature": "yes",
+    "feature": "",
     "innerDescription": [
       "Encourage the healthy life food trend by making your snack bars. With its dual-function lid, it acts as a snack bar mold press as well as a to-go container. The sliding lid feature allows for an opening of selected compartments. Silicone mold makes popping out the snack bars easy. Carries up to 4 snack bars for a full day of supplemental energy. The compact size is perfect for any bag."
     ],

@@ -174,12 +174,12 @@ var projects = [
       "innerDescription": [
         {
           "title": "",
-          "description": "The brief was to expand the Drip EZ product family into everyday kitchen storage, building directly on the success of the Prep Tub. Recognising that the Prep Tub's collapsible silicone sides, robust proportions, and distinctive lid features, such as the integrated lifting handle, resonated strongly with users. The goal was to adapt these iconic elements into a more compact, versatile food storage system. The result is Secondz® becomes a high-growth, best-selling series that addresses common pain points like overflowing cabinets and bulky containers, while maintaining the brand's signature practical and durable aesthetic.",
+          "description": "The brief was to expand the DripEZ product family into everyday kitchen storage, building directly on the success of the Prep Tub. Recognising that the Prep Tub's collapsible sides, robust proportions, and distinctive lid features, such as the integrated lifting handle, resonated strongly with users. The goal was to adapt these iconic elements into a more compact, versatile food storage system. The result is Secondz® becomes a high-growth, best-selling series that addresses common pain points like overflowing cabinets and bulky containers, while maintaining the brand's signature practical and durable aesthetic.",
           "images": [1]
         },
         {
           "title": "Design Concept and Evolution",
-          "description": "The core idea drew inspiration from the Prep Tub's visual language to ensure brand cohesion. We retained the characteristic lid profile with its easy-grip handle for intuitive lifting, along with the familiar broad, stable proportions that give the products a premium, trustworthy feel. To differentiate and enhance functionality for storage, we refined key details: the Prep Tub's grooves were evolved into subtle stacking dents on the base of each Secondz container, improving secure alignment when stacked in the fridge or cupboard. The collapsible silicone walls were optimised for repeated expansion and compression, paired with airtight, leakproof locking lids that prevent spills and preserve freshness. This approach allowed the line to feel like a natural extension of the Prep Tub family — familiar yet distinctly tailored for daily meal prep, leftovers, and portion control.",
+          "description": "The core idea drew inspiration from the Prep Tub's visual language to ensure brand cohesion. We retained the characteristic lid profile with its easy-grip handle for intuitive lifting, along with the familiar broad, stable proportions that give the products a premium, trustworthy feel. To differentiate and enhance functionality for storage, we refined key details: the Prep Tub's grooves were evolved into subtle stacking dents on the lid of each Secondz, improving secure alignment when stacked in the fridge or cupboard. The collapsible silicone walls were optimised for repeated expansion and compression, paired with airtight, leakproof locking lids that prevent spills and preserve freshness. This approach allowed the line to feel like a natural extension of the Prep Tub family — familiar yet distinctly tailored for daily meal prep, leftovers, and portion control.",
           "images": [2, 3, 4, 5]
         },
         {
@@ -189,7 +189,7 @@ var projects = [
         },
         {
           "title": "Impact and Outcome",
-          "description": "Since launch, Secondz has quickly become one of Drip EZ's highest-growth and best-selling items, appealing to home cooks who value space efficiency without compromising on quality or performance. The series has expanded in response to strong demand, with additional sizes and colours added following the initial success. This project highlights my approach to iterative design: leveraging established brand strengths to create complementary products that solve real user problems in fresh and intuitive ways.",
+          "description": "Since launch, Secondz has quickly become one of DripEZ's highest-growth and best-selling items, appealing to home cooks who value space efficiency without compromising on quality or performance. The series has expanded in response to strong demand, with additional sizes and colours added following the initial success. This project highlights my approach to iterative design: leveraging established brand strengths to create complementary products that solve real user problems in fresh and intuitive ways.",
           "images": [8]
         }
       ],

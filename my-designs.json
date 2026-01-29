@@ -190,10 +190,10 @@ var projects = [
         {
           "title": "Impact and Outcome",
           "description": "Since launch, Secondz has quickly become one of DripEZ's highest-growth and best-selling items, appealing to home cooks who value space efficiency without compromising on quality or performance. The series has expanded in response to strong demand, with additional sizes and colours added following the initial success. This project highlights my approach to iterative design: leveraging established brand strengths to create complementary products that solve real user problems in fresh and intuitive ways.",
-          "images": [8]
+          "images": [8, 9]
         }
       ],
-      "img": 8,
+      "img": 9,
     },
   {
     "meta": "financeschool",

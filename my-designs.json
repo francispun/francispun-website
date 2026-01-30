@@ -60,8 +60,8 @@ var projects = [
         "title": "Frictionless Connectivity via Floating Action Button",
         "description": [
           "To maximize conversion—defined here as successfully saving a contact—we have engineered a persistent User Experience (UX) feature. A floating 'Add Contact' button remains sticky at the bottom of the screen, hovering above the content regardless of how far the user scrolls. This eliminates the need to scroll to the footer to find action buttons. Upon clicking, this button triggers the device’s native contact application, prompting the user to save the new contact immediately.",
+        ],
         "images": [2, 3]
-        ]
       },
       {
         "title": "Internal Generator & VCF Export Workflow",

@@ -53,22 +53,25 @@ var projects = [
       },
       {
         "title": "User Interface Design and Visual Hierarchy",
-        "description": "The front-end user interface is designed with a 'mobile-first' philosophy, prioritizing visual impact and ease of navigation. Key design elements include a prominent, eye-catching profile picture and a clean presentation of the user's name and professional details. To ensure accessibility, a language toggle switch is strategically placed in the top-right corner, allowing viewers to instantly swap between English and Chinese versions of the profile without reloading the page or losing context."
+        "description": "The front-end user interface is designed with a 'mobile-first' philosophy, prioritizing visual impact and ease of navigation. Key design elements include a prominent, eye-catching profile picture and a clean presentation of the user's name and professional details. To ensure accessibility, a language toggle switch is strategically placed in the top-right corner, allowing viewers to instantly swap between English and Chinese versions of the profile without reloading the page or losing context.",
+        "images": [1]
       },
       {
         "title": "Frictionless Connectivity via Floating Action Button",
         "description": [
-          "To maximize conversion—defined here as successfully saving a contact—we have engineered a persistent User Experience (UX) feature. A floating 'Add Contact' button remains sticky at the bottom of the screen, hovering above the content regardless of how far the user scrolls. This eliminates the need to scroll to the footer to find action buttons. Upon clicking, this button triggers the device’s native contact application, prompting the user to save the new contact immediately."
+          "To maximize conversion—defined here as successfully saving a contact—we have engineered a persistent User Experience (UX) feature. A floating 'Add Contact' button remains sticky at the bottom of the screen, hovering above the content regardless of how far the user scrolls. This eliminates the need to scroll to the footer to find action buttons. Upon clicking, this button triggers the device’s native contact application, prompting the user to save the new contact immediately.",
+        "images": [2, 3]
         ]
       },
       {
         "title": "Internal Generator & VCF Export Workflow",
-        "description": "For internal efficiency, we utilized AI to help code a custom E-Namecard generator interface. This tool allows administrators to input personal data once and automatically export two distinct vCard (.vcf) files—one in English and one in Chinese. This ensures that the downloadable contact file always matches the language currently displayed on the screen."
+        "description": "For internal efficiency, we utilized AI to help code a custom E-Namecard generator interface. This tool allows administrators to input personal data once and automatically export two distinct vCard (.vcf) files—one in English and one in Chinese. This ensures that the downloadable contact file always matches the language currently displayed on the screen.",
+        "images": [4]
       }
     ],
     "img": 4,
     "download": "https://contacts.koolfoundation.org/#francispun",
-    "downloadText": "view my card"
+    "downloadText": "view my namecard"
   },
     {
       "meta": "product-engraving-customiser",

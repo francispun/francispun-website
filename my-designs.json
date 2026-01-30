@@ -76,7 +76,7 @@ var projects = [
     {
       "meta": "product-engraving-customiser",
       "name": "Product Engraving Customiser",
-      "description": "user-led bespoke production interface",
+      "description": "bespoke engraving UI",
       "type": "uiux",
       "for": "Kool",
       "published": "Jun 2025",

@@ -29,7 +29,7 @@ const myCV = [
   },
   {
     "jobCompany": "Arctomys",
-    "companyDesc": "Hong Kong-based fashion and accessories brand co-founded by two local designers.",
+    "companyDesc": "Hong Kong-based fashion and accessories brand co-founded by two Hong Kong local designers.",
     "jobTitle": "Co-founder & Designer",
     "jobDate": "2018.05 – 2021.09",
     "jobAchieve": {

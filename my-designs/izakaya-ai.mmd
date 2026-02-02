@@ -1,0 +1,43 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    Entry@{ label: "Izakaya AI APP<br><p dir=\"auto\" style=\"white-space:\">Menu Screen<br></p>" } --> Actions{"What you can do next"}
+    Actions --> Lang["🌐 Switch language<br>(English / 中文 / 日本語)"] & Browse["Browse categories<br>(Sake → Skewers → Appetizers → Mains)"] & AddFromMenu["Tap +Add on any dish<br>in the menu grid"] & Cart["🛒 Open Cart<br>(header icon or button)"] & AI["⭐ Tap AI Assistant<br>(floating button, bottom-left)"]
+    Lang --> UpdateLang["Everything updates instantly<br>Names, descriptions, buttons – all in your language"]
+    UpdateLang --> Entry
+    Browse --> ShowCategory["Selected category <br>fills the grid:<br>thumbnails, names, prices, and +Add buttons"]
+    ShowCategory --> AddFromMenu
+    AddFromMenu --> AddItem["Dish added to your current round<br>Quantity increases if already there<br>Cart badge updates smoothly"]
+    AI --> AIChat["AI chat opens gently<br>First time: Warm greeting in your language 😊"]
+    AIChat --> ChatLoop{"Chat with your AI Assistant"} & CloseChat["Close chat anytime"]
+    ChatLoop --> Ask["You send a message<br>(e.g. “What’s good with sake?” or “I’m vegetarian”)"]
+    Ask --> Response["AI replies personally<br>Knows your cart, past orders, language, and chat history<br>Suggests pairings and personalized dishes<br>Recommended items show +Add buttons right in the chat"]
+    Response --> AddFromAI["Tap +Add in the AI message<br>→ Item added instantly"] & Continue["Keep chatting<br>AI remembers and refines suggestions"]
+    AddFromAI --> AddItem
+    Continue --> ChatLoop
+    AddItem --> Entry
+    Cart --> CartModal["Cart slides in smoothly"]
+    CartModal --> Current["View &amp; edit Current Round<br>Adjust quantities with + / −<br>See subtotal"] & History["See Confirmed Orders<br>(previous rounds sent tonight)"]
+    Current --> ConfirmQ{"Ready to send this round?"}
+    ConfirmQ -- Yes --> ConfirmOrder["Order sent to kitchen!<br>Current round moves to Confirmed Orders<br>Start fresh for next round 🍻"]
+    ConfirmOrder --> CartModal
+    ConfirmQ -- No / Close --> Entry
+    History --> PayQ{"Ready to pay the bill?"}
+    PayQ -- Yes --> Settle["Bill settled<br>Thank you! Session clears<br>Ready for your next visit 🌸"]
+    Settle --> Entry
+    CloseChat --> Entry
+
+    Entry@{ shape: rect}
+    style Entry fill:#D50000, color:#92400e, stroke:#f59e0b,color:#FFFFFF,stroke:#FFFFFF
+    style AI fill:#7c3aed, color:#fff, stroke:#a78bfa, stroke-width:4px
+    style ShowCategory fill:#fef3c7, color:#92400e, stroke:#f59e0b
+    style AddItem fill:#dc2626, color:#fff
+    style AIChat fill:#ddd6fe, color:#4c1d95, stroke:#7c3aed, stroke-width:3px
+    style ChatLoop fill:#ddd6fe, color:#4c1d95
+    style Ask fill:#c4b5fd, color:#1e1b4b
+    style Response fill:#ddd6fe, color:#4c1d95, stroke:#7c3aed, stroke-width:2px
+    style AddFromAI fill:#7c3aed, color:#fff
+    style ConfirmOrder fill:#b91c1c, color:#fff
+    style Settle fill:#16a34a, color:#fff

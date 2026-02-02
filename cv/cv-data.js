@@ -6,10 +6,9 @@ const myCV = [
     "jobDate": "2021.09 – Present (Promoted Aug 2025)",
     "jobAchieve": {
       "Design & Innovation": [
-        "Initiated Kool OBM and multiple ODM projects: Delivered customer-centric designs aligned with brand identity.",
-        "Orchestrated cohesive e-commerce platform ensuring brand consistency across digital channels, contributing to sustained online visibility and average ~10% monthly sales growth, with peaks up to 200% in certain periods (combined with marketing efforts).",
-        "Developed virtual prototyping web app (AI-assisted): Eliminated 2–3 early physical prototyping cycles, significantly reducing time and costs.",
-        "Managed customized laser engraving service launch for niche personalized market."
+        "Initiated Kool OBM and multiple ODM projects: Delivered innovative, customer-centric designs aligned with brand identity.",
+        "Orchestrated e-commerce platform enhancements and personalised laser engraving service launch, contributing to ~10% average monthly sales growth (peaks 200% during campaigns).",
+        "Developed virtual prototyping web app (AI-assisted): Eliminated 2–3 early physical prototyping cycles, significantly reducing time and costs."
       ],
       "Leadership & AI Integration": [
         "Promoted to lead all product design projects with focus on innovation, feasibility, and brand integrity; oversee online shop and social media backend management.",

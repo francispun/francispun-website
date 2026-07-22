@@ -3,7 +3,7 @@ const myCV = [
     "jobCompany": "Kool Ltd",
     "companyDesc": "Kool Ltd. is a Hong Kong company that designs and manufactures high-quality, innovative kitchen and household products under the renowned Kool brand, as well as for other brands.",
     "jobTitle": "Senior Product Designer & AI Integration Specialist",
-    "jobDate": "2021.09 – Present (Promoted Aug 2025)",
+    "jobDate": "2021.09 – 2026.06",
     "jobAchieve": {
       "Design & Innovation": [
         "Initiated Kool OBM and multiple ODM projects: Delivered innovative, customer-centric designs aligned with brand identity.",
@@ -20,7 +20,7 @@ const myCV = [
     "jobCompany": "Computer Academy",
     "companyDesc": "Leading Hong Kong software training company providing courses for organizations and individuals.",
     "jobTitle": "Part-time Trainer",
-    "jobDate": "2012.12 – Present",
+    "jobDate": "2012.12 – 2026.06",
     "jobAchieve": {
       "Teaching Experience": [
         "Over 13 years guiding students (secondary to professionals) in Photoshop, Illustrator, InDesign, Premiere Pro, Excel — in English and Chinese."

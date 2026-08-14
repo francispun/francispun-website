@@ -59,7 +59,7 @@ var projects = [
       {
         "title": "Frictionless Connectivity via Floating Action Button",
         "description": [
-          "To maximize conversion—defined here as successfully saving a contact—we have engineered a persistent User Experience (UX) feature. A floating 'Add Contact' button remains sticky at the bottom of the screen, hovering above the content regardless of how far the user scrolls. This eliminates the need to scroll to the footer to find action buttons. Upon clicking, this button triggers the device’s native contact application, prompting the user to save the new contact immediately.",
+          "To maximize conversion—defined here as successfully saving a contact—we have engineered a persistent User Experience (UX) feature. A floating 'Add Contact' button remains sticky at the bottom of the screen, hovering above the content regardless of how far the user scrolls. This eliminates the need to scroll to the footer to find action buttons. Upon clicking, this button triggers the device’s native contact application, prompting the user to save the new contact immediately."
         ],
         "images": [2, 3]
       },
@@ -108,7 +108,7 @@ var projects = [
         },
         {
           "title": "Technical Implementation",
-          "description": "Built using HTML5, CSS3, and JavaScript (Canvas API), the project leveraged AI-assisted coding to rapidly transition from concept to a functional tool. This architecture allows the customiser to integrate directly into our workshop’s existing digital workflow.",
+          "description": "Built using HTML5, CSS3, and JavaScript (Canvas API), the project leveraged AI-assisted coding to rapidly transition from concept to a functional tool. This architecture allows the customiser to integrate directly into our workshop’s existing digital workflow."
         },
         {
           "title": "Impact & Results",
@@ -196,7 +196,7 @@ var projects = [
           "images": [8, 9]
         }
       ],
-      "img": 9,
+      "img": 9
     },
   {
     "meta": "financeschool",
@@ -207,8 +207,14 @@ var projects = [
     "published": "Aug 2022",
     "feature": "",
     "innerDescription": [
-      "The Finance School project is a student endeavor undertaken as part of the Google UX Design Professional Certificate program, with a focus on designing for social good. The objective of this project was to address the need for improved financial and economic knowledge among young adults, enabling them to effectively utilize fintech tools to enhance their financial well-being.",
-      "As a UX designer, my role encompassed a comprehensive range of tasks and responsibilities. This included creating detailed personas to understand the target audience, developing both paper and digital wireframes to visualize the app and website interfaces, crafting low and high-fidelity prototypes for conducting rigorous usability studies, establishing an effective information architecture, ensuring accessibility considerations were integrated into the design process, and iteratively refining the designs based on feedback and insights."
+      {
+        "title": "",
+        "description": "The Finance School project is a student endeavor undertaken as part of the Google UX Design Professional Certificate program, with a focus on designing for social good. The objective of this project was to address the need for improved financial and economic knowledge among young adults, enabling them to effectively utilize fintech tools to enhance their financial well-being."
+      },
+      {
+        "title": "",
+        "description": "As a UX designer, my role encompassed a comprehensive range of tasks and responsibilities. This included creating detailed personas to understand the target audience, developing both paper and digital wireframes to visualize the app and website interfaces, crafting low and high-fidelity prototypes for conducting rigorous usability studies, establishing an effective information architecture, ensuring accessibility considerations were integrated into the design process, and iteratively refining the designs based on feedback and insights."
+      }
     ],
     "img": 16,
     "download": "https://www.figma.com/proto/2vvhkAjarIzuCTH82jvv7T/financeschool-app?node-id=85%3A631&scaling=scale-down&page-id=85%3A630&starting-point-node-id=85%3A631",
@@ -223,10 +229,22 @@ var projects = [
     "published": "Aug 2022",
     "feature": "",
     "innerDescription": [
-      "The Cat Dog Planet project is a student endeavor undertaken as part of the Google UX Design Professional Certificate program. The project focuses on designing an app for an imaginary pet shop and adoption center that goes by the name of Cat Dog Planet.",
-      "As a UX designer, my primary objective was to create an app that places significant emphasis on simplifying and enhancing the pet adoption process. In Hong Kong, where most adoption centers rely on social media platforms for adoption applications, there exists a potential gap that the app seeks to address.",
-      "Throughout the project, I assumed the responsibility of various key tasks. This included creating detailed personas to gain a comprehensive understanding of the target audience and their needs. Additionally, I designed both paper and digital wireframes to conceptualize the app's user interface. To bring the designs to life, I developed low and high-fidelity prototypes that were used to conduct usability studies, allowing for valuable user feedback.",
-      "The project's iterative design process allowed for continuous improvement and refinement of the app's functionality and user experience. By addressing the identified gap in the adoption process through an intuitive and user-centric design approach, the Cat Dog Planet app aims to streamline and enhance the adoption experience for both prospective pet owners and the pet shop itself."
+      {
+        "title": "",
+        "description": "The Cat Dog Planet project is a student endeavor undertaken as part of the Google UX Design Professional Certificate program. The project focuses on designing an app for an imaginary pet shop and adoption center that goes by the name of Cat Dog Planet."
+      },
+      {
+        "title": "",
+        "description": "As a UX designer, my primary objective was to create an app that places significant emphasis on simplifying and enhancing the pet adoption process. In Hong Kong, where most adoption centers rely on social media platforms for adoption applications, there exists a potential gap that the app seeks to address."
+      },
+      {
+        "title": "",
+        "description": "Throughout the project, I assumed the responsibility of various key tasks. This included creating detailed personas to gain a comprehensive understanding of the target audience and their needs. Additionally, I designed both paper and digital wireframes to conceptualize the app's user interface. To bring the designs to life, I developed low and high-fidelity prototypes that were used to conduct usability studies, allowing for valuable user feedback."
+      },
+      {
+        "title": "",
+        "description": "The project's iterative design process allowed for continuous improvement and refinement of the app's functionality and user experience. By addressing the identified gap in the adoption process through an intuitive and user-centric design approach, the Cat Dog Planet app aims to streamline and enhance the adoption experience for both prospective pet owners and the pet shop itself."
+      }
     ],
     "img": 11,
     "download": "https://www.figma.com/proto/5zEOO2kpHDeMzjldyp71qR/Cat-Dog-Planet-(final)?node-id=68%3A1484&scaling=scale-down&page-id=57%3A17&starting-point-node-id=68%3A1831&show-proto-sidebar=1",
@@ -252,7 +270,10 @@ var projects = [
           "The logo serves as a visual representation of my diverse skill set. It takes the form of a 2D hexagon, which can also be perceived as a flattened 3D cube. Imprinted on this structure are my initials, F and P, symbolizing my proficiency in both 2D and 3D design realms. The hexagon assumes a pivotal role as the primary visual element throughout the website, reinforcing its visual identity and thematic consistency."
         ]
       },
-      "I wholeheartedly invite you to provide feedback regarding any potential UI/UX concerns or suggestions for improvement. Your valuable insights will be greatly appreciated, as I am committed to refining and enhancing this website to deliver an exceptional user experience."
+      {
+        "title": "",
+        "description": "I wholeheartedly invite you to provide feedback regarding any potential UI/UX concerns or suggestions for improvement. Your valuable insights will be greatly appreciated, as I am committed to refining and enhancing this website to deliver an exceptional user experience."
+      }
     ],
     "img": 0
   },
@@ -295,12 +316,18 @@ var projects = [
     "published": "Aug 2021",
     "feature": "",
     "innerDescription": [
-      "The Sachelle Collective New Collection Launch is an exciting freelance photography project focused on capturing stunning visuals for the brand's latest line of jewelry. The collection comprises a range of exquisite necklaces, earrings, and rings, showcasing the brand's commitment to style.",
+      {
+        "title": "",
+        "description": "The Sachelle Collective New Collection Launch is an exciting freelance photography project focused on capturing stunning visuals for the brand's latest line of jewelry. The collection comprises a range of exquisite necklaces, earrings, and rings, showcasing the brand's commitment to style."
+      },
       {
         "title": "Model Shooting",
         "description": "Showcasing the jewelry collection in a real-life context by capturing images of models wearing the jewelry. The photographs provide a sense of how the pieces look when worn, allowing potential customers to visualize themselves wearing the collection and inspiring them to make a purchase."
       },
-      "Throughout the project, utmost attention is given to lighting, composition, and styling to ensure that the photographs effectively convey the elegance and allure of the Sachelle Collective's new collection."
+      {
+        "title": "",
+        "description": "Throughout the project, utmost attention is given to lighting, composition, and styling to ensure that the photographs effectively convey the elegance and allure of the Sachelle Collective's new collection."
+      }
     ],
     "img": 5
   },
@@ -313,8 +340,14 @@ var projects = [
     "published": "2020 - 2021",
     "feature": "",
     "innerDescription": [
-      "The QDO Photography Project involved multiple assignments for social media, e-commerce, packaging, and product launching press releases. As the designer, I was responsible for creating layouts, selecting props, and setting up lighting to capture the Scandinavian vibe of this lifestyle tableware brand.",
-      "With a focus on coffee and tea items, the photography aimed to showcase the unique Scandinavian aesthetic of QDO. For social media and e-commerce, I carefully arranged the tableware, utilized suitable props, and employed lighting techniques to create visually appealing images that would attract potential customers. The goal was to convey the brand's quality and sophistication while evoking a sense of lifestyle and ambiance."
+      {
+        "title": "",
+        "description": "The QDO Photography Project involved multiple assignments for social media, e-commerce, packaging, and product launching press releases. As the designer, I was responsible for creating layouts, selecting props, and setting up lighting to capture the Scandinavian vibe of this lifestyle tableware brand."
+      },
+      {
+        "title": "",
+        "description": "With a focus on coffee and tea items, the photography aimed to showcase the unique Scandinavian aesthetic of QDO. For social media and e-commerce, I carefully arranged the tableware, utilized suitable props, and employed lighting techniques to create visually appealing images that would attract potential customers. The goal was to convey the brand's quality and sophistication while evoking a sense of lifestyle and ambiance."
+      }
     ],
     "img": 8
   },
@@ -327,10 +360,22 @@ var projects = [
     "published": "Jul 2021",
     "feature": "",
     "innerDescription": [
-      "The QDO Website project was created with the primary goal of engaging both B2B clients and B2C customers. The website design caters to the specific needs of these two target audiences, offering distinct features to enhance their experience with the brand.",
-      "For B2B clients, the website incorporates mood boards and detailed product information to provide a comprehensive understanding of QDO's brand image and the potential business opportunities that exist. The mood boards visually communicate the brand's identity and aesthetic, while the product details offer insights into the range of products available and their unique features. This information helps B2B clients make informed decisions and explore potential collaborations with QDO.",
-      "Simultaneously, the website provides a seamless shopping experience for B2C customers through an Amazon brand store link. This feature allows interested B2C customers to directly access and purchase QDO products via the trusted and widely recognized Amazon platform. By providing this convenient shopping option, the website effectively caters to the needs and preferences of its target audiences, enabling them to easily discover and purchase QDO's lifestyle tableware.",
-      "The overall objective of the project was to create a versatile and user-friendly website that serves both B2B and B2C purposes. By offering comprehensive brand information and facilitating convenient online shopping, the QDO website successfully engages and caters to the diverse needs of its target audiences, fostering business collaborations and driving direct consumer sales."
+      {
+        "title": "",
+        "description": "The QDO Website project was created with the primary goal of engaging both B2B clients and B2C customers. The website design caters to the specific needs of these two target audiences, offering distinct features to enhance their experience with the brand."
+      },
+      {
+        "title": "",
+        "description": "For B2B clients, the website incorporates mood boards and detailed product information to provide a comprehensive understanding of QDO's brand image and the potential business opportunities that exist. The mood boards visually communicate the brand's identity and aesthetic, while the product details offer insights into the range of products available and their unique features. This information helps B2B clients make informed decisions and explore potential collaborations with QDO."
+      },
+      {
+        "title": "",
+        "description": "Simultaneously, the website provides a seamless shopping experience for B2C customers through an Amazon brand store link. This feature allows interested B2C customers to directly access and purchase QDO products via the trusted and widely recognized Amazon platform. By providing this convenient shopping option, the website effectively caters to the needs and preferences of its target audiences, enabling them to easily discover and purchase QDO's lifestyle tableware."
+      },
+      {
+        "title": "",
+        "description": "The overall objective of the project was to create a versatile and user-friendly website that serves both B2B and B2C purposes. By offering comprehensive brand information and facilitating convenient online shopping, the QDO website successfully engages and caters to the diverse needs of its target audiences, fostering business collaborations and driving direct consumer sales."
+      }
     ],
     "img": 13,
     "download": "https://drive.google.com/file/d/1tPtw8DiiWZxFjbhPeQm2ZZpLZeZtlUKc/view?usp=sharing",
@@ -345,10 +390,22 @@ var projects = [
     "published": "May 2021",
     "feature": "",
     "innerDescription": [
-      "The Homeasy Website Project focuses on engaging and converting B2B clients through a strategically designed website. The primary objective is to showcase Homeasy's products and their backgrounds, establishing credibility and trust with potential clients.",
-      "Through compelling product presentations and informative content, the website effectively communicates the value and benefits of Homeasy's offerings. The design and layout of the website are carefully crafted to capture the attention of B2B clients and provide a seamless user experience.",
-      "The project further aims to build trust and credibility by sharing the backgrounds and expertise of Homeasy. This helps potential clients understand the company's experience and knowledge in delivering high-quality products and services. The website strategically incorporates this information to position Homeasy as a reliable and reputable partner for B2B collaborations.",
-      "To convert B2B clients into sales leads, the website implements effective call-to-action elements and lead generation strategies. These include clear and compelling prompts for potential clients to contact Homeasy, request more information, or engage in further discussions about potential collaborations. By facilitating seamless communication and providing easy access to relevant contact information, the website project aims to generate valuable sales leads and foster long-term business relationships."
+      {
+        "title": "",
+        "description": "The Homeasy Website Project focuses on engaging and converting B2B clients through a strategically designed website. The primary objective is to showcase Homeasy's products and their backgrounds, establishing credibility and trust with potential clients."
+      },
+      {
+        "title": "",
+        "description": "Through compelling product presentations and informative content, the website effectively communicates the value and benefits of Homeasy's offerings. The design and layout of the website are carefully crafted to capture the attention of B2B clients and provide a seamless user experience."
+      },
+      {
+        "title": "",
+        "description": "The project further aims to build trust and credibility by sharing the backgrounds and expertise of Homeasy. This helps potential clients understand the company's experience and knowledge in delivering high-quality products and services. The website strategically incorporates this information to position Homeasy as a reliable and reputable partner for B2B collaborations."
+      },
+      {
+        "title": "",
+        "description": "To convert B2B clients into sales leads, the website implements effective call-to-action elements and lead generation strategies. These include clear and compelling prompts for potential clients to contact Homeasy, request more information, or engage in further discussions about potential collaborations. By facilitating seamless communication and providing easy access to relevant contact information, the website project aims to generate valuable sales leads and foster long-term business relationships."
+      }
     ],
     "img": 5,
     "download": "https://drive.google.com/file/d/1eh2KcNj2OfLX-M6ZUI4L6ht7ULQqlQut/view?usp=sharing",
@@ -394,7 +451,10 @@ var projects = [
     "published": "2019 - 2020",
     "feature": "",
     "innerDescription": [
-      "As a designer supporting the Kai marketing team, I was responsible for creating a variety of assets to help promote the brand and its products. This included developing engaging social media content as well as other miscellaneous design projects.",
+      {
+        "title": "",
+        "description": "As a designer supporting the Kai marketing team, I was responsible for creating a variety of assets to help promote the brand and its products. This included developing engaging social media content as well as other miscellaneous design projects."
+      },
       {
         "title": "Social Media Content Creation",
         "description": [
@@ -491,7 +551,10 @@ var projects = [
     "published": "2018 - 2019",
     "feature": "",
     "innerDescription": [
-      "Multiple design projects are designed for the Slick Case marketing team for their website, social media, and editorials."
+      {
+        "title": "",
+        "description": "Multiple design projects are designed for the Slick Case marketing team for their website, social media, and editorials."
+      }
     ],
     "img": 9,
     "gif": 3
@@ -505,7 +568,10 @@ var projects = [
     "published": "2018 - 2019",
     "feature": "",
     "innerDescription": [
-      "3D visualization designs for Sportsoho's event proposals for their clients. The renderings were also used in their later advertisement."
+      {
+        "title": "",
+        "description": "3D visualization designs for Sportsoho's event proposals for their clients. The renderings were also used in their later advertisement."
+      }
     ],
     "img": 15
   },
@@ -518,7 +584,10 @@ var projects = [
     "published": "2018 - 2019",
     "feature": "",
     "innerDescription": [
-      "Event backdrop designs and booklet designs for HKPA event."
+      {
+        "title": "",
+        "description": "Event backdrop designs and booklet designs for HKPA event."
+      }
     ],
     "img": 12
   },
@@ -531,7 +600,10 @@ var projects = [
     "published": "Sep 2017",
     "feature": "",
     "innerDescription": [
-      "This is a web design project for Kool. I was responsible for the whole project, from graphic design, to layout, to prototyping, to communication with the developer, and to content data entry for launching. During the development period, the prototype was used to conduct user experience interviews with management to get feedback and approval. Management believed it's better to have all icons on the nav bar than text. After the compromise, there was a mouse-over effect to switch the nav bar icons to text. The website was no longer active after 2019."
+      {
+        "title": "",
+        "description": "This is a web design project for Kool. I was responsible for the whole project, from graphic design, to layout, to prototyping, to communication with the developer, and to content data entry for launching. During the development period, the prototype was used to conduct user experience interviews with management to get feedback and approval. Management believed it's better to have all icons on the nav bar than text. After the compromise, there was a mouse-over effect to switch the nav bar icons to text. The website was no longer active after 2019."
+      }
     ],
     "img": 0,
     "download": "./kool-demo/index.html",
@@ -608,7 +680,10 @@ var projects = [
     "published": "Mar 2017",
     "feature": "",
     "innerDescription": [
-      "Encourage the healthy life food trend by making your snack bars. With its dual-function lid, it acts as a snack bar mold press as well as a to-go container. The sliding lid feature allows for an opening of selected compartments. Silicone mold makes popping out the snack bars easy. Carries up to 4 snack bars for a full day of supplemental energy. The compact size is perfect for any bag."
+      {
+        "title": "",
+        "description": "Encourage the healthy life food trend by making your snack bars. With its dual-function lid, it acts as a snack bar mold press as well as a to-go container. The sliding lid feature allows for an opening of selected compartments. Silicone mold makes popping out the snack bars easy. Carries up to 4 snack bars for a full day of supplemental energy. The compact size is perfect for any bag."
+      }
     ],
     "img": 0,
     "video": [
@@ -624,7 +699,10 @@ var projects = [
     "published": "Nov 2016",
     "feature": "",
     "innerDescription": [
-      "This is a freelance project for Novexpert, a client of Topix Ltd. I was responsible for animation design and rendering. The after-effects and the voice-over were done by the Topix production team."
+      {
+        "title": "",
+        "description": "This is a freelance project for Novexpert, a client of Topix Ltd. I was responsible for animation design and rendering. The after-effects and the voice-over were done by the Topix production team."
+      }
     ],
     "img": 0,
     "video": [
@@ -643,7 +721,10 @@ var projects = [
     "published": "Jun 2015",
     "feature": "",
     "innerDescription": [
-      "It is a shower stall with a water tank and a countdown clock display for raising awareness of the amount of water used. The water tank is filling up with water at a rate of 3.5 L/min. It forces the users to balance the comfort and the environmental impact when showering by adjusting the amount of water used."
+      {
+        "title": "",
+        "description": "It is a shower stall with a water tank and a countdown clock display for raising awareness of the amount of water used. The water tank is filling up with water at a rate of 3.5 L/min. It forces the users to balance the comfort and the environmental impact when showering by adjusting the amount of water used."
+      }
     ],
     "img": 0,
     "video": [
@@ -659,7 +740,10 @@ var projects = [
     "published": "Sept 2015",
     "feature": "",
     "innerDescription": [
-      "Online advert banner designs for HKSN to promote their nutrition supplements."
+      {
+        "title": "",
+        "description": "Online advert banner designs for HKSN to promote their nutrition supplements."
+      }
     ],
     "img": 5
   },
@@ -672,7 +756,10 @@ var projects = [
     "published": "Aug 2014",
     "feature": "",
     "innerDescription": [
-      "Pay.ImHome.Queue is a Japanese cultural souvenir collection. Mantha and I wanted to highlight and remind the tourists of the interesting cultural behaviors of the Japanese. We have this idea after we traveled to Japan together. We both very much appreciate the culture and aesthetic of the olden days of Japan. We therefore designed them like a folk toy."
+      {
+        "title": "",
+        "description": "Pay.ImHome.Queue is a Japanese cultural souvenir collection. Mantha and I wanted to highlight and remind the tourists of the interesting cultural behaviors of the Japanese. We have this idea after we traveled to Japan together. We both very much appreciate the culture and aesthetic of the olden days of Japan. We therefore designed them like a folk toy."
+      }
     ],
     "img": 0
   },
@@ -685,9 +772,18 @@ var projects = [
     "published": "May 2014",
     "feature": "",
     "innerDescription": [
-      "Catherine and I aimed at designing a lightweight stackable plywood chair. We wanted to make it as lightweight as possible to respond to the properties of plywood. The profile of the side view is designed to echo the silhouette of the back of a human body geometrically. Material-wise, we tried to avoid using irregular shapes to Minimize the waste of material.",
-      "Size : 448mm x 425mm x 825mm seat H : 450mm",
-      "Material : plywood"
+      {
+        "title": "",
+        "description": "Catherine and I aimed at designing a lightweight stackable plywood chair. We wanted to make it as lightweight as possible to respond to the properties of plywood. The profile of the side view is designed to echo the silhouette of the back of a human body geometrically. Material-wise, we tried to avoid using irregular shapes to Minimize the waste of material."
+      },
+      {
+        "title": "",
+        "description": "Size : 448mm x 425mm x 825mm seat H : 450mm"
+      },
+      {
+        "title": "",
+        "description": "Material : plywood"
+      }
     ],
     "img": 0
   },
@@ -700,7 +796,10 @@ var projects = [
     "published": "Dec 2013",
     "feature": "",
     "innerDescription": [
-      "PATCHES is a pair of boots with a patching style that is transformed from the idea \"I want to repair old shoes for my use.\". It targets fashionable youngsters who would like to carry a little bit of taste of vintage."
+      {
+        "title": "",
+        "description": "PATCHES is a pair of boots with a patching style that is transformed from the idea \"I want to repair old shoes for my use.\". It targets fashionable youngsters who would like to carry a little bit of taste of vintage."
+      }
     ],
     "img": 3
   },
@@ -713,7 +812,10 @@ var projects = [
     "published": "Jan 2014",
     "feature": "",
     "innerDescription": [
-      "It is a project to design a payment user interface for Macau Government when I was working at BIC Ltd. to design. The user flow was designed and I was only responsible for designing the graphic interface."
+      {
+        "title": "",
+        "description": "It is a project to design a payment user interface for Macau Government when I was working at BIC Ltd. to design. The user flow was designed and I was only responsible for designing the graphic interface."
+      }
     ],
     "img": 4
   },
@@ -726,7 +828,10 @@ var projects = [
     "published": "Dec 2013",
     "feature": "",
     "innerDescription": [
-      "A pair of runway shoes merging elegance and aggression is designed and produced with 3D printing. Since 3D printing breaks a lot of limitations of a form, I was challenging a new sense of aesthetics through it."
+      {
+        "title": "",
+        "description": "A pair of runway shoes merging elegance and aggression is designed and produced with 3D printing. Since 3D printing breaks a lot of limitations of a form, I was challenging a new sense of aesthetics through it."
+      }
     ],
     "img": 2
   },
@@ -739,10 +844,18 @@ var projects = [
     "published": "Jun 2013",
     "feature": "",
     "innerDescription": [
-      "Jofab is a mini foldable boat for teens to use at the beach and calm water area. It is aimed at providing a new boating experience for teens. Jofab is different from other boats as it is used origami elements. Teens need to construct the boat by themselves and turn the origami boat into a real boat. Through this process, they can enjoy the sense of success and satisfaction.",
-      "Weight : 4.5 kg Load : 50 kg",
-      "Material : canvas // coroplast",
-      "Size : 130cm x 48cm~70cm x 30cm (unfold)    60cm x 42cm x 4cm (fold)"
+      {
+        "title": "",
+        "description": "Jofab is a mini foldable boat for teens to use at the beach and calm water area. It is aimed at providing a new boating experience for teens. Jofab is different from other boats as it is used origami elements. Teens need to construct the boat by themselves and turn the origami boat into a real boat. Through this process, they can enjoy the sense of success and satisfaction."
+      },
+      {
+        "title": "",
+        "description": "Weight : 4.5 kg Load : 50 kg"
+      },
+      {
+        "title": "",
+        "description": "Material : canvas // coroplast\nSize : 130cm x 48cm~70cm x 30cm (unfold)    60cm x 42cm x 4cm (fold)"
+      }
     ],
     "img": 3,
     "video": [
@@ -758,7 +871,10 @@ var projects = [
     "published": "May 2013",
     "feature": "",
     "innerDescription": [
-      "Mitle is a kettle for preparing quick and hygienic milk formula for babies. It boils water in a very short time for killing bacteria, which cannot be filtered. Then cool it down immediately to body temperature 37℃. Within 5 minutes, a bottle of milk can be prepared for babies. When babies feel hungry, parents would feed them as soon as possible because parents care so much. This is a new opportunity for the kettle market."
+      {
+        "title": "",
+        "description": "Mitle is a kettle for preparing quick and hygienic milk formula for babies. It boils water in a very short time for killing bacteria, which cannot be filtered. Then cool it down immediately to body temperature 37℃. Within 5 minutes, a bottle of milk can be prepared for babies. When babies feel hungry, parents would feed them as soon as possible because parents care so much. This is a new opportunity for the kettle market."
+      }
     ],
     "img": 2
   },
@@ -771,7 +887,10 @@ var projects = [
     "published": "May 2013",
     "feature": "",
     "innerDescription": [
-      "This is a product explaination animation. I was responsible for story board and animation. Product is designed by Tam Chun For, Ma Ka Yee and Chan Wai Fan."
+      {
+        "title": "",
+        "description": "This is a product explaination animation. I was responsible for story board and animation. Product is designed by Tam Chun For, Ma Ka Yee and Chan Wai Fan."
+      }
     ],
     "img": 0,
     "video": [
@@ -788,7 +907,10 @@ var projects = [
     "published": "Apr 2013",
     "feature": "",
     "innerDescription": [
-      "It is a story about community. I wanted to collect the bottles from anyone that played basketball with me. I then upcycled the bottles into tableware. I can show the final product to them and give them as a gift when we have a meal, or eat-chit-chat."
+      {
+        "title": "",
+        "description": "It is a story about community. I wanted to collect the bottles from anyone that played basketball with me. I then upcycled the bottles into tableware. I can show the final product to them and give them as a gift when we have a meal, or eat-chit-chat."
+      }
     ],
     "img": 2
   },
@@ -801,8 +923,11 @@ var projects = [
     "published": "Aug 2013",
     "feature": "",
     "innerDescription": [
-      "This is a project cooperating with MINI. I decided to use the form of the mirror of MINI Cooper to design the Bluetooth speaker as it is a very iconic element of the car. I suggested designing it with different colors or patterns that MINI use always."
+      {
+        "title": "",
+        "description": "This is a project cooperating with MINI. I decided to use the form of the mirror of MINI Cooper to design the Bluetooth speaker as it is a very iconic element of the car. I suggested designing it with different colors or patterns that MINI use always."
+      }
     ],
     "img": 2
   }
-]
+];

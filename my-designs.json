@@ -582,8 +582,21 @@ var projects = [
     "published": "Mar 2017",
     "feature": "",
     "innerDescription": [
-      "A multifunctional 4-in-1 design, can be a splatter guard, strainer, cooling rack, and baking sheet. Foldable and featuring locking handles for secure and compact storage. Non-stick and easy to clean, won’t stain or retain odors. 330mm / 13-inches diameter, suitable for most standard size pans."
-    ],
+        {
+          "title": "Versatile 4-in-1 Functionality",
+          "description": [
+            "Traditional metal splatter guards are single-purpose tools that take up massive drawer space and are notoriously difficult to clean.",
+            "Designed for ultimate kitchen efficiency, the 4-in-1 Splatter Guard combines four essential tools into one compact silicone sheet: a pan splatter guard, a pot strainer, a trivet/cooling rack, and a non-stick baking mat suitable for standard 330mm (13-inch) cookware."
+          ]
+        },
+        {
+          "title": "Foldable & Compact Storage",
+          "description": [
+            "Addressing the primary storage friction of traditional rigid mesh screens, this design features a flexible, heat-resistant structure with intuitive locking handles that fold completely flat for effortless drawer storage.",
+            "Made from high-grade, non-stick, food-safe silicone that will not stain or absorb cooking odors, ensuring long-term hygienic use and simple dishwasher cleanup."
+          ]
+        }
+      ],
     "img": 0
   },
   {

@@ -623,7 +623,8 @@ var projects = [
         "description": [
           "While observing cooks preparing dishes like prawn pasta or pan-fried fish fillets, a common friction point emerged: managing hot, delicate ingredients with tongs while needing to squeeze fresh citrus juice at the exact same moment.",
           "Instead of forcing cooks to stop, grab, and dirty a separate citrus reamer—or awkwardly crush lemons with standard tong handles—the Citrus Reamer Tongs integrate juicing directly into the primary cooking utensil without adding complex mechanical parts."
-        ]
+        ],
+        "images": [1, 2]
       },
       {
         "title": "Precision Details & Clever Form",

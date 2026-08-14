@@ -547,17 +547,24 @@ var projects = [
     "feature": "yes",
     "innerDescription": [
       {
-        "title": "Juicing and Grasping in One Clever Tool",
+        "title": "Solving Everyday Kitchen Friction",
         "description": [
-          "Citrus Reamer Tongs combines the functionality of tongs with the juicing prowess of a citrus reamer. This innovative utensil streamlines your kitchen tasks, elevating your cooking experience with a splash of fresh citrus flavor.",
-          "The Citrus Reamer Tongs feature a smart design at their core. The V-shaped tip and reamer head, inspired by a fish's fin, allow for precise juice extraction - perfect for adding a zesty kick to seafood, pasta, and more. No more switching between tools, the Citrus Reamer Tongs have you covered.",
-          "Crafted from durable, nylon-reinforced composite, these tongs are built to withstand the rigors of the kitchen. Their adjustable width, with three customizable settings, ensures a secure grip on ingredients big and small. And for easy storage, the built-in hanging hole makes them a seamless addition to any kitchen."
+          "While observing cooks preparing dishes like prawn pasta or pan-fried fish fillets, a common friction point emerged: managing hot, delicate ingredients with tongs while needing to squeeze fresh citrus juice at the exact same moment.",
+          "Instead of forcing cooks to stop, grab, and dirty a separate citrus reamer—or awkwardly crush lemons with standard tong handles—the Citrus Reamer Tongs integrate juicing directly into the primary cooking utensil without adding complex mechanical parts."
         ]
       },
       {
-        "title": "Design Excellence Recognized",
+        "title": "Precision Details & Clever Form",
         "description": [
-          "The Citrus Reamer Tongs embody the pursuit of design efficiency and multifunctionality. Their recognition with renowned awards, including the Golden Pin Design Award and The International Design Awards (IDA), is a testament to their excellence in both form and function."
+          "At the core is a fin-inspired V-shaped head that functions seamlessly in two modes: open for precise ingredient gripping, and closed to form a rigid, high-yield citrus reamer.",
+          "To solve the tip-flexing common in standard tongs, integrated guiding pins enforce exact jaw alignment during clamping. This ensures maximum stability and precise control when picking up tiny or delicate garnishes like herbs, garlic, or individual prawns.",
+          "Crafted from heat-resistant, nylon-reinforced composite, an intuitive 3-shift locking system allows users to adjust the handle span for food of various sizes and locks flat for compact drawer or hanging storage."
+        ]
+      },
+      {
+        "title": "Recognized Design Excellence",
+        "description": [
+          "By resolving daily cooking friction through intuitive form integration and thoughtful precision details, the Citrus Reamer Tongs achieved both commercial success with Kool and international acclaim, winning the Golden Pin Design Award and the International Design Award (IDA)."
         ]
       }
     ],

@@ -9,15 +9,11 @@ if (document.getElementById("menu-icon")){
   });
 };
 
-
-
 function storedTypes(){
   return localStorage.getItem("types");
 };
 
-
 function popUpDetails(){
-  
   setTimeout(function() {
     if (document.location.hash !== ""){
       document.getElementById("iterContent").classList.remove("my-designs-inner");
@@ -66,7 +62,6 @@ function featureProjects(){
     });
   };
 };
-
 
 function templateBefore(types){
   // check if projects is loaded
@@ -130,7 +125,6 @@ function templateBefore(types){
     };
   };
 };
-
 
 function templateAfter() {
   let newDiv = "";
@@ -291,7 +285,6 @@ function templateAfter() {
   return newDiv;
 }
 
-
 function toggleDropdown(){
   document.getElementById("dropdown-menu").classList.toggle("show");
 };
@@ -307,7 +300,7 @@ function backToDesigns(){
     let currentHash = document.getElementsByClassName("project-inner")[0].classList[1]
     setTimeout(function() {
       if (document.location.hash == "" || document.location.hash !== currentHash){
-        templateBefore(storedTypes);
+        templateBefore(); // FIXED: Removed 'storedTypes' parameter to prevent a JS warning
       };
     }, 0.8);
   };
@@ -323,7 +316,9 @@ function closeProject(){
   
   function closeProjectDiv() {
     let previousPage = document.referrer
-    if (previousPage.includes(!"francispun.com") || previousPage == ""){
+    // FIXED: Changed .includes(!"francispun.com") to !.includes("francispun.com") 
+    // to correctly detect if the user came from an external site
+    if (!previousPage.includes("francispun.com") || previousPage == ""){
       location.href="https://www.francispun.com"
     }else{
       history.back();
@@ -333,7 +328,6 @@ function closeProject(){
   closeProjectAnimation();
   setTimeout(closeProjectDiv, 150);
 };
-
 
 if(document.location.href.includes("my-designs")){
   window.addEventListener('scroll', (e) => {
@@ -358,7 +352,22 @@ window.addEventListener('click', function(e) {
   };
 });
 
+// ==========================================
+// INITIAL PAGE RENDER & URL PARAMETER LOGIC
+// ==========================================
 
 featureProjects();
+
+// 1. Grab the parameters from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get('category');
+const validCategories = ['all', 'product', 'uiux', 'multimedia'];
+
+// 2. If the URL has a valid category, force local storage to update
+if (category && validCategories.includes(category)) {
+  setStore(category);
+} 
+
+// 3. Render the page using whatever is now in local storage
 templateBefore();
 popUpDetails();

@@ -36,9 +36,7 @@ function featureProjects(){
   if ($iterProductFeatureContent !== null){
     projects.forEach(function(project) {
       if (project.feature == "yes"){
-        // get template from tag
         let featureProjectsTemplate = document.getElementById("featureProjectsTemplate").innerHTML;
-        // replace placeholders with values from project object
         for (let i=0; i<2; i++){
         featureProjectsTemplate = featureProjectsTemplate.replace("{meta}", project.meta);
         }
@@ -47,7 +45,6 @@ function featureProjects(){
         featureProjectsTemplate = featureProjectsTemplate.replace("{description}", project.description);
         featureProjectsTemplate = featureProjectsTemplate.replace("{link}", project.link);
 
-        // add to the list
         div = document.createElement('div');
         div.classList.add("my-design");
         div.classList.add("col-sm-6");
@@ -66,10 +63,25 @@ function featureProjects(){
 function templateBefore(types){
   // check if projects is loaded
   if (typeof projects !== 'undefined'){
-    //check if $iterContent div exist
     let $iterContent = document.getElementById("iterContent");
     if ($iterContent !== null){
       types = storedTypes();
+
+      // NEW: Keep the URL perfectly in sync with the current filter!
+      if (types) {
+        const currentUrlParams = new URLSearchParams(window.location.search);
+        const currentCat = currentUrlParams.get('category');
+        
+        // If the URL doesn't match the active filter, update the address bar quietly
+        if (currentCat !== types && !(types === 'all' && !currentCat)) {
+          let newUrl = window.location.pathname;
+          if (types !== 'all') {
+            newUrl += '?category=' + types;
+          }
+          newUrl += window.location.hash;
+          window.history.replaceState(null, '', newUrl); // Changes URL without reloading!
+        }
+      }
 
       // make sure div is empty to start
       $iterContent.innerHTML = "";
@@ -81,8 +93,6 @@ function templateBefore(types){
       let mulitmediaDesignFilterText = 'MULTIMEDIA DESIGNS <i class="fa-solid fa-chevron-down"></i>';
       let allDesignFilterText = 'MY DESIGNS <i class="fa-solid fa-chevron-down"></i>';
 
-      // loop through the project array and append each list item
-      // check the "types" from storage or button action
       projects.forEach(function(project) {
         if (types === "product"){
           document.getElementById("dropdownMenuButton").innerHTML = productDesignFilterText
@@ -102,10 +112,8 @@ function templateBefore(types){
         } else if (types === "all"){
           document.getElementById("dropdownMenuButton").innerHTML = allDesignFilterText
         };
-        // get template from tag
+        
         let template = document.getElementById("my-template").innerHTML;
-
-        // replace placeholders with values from project object
         for (let i=0; i<2; i++){
         template = template.replace("{meta}", project.meta);
         }
@@ -114,7 +122,6 @@ function templateBefore(types){
         template = template.replace("{description}", project.description);
         template = template.replace("{link}", project.link);
 
-        // add to the list
         div = document.createElement('div');
         div.classList.add("my-design");
         div.classList.add("col-sm-6");
@@ -136,22 +143,18 @@ function templateAfter() {
         <h1>${project.name}</h1>
         <p class="info"><em>${project.description} project for ${project.for}</em></p>`;
 
-      // Download button
       if (typeof project.download !== "undefined") {
         newDiv += `<button class="button secondary-button my-4" onclick="window.open('${project.download}')">${project.downloadText}</button>`;
       }
 
-      // Render each section (including the first "intro" one)
       if (project.innerDescription) {
         project.innerDescription.forEach(function (section) {
           newDiv += `<section class="project-section">`;
 
-          // Only render title if it exists and is non-empty
           if (section.title && section.title.trim() !== "") {
             newDiv += `<h3>${section.title}</h3>`;
           }
 
-          // Description (string or array)
           if (typeof section.description === "string") {
             newDiv += `<p>${section.description}</p>`;
           } else if (Array.isArray(section.description)) {
@@ -160,21 +163,18 @@ function templateAfter() {
             });
           }
 
-          // Inline images
           if (Array.isArray(section.images) && section.images.length > 0) {
             section.images.forEach(function (idx) {
               newDiv += `<img class="project-img" src="my-designs/${project.meta}-${idx}.jpg" alt="${project.name} image ${idx}" loading="lazy">`;
             });
           }
 
-          // Inline GIFs (optional)
           if (Array.isArray(section.gifs) && section.gifs.length > 0) {
             section.gifs.forEach(function (idx) {
               newDiv += `<img class="project-img" src="my-designs/${project.meta}-${idx}.gif" alt="${project.name} gif ${idx}" loading="lazy">`;
             });
           }
 
-          // Inline videos (optional)
           if (Array.isArray(section.videos) && section.videos.length > 0) {
             section.videos.forEach(function (videoIdx) {
               if (project.video && project.video[videoIdx]) {
@@ -187,7 +187,6 @@ function templateAfter() {
         });
       }
 
-      // Optional: leftover images at bottom (for unassigned ones)
       const usedImages = new Set();
       if (project.innerDescription) {
         project.innerDescription.forEach(sec => {
@@ -222,7 +221,6 @@ function templateAfter() {
 
         if (hasUnassignedGifs) {
           newDiv += `<div class="project-gif-gallery mt-5">`;
-
           for (let i = 1; i <= project.gif; i++) {
             if (!usedGifs.has(i)) {
               newDiv += `<img class="project-img project-gif" 
@@ -231,7 +229,6 @@ function templateAfter() {
                              loading="lazy">`;
             }
           }
-
           newDiv += `</div>`;
         }
       }
@@ -255,7 +252,6 @@ function templateAfter() {
         if (hasUnassigned) {
           newDiv += `<div class="project-video-gallery mt-5">`;
           newDiv += `<h3 class="text-center mb-4">Project Videos</h3>`;
-          
           project.video.forEach(function (videoAttr, idx) {
             if (!usedVideos.has(idx)) {
               newDiv += `<div class="iframe-container mb-4">
@@ -263,12 +259,10 @@ function templateAfter() {
               </div>`;
             }
           });
-
           newDiv += `</div>`;
         }
       }
 
-      // Published & close
       newDiv += `
         <p class="text-center published">@ ${project.published}</p>
         <button class="project-inner-close project-close-top" onclick="closeProject()"><i class="fa-solid fa-xmark"></i></button> 
@@ -300,7 +294,7 @@ function backToDesigns(){
     let currentHash = document.getElementsByClassName("project-inner")[0].classList[1]
     setTimeout(function() {
       if (document.location.hash == "" || document.location.hash !== currentHash){
-        templateBefore(); // FIXED: Removed 'storedTypes' parameter to prevent a JS warning
+        templateBefore(); 
       };
     }, 0.8);
   };
@@ -316,8 +310,6 @@ function closeProject(){
   
   function closeProjectDiv() {
     let previousPage = document.referrer
-    // FIXED: Changed .includes(!"francispun.com") to !.includes("francispun.com") 
-    // to correctly detect if the user came from an external site
     if (!previousPage.includes("francispun.com") || previousPage == ""){
       location.href="https://www.francispun.com"
     }else{
@@ -358,16 +350,30 @@ window.addEventListener('click', function(e) {
 
 featureProjects();
 
-// 1. Grab the parameters from the URL
+// 1. Check the URL for parameters
 const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get('category');
-const validCategories = ['all', 'product', 'uiux', 'multimedia'];
+let category = urlParams.get('category');
 
-// 2. If the URL has a valid category, force local storage to update
-if (category && validCategories.includes(category)) {
-  setStore(category);
-} 
+// Edge-case fix: If someone accidentally appends the category after a project hash (#meta?category=uiux)
+if (!category && window.location.hash.includes('?category=')) {
+  const hashQuery = window.location.hash.split('?')[1];
+  const hashParams = new URLSearchParams('?' + hashQuery);
+  category = hashParams.get('category');
+}
 
-// 3. Render the page using whatever is now in local storage
+// 2. Decide what filter to apply based on the URL
+if (category) {
+  category = category.toLowerCase(); // Converts ?category=UIUX to uiux so it doesn't break
+  const validCategories = ['all', 'product', 'uiux', 'multimedia'];
+  if (validCategories.includes(category)) {
+    setStore(category); 
+  }
+} else {
+  // If there is NO category in the URL (like clicking your main header link),
+  // reset to "all" to wipe the memory so you don't get trapped.
+  setStore('all');
+}
+
+// 3. Render the page
 templateBefore();
 popUpDetails();

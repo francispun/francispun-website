@@ -34,7 +34,7 @@ var projects = [
       "img": 4,
       "download": "https://izakaya-ai.francispun.com/",
       "downloadText": "view prototype"
-    }
+    },
   {
     "meta": "kool-econtact",
     "name": "Dynamic e-Namecard",

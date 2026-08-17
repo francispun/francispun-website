@@ -10,30 +10,31 @@ var projects = [
       "feature": "yes",
       "innerDescription": [
         {
-          "title": "",  // empty title = no <h3> rendered
-          "description": "Izakaya AI is a single-page web application that transforms the casual dining experience. Born from a discussion with a restaurant owner, it addresses the primary limitation of self-ordering kiosks: they are static tools that demand the user do all the work. While digital menus are efficient, they lack the intelligence to guide a customer. This project solves that by embedding a smart, context-aware agent directly into the ordering workflow.",
+          "title": "",
+          "description": "During a discussion with a restaurant owner, I noticed a major flaw in current self-ordering kiosks: they are static tools that force customers to do all the heavy lifting. When diners sit down, they often have a broad craving in mind—like 'I feel like chicken today'—or want details on a dish. Instead of receiving quick recommendations, traditional menus force them to scroll through endless categories or wait around for a server. To address this, I designed a interactive concept prototype demonstrating how AI can make self-ordering truly effortless.",
           "images": [1]
         },
         {
-          "title": "The Solution: An Intelligent Menu Interface",
+          "title": "The Concept: An Intent-Driven Menu Interface",
           "description": [
-            "The core of the application is an AI that moves beyond simple Q&A to act as a personalized dining concierge.",
-            "Contextual Intelligence: The AI monitors the user’s active cart in real-time. If a guest orders sake, the AI recognizes the flavor profile and immediately suggests compatible yakitori skewers, rather than random items.",
-            "Frictionless Utility: The goal is to reduce the distance between decision and action. Recommendations are not just text; they are rendered with interactive '+Add' buttons, allowing users to act on the AI's advice instantly.",
-            "Adaptive Communication: It supports English, Traditional Chinese, and Japanese, adapting not just the language, but the depth of explanation required for ingredients and culinary terms."
+            "This prototype reimagines digital ordering by transforming rigid category lists into an intuitive, conversational menu guide.",
+            "Intent-Driven Discovery: Diners can express broad cravings (e.g., 'What chicken dishes do you recommend?') or ask about specific ingredients, getting instant answers without endless browsing or waiting for staff.",
+            "Contextual Pairings: The UI monitors active cart items in real-time. If a guest adds sake, the interface proactively suggests complementary pairings like yakitori skewers.",
+            "Frictionless Action: AI recommendations feature interactive '+Add' buttons, enabling customers to add items to their cart directly from the suggestion stream.",
+            "Adaptive Communication: Seamlessly supports English, Traditional Chinese, and Japanese, tailoring culinary explanations and dish details to the diner's language preference."
           ],
           "images": [2, 3]
         },
         {
-          "title": "Technical Strategy & Design Thinking",
-          "description": "The system is powered by Google Gemini, but the effectiveness comes from the architectural logic: Simulated RAG via Prompt Injection. Instead of a complex vector database, the application injects the structured menu JSON and the conversation history into every prompt. This lightweight approach gives the AI 'perfect memory' of the session without backend latency. The objective was to demonstrate that by strictly managing context and state, we can transform a generic LLM into a domain-specific tool that feels distinctively helpful, personal, and smart.",
+          "title": "Design Thinking & Concept Prototyping",
+          "description": "As the UI/UX designer on this project, my focus was on solving the restaurant owner's operational challenge through human-centered design principles and prompt architecture. To quickly validate the concept, I directed AI coding tools to develop a functional prototype based on my wireframes and interaction flows. This allowed me to concentrate on user journeys, micro-interactions, and context management—proving how thoughtful design can turn a static digital menu into a smart, personal dining concierge.",
           "images": [4]
         }
       ],
       "img": 4,
       "download": "https://izakaya-ai.francispun.com/",
       "downloadText": "view prototype"
-    },
+    }
   {
     "meta": "kool-econtact",
     "name": "Dynamic e-Namecard",

@@ -7,6 +7,7 @@ const myCV = [
     "jobAchieve": {
       "Design & Innovation": [
         "Initiated Kool OBM and multiple ODM projects: Delivered innovative, customer-centric designs aligned with brand identity.",
+        "Led design of Secondz collapsible food storage line for client DripEZ — best-selling range.",
         "Orchestrated e-commerce platform enhancements and personalised laser engraving service launch, contributing to ~10% average monthly sales growth (peaks 200% during campaigns).",
         "Developed virtual prototyping web app (AI-assisted): Eliminated 2–3 early physical prototyping cycles, significantly reducing time and costs."
       ],
@@ -65,7 +66,7 @@ const myCV = [
     "jobCompany": "Selected Earlier Roles",
     "companyDesc": "Homeasy Enterprise Ltd. (kitchenware/QDO/Hailo), Kool Ltd. (2016–2018), Fang Studio Ltd., and others — foundational roles building expertise in product design, branding, and innovation.",
     "jobTitle": "",
-    "jobDate": "2011 – 2018",
+    "jobDate": "",
     "jobAchieve": {
       "Key Achievements": [
         "<strong>International Awards (Kool Ltd, 2016–2018)</strong>: Led end-to-end design of Dual Citrus Reamer Tongs, winning Golden Pin Design Award and IDA Prize Third Place.",

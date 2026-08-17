@@ -309,10 +309,21 @@ function closeProject(){
   };
   
   function closeProjectDiv() {
-    let previousPage = document.referrer
-    if (!previousPage.includes("francispun.com") || previousPage == ""){
-      location.href="https://www.francispun.com"
-    }else{
+    let previousPage = document.referrer;
+    
+    if (!previousPage.includes("francispun.com") || previousPage === ""){
+      const currentUrlParams = new URLSearchParams(window.location.search);
+      const currentCat = currentUrlParams.get('category');
+      
+      let returnUrl = window.location.pathname; 
+      
+      if (currentCat) {
+        returnUrl += '?category=' + currentCat;
+      }
+      
+      window.location.href = returnUrl;
+      
+    } else {
       history.back();
     };
   };
